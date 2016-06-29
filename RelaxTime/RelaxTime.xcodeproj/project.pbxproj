@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		35E7DC10A8121C6EAA053C9F /* libPods-RelaxTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */; };
-		BCA725671D23C6770005F7BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725661D23C6770005F7BE /* main.m */; };
-		BCA7256A1D23C6770005F7BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725691D23C6770005F7BE /* AppDelegate.m */; };
-		BCA7256D1D23C6770005F7BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7256C1D23C6770005F7BE /* ViewController.m */; };
 		BCA725701D23C6780005F7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA7256E1D23C6780005F7BE /* Main.storyboard */; };
 		BCA725721D23C6780005F7BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA725711D23C6780005F7BE /* Assets.xcassets */; };
 		BCA725751D23C6780005F7BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA725731D23C6780005F7BE /* LaunchScreen.storyboard */; };
 		BCA725801D23C6780005F7BE /* RelaxTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7257F1D23C6780005F7BE /* RelaxTimeTests.m */; };
 		BCA7258B1D23C6780005F7BE /* RelaxTimeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7258A1D23C6780005F7BE /* RelaxTimeUITests.m */; };
+		BCA725BB1D23C9200005F7BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7259B1D23C9200005F7BE /* AppDelegate.m */; };
+		BCA725BC1D23C9200005F7BE /* NSDate+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7259E1D23C9200005F7BE /* NSDate+XMGExtension.m */; };
+		BCA725BD1D23C9200005F7BE /* UIBarButtonItem+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725A01D23C9200005F7BE /* UIBarButtonItem+XMGExtension.m */; };
+		BCA725BE1D23C9200005F7BE /* UIView+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725A21D23C9200005F7BE /* UIView+XMGExtension.m */; };
+		BCA725BF1D23C9200005F7BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725B41D23C9200005F7BE /* main.m */; };
+		BCA725C01D23C9200005F7BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725B61D23C9200005F7BE /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +42,6 @@
 		2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.release.xcconfig"; sourceTree = "<group>"; };
 		74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.debug.xcconfig"; sourceTree = "<group>"; };
 		BCA725621D23C6770005F7BE /* RelaxTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelaxTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCA725661D23C6770005F7BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BCA725681D23C6770005F7BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BCA725691D23C6770005F7BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BCA7256B1D23C6770005F7BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BCA7256C1D23C6770005F7BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BCA7256F1D23C6780005F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCA725711D23C6780005F7BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCA725741D23C6780005F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +52,18 @@
 		BCA725861D23C6780005F7BE /* RelaxTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelaxTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA7258A1D23C6780005F7BE /* RelaxTimeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelaxTimeUITests.m; sourceTree = "<group>"; };
 		BCA7258C1D23C6780005F7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCA7259A1D23C9200005F7BE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BCA7259B1D23C9200005F7BE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BCA7259D1D23C9200005F7BE /* NSDate+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+XMGExtension.h"; sourceTree = "<group>"; };
+		BCA7259E1D23C9200005F7BE /* NSDate+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XMGExtension.m"; sourceTree = "<group>"; };
+		BCA7259F1D23C9200005F7BE /* UIBarButtonItem+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+XMGExtension.h"; sourceTree = "<group>"; };
+		BCA725A01D23C9200005F7BE /* UIBarButtonItem+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+XMGExtension.m"; sourceTree = "<group>"; };
+		BCA725A11D23C9200005F7BE /* UIView+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XMGExtension.h"; sourceTree = "<group>"; };
+		BCA725A21D23C9200005F7BE /* UIView+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XMGExtension.m"; sourceTree = "<group>"; };
+		BCA725A41D23C9200005F7BE /* DefineUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineUrl.h; sourceTree = "<group>"; };
+		BCA725B41D23C9200005F7BE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BCA725B51D23C9200005F7BE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BCA725B61D23C9200005F7BE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RelaxTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,13 +135,7 @@
 		BCA725641D23C6770005F7BE /* RelaxTime */ = {
 			isa = PBXGroup;
 			children = (
-				BCA725681D23C6770005F7BE /* AppDelegate.h */,
-				BCA725691D23C6770005F7BE /* AppDelegate.m */,
-				BCA7256B1D23C6770005F7BE /* ViewController.h */,
-				BCA7256C1D23C6770005F7BE /* ViewController.m */,
-				BCA7256E1D23C6780005F7BE /* Main.storyboard */,
-				BCA725711D23C6780005F7BE /* Assets.xcassets */,
-				BCA725731D23C6780005F7BE /* LaunchScreen.storyboard */,
+				BCA725981D23C9200005F7BE /* Classes */,
 				BCA725761D23C6780005F7BE /* Info.plist */,
 				BCA725651D23C6770005F7BE /* Supporting Files */,
 			);
@@ -141,7 +145,9 @@
 		BCA725651D23C6770005F7BE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BCA725661D23C6770005F7BE /* main.m */,
+				BCA7256E1D23C6780005F7BE /* Main.storyboard */,
+				BCA725711D23C6780005F7BE /* Assets.xcassets */,
+				BCA725731D23C6780005F7BE /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -162,6 +168,201 @@
 				BCA7258C1D23C6780005F7BE /* Info.plist */,
 			);
 			path = RelaxTimeUITests;
+			sourceTree = "<group>";
+		};
+		BCA725981D23C9200005F7BE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BCA725991D23C9200005F7BE /* Commen */,
+				BCA725A71D23C9200005F7BE /* Home */,
+				BCA725AB1D23C9200005F7BE /* Movie */,
+				BCA725AF1D23C9200005F7BE /* Music */,
+				BCA725B31D23C9200005F7BE /* Other */,
+				BCA725B71D23C9200005F7BE /* Reading */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BCA725991D23C9200005F7BE /* Commen */ = {
+			isa = PBXGroup;
+			children = (
+				BCA7259A1D23C9200005F7BE /* AppDelegate.h */,
+				BCA7259B1D23C9200005F7BE /* AppDelegate.m */,
+				BCA7259C1D23C9200005F7BE /* Category */,
+				BCA725A31D23C9200005F7BE /* Controllers */,
+				BCA725A41D23C9200005F7BE /* DefineUrl.h */,
+				BCA725A51D23C9200005F7BE /* Models */,
+				BCA725A61D23C9200005F7BE /* Views */,
+			);
+			path = Commen;
+			sourceTree = "<group>";
+		};
+		BCA7259C1D23C9200005F7BE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BCA7259D1D23C9200005F7BE /* NSDate+XMGExtension.h */,
+				BCA7259E1D23C9200005F7BE /* NSDate+XMGExtension.m */,
+				BCA7259F1D23C9200005F7BE /* UIBarButtonItem+XMGExtension.h */,
+				BCA725A01D23C9200005F7BE /* UIBarButtonItem+XMGExtension.m */,
+				BCA725A11D23C9200005F7BE /* UIView+XMGExtension.h */,
+				BCA725A21D23C9200005F7BE /* UIView+XMGExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		BCA725A31D23C9200005F7BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BCA725A51D23C9200005F7BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCA725A61D23C9200005F7BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCA725A71D23C9200005F7BE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BCA725A81D23C9200005F7BE /* Controllers */,
+				BCA725A91D23C9200005F7BE /* Models */,
+				BCA725AA1D23C9200005F7BE /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BCA725A81D23C9200005F7BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BCA725A91D23C9200005F7BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCA725AA1D23C9200005F7BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCA725AB1D23C9200005F7BE /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				BCA725AC1D23C9200005F7BE /* Controllers */,
+				BCA725AD1D23C9200005F7BE /* Models */,
+				BCA725AE1D23C9200005F7BE /* Views */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		BCA725AC1D23C9200005F7BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BCA725AD1D23C9200005F7BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCA725AE1D23C9200005F7BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCA725AF1D23C9200005F7BE /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				BCA725B01D23C9200005F7BE /* Controllers */,
+				BCA725B11D23C9200005F7BE /* Models */,
+				BCA725B21D23C9200005F7BE /* Views */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		BCA725B01D23C9200005F7BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BCA725B11D23C9200005F7BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCA725B21D23C9200005F7BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCA725B31D23C9200005F7BE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				BCA725B41D23C9200005F7BE /* main.m */,
+				BCA725B51D23C9200005F7BE /* ViewController.h */,
+				BCA725B61D23C9200005F7BE /* ViewController.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		BCA725B71D23C9200005F7BE /* Reading */ = {
+			isa = PBXGroup;
+			children = (
+				BCA725B81D23C9200005F7BE /* Controllers */,
+				BCA725B91D23C9200005F7BE /* Models */,
+				BCA725BA1D23C9200005F7BE /* Views */,
+			);
+			path = Reading;
+			sourceTree = "<group>";
+		};
+		BCA725B81D23C9200005F7BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BCA725B91D23C9200005F7BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCA725BA1D23C9200005F7BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,9 +549,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCA7256D1D23C6770005F7BE /* ViewController.m in Sources */,
-				BCA7256A1D23C6770005F7BE /* AppDelegate.m in Sources */,
-				BCA725671D23C6770005F7BE /* main.m in Sources */,
+				BCA725C01D23C9200005F7BE /* ViewController.m in Sources */,
+				BCA725BF1D23C9200005F7BE /* main.m in Sources */,
+				BCA725BB1D23C9200005F7BE /* AppDelegate.m in Sources */,
+				BCA725BE1D23C9200005F7BE /* UIView+XMGExtension.m in Sources */,
+				BCA725BC1D23C9200005F7BE /* NSDate+XMGExtension.m in Sources */,
+				BCA725BD1D23C9200005F7BE /* UIBarButtonItem+XMGExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
