@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYHomeViewController">
+            <connections>
+                <outlet property="collectionView" destination="xR5-y5-TxP" id="BeR-n2-aBV"/>
+                <outlet property="likeButton" destination="8Fc-oD-R27" id="XIi-vQ-yNj"/>
+                <outlet property="likeLabel" destination="gOt-ey-vcc" id="RHN-lP-BB8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fc-oD-R27" userLabel="喜欢">
+                    <rect key="frame" x="60" y="577" width="23" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="23" id="D9M-zI-h7l"/>
+                        <constraint firstAttribute="height" constant="20" id="VYX-RP-twR"/>
+                    </constraints>
+                    <state key="normal" title="Button" backgroundImage="liker"/>
+                    <state key="selected" backgroundImage="liker_click"/>
+                    <connections>
+                        <action selector="likeBtnClick:" destination="-1" eventType="touchUpInside" id="3RE-Vp-jJt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIe-gz-d6B" userLabel="分享">
+                    <rect key="frame" x="270" y="572" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="xLq-TH-HGw"/>
+                        <constraint firstAttribute="width" constant="25" id="z3o-33-UmR"/>
+                    </constraints>
+                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" backgroundImage="mainCellShare"/>
+                    <connections>
+                        <action selector="shareBtnClick:" destination="-1" eventType="touchUpInside" id="4tg-d6-MS9"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOt-ey-vcc">
+                    <rect key="frame" x="93" y="576" width="33" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="1Wk-fx-IuF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xR5-y5-TxP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7vO-k8-f7y">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="vim-IZ-sG4"/>
+                        <outlet property="delegate" destination="-1" id="OxP-PI-TtM"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="gOt-ey-vcc" firstAttribute="leading" secondItem="8Fc-oD-R27" secondAttribute="trailing" constant="10" id="0gI-s5-cxp"/>
+                <constraint firstItem="xR5-y5-TxP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9iG-H6-s0L"/>
+                <constraint firstAttribute="trailing" secondItem="IIe-gz-d6B" secondAttribute="trailing" constant="80" id="AGG-rt-Py7"/>
+                <constraint firstAttribute="bottom" secondItem="xR5-y5-TxP" secondAttribute="bottom" id="ETn-ub-rRJ"/>
+                <constraint firstItem="gOt-ey-vcc" firstAttribute="centerY" secondItem="8Fc-oD-R27" secondAttribute="centerY" id="GzV-LW-zQF"/>
+                <constraint firstItem="8Fc-oD-R27" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="Jbq-jX-rn9"/>
+                <constraint firstItem="IIe-gz-d6B" firstAttribute="bottom" secondItem="8Fc-oD-R27" secondAttribute="bottom" id="VMk-GC-Bk0"/>
+                <constraint firstAttribute="trailing" secondItem="xR5-y5-TxP" secondAttribute="trailing" id="jAV-rX-fdD"/>
+                <constraint firstItem="xR5-y5-TxP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="o7Y-fW-JSi"/>
+                <constraint firstAttribute="bottom" secondItem="8Fc-oD-R27" secondAttribute="bottom" constant="70" id="sEr-dd-jif"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="257.5" y="389.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="liker" width="23" height="21"/>
+        <image name="liker_click" width="23" height="21"/>
+        <image name="mainCellShare" width="20" height="20"/>
+    </resources>
+</document>

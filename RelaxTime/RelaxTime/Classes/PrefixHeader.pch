@@ -1,0 +1,55 @@
+//
+//  PrefixHeader.pch
+//  RelaxTime
+//
+//  Created by 千锋 on 16/6/29.
+//  Copyright © 2016年 abc. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//第三方库
+#import<MJRefresh.h>
+#import <AFNetworking.h>
+#import <SVProgressHUD.h>
+#import <UIImageView+WebCache.h>
+#import <UIImageView+AFNetworking.h>
+#import <YYModel.h>
+#import <Masonry.h>
+
+//类别
+#import "UIBarButtonItem+XMGExtension.h"
+
+#import "NSDate+XMGExtension.h"
+
+#import "UIView+XMGExtension.h"
+
+
+//全局统一背景颜色
+
+#define GlobalBlueColor SYColorRBG(85, 150, 250)
+
+//只在调试时打印
+#ifdef DEBUG
+#define SYLog(...) NSLog(__VA_ARGS__)
+#else
+#define SYLog(...)
+#endif
+
+//打印调用的方法
+#define SYLogFunc  SYLog(@"%s", __FUNCTION__);
+
+// 颜色
+#define SYColorRBG(r, g, b)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define SYColorRBGA(r, g, b, a)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+#define WIDTH  [[UIScreen mainScreen] bounds].size.width
+#define HEIGHT  [[UIScreen mainScreen] bounds].size.height
+
+//url设置
+#import "DefineUrl.h"
+
+
+#endif /* PrefixHeader_pch */
