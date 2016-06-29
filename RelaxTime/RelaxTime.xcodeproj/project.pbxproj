@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35E7DC10A8121C6EAA053C9F /* libPods-RelaxTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */; };
 		BCA725671D23C6770005F7BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725661D23C6770005F7BE /* main.m */; };
 		BCA7256A1D23C6770005F7BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725691D23C6770005F7BE /* AppDelegate.m */; };
 		BCA7256D1D23C6770005F7BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7256C1D23C6770005F7BE /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.release.xcconfig"; sourceTree = "<group>"; };
+		74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.debug.xcconfig"; sourceTree = "<group>"; };
 		BCA725621D23C6770005F7BE /* RelaxTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelaxTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA725661D23C6770005F7BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCA725681D23C6770005F7BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		BCA725861D23C6780005F7BE /* RelaxTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelaxTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA7258A1D23C6780005F7BE /* RelaxTimeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelaxTimeUITests.m; sourceTree = "<group>"; };
 		BCA7258C1D23C6780005F7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RelaxTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E7DC10A8121C6EAA053C9F /* libPods-RelaxTime.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0282CF04C589C5A90FC8000E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6BF06B9304806EF5432D352 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */,
+				2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BCA725591D23C6770005F7BE = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				BCA7257E1D23C6780005F7BE /* RelaxTimeTests */,
 				BCA725891D23C6780005F7BE /* RelaxTimeUITests */,
 				BCA725631D23C6770005F7BE /* Products */,
+				A6BF06B9304806EF5432D352 /* Pods */,
+				0282CF04C589C5A90FC8000E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCA7258F1D23C6780005F7BE /* Build configuration list for PBXNativeTarget "RelaxTime" */;
 			buildPhases = (
+				F3CD655DC566B980D786130C /* [CP] Check Pods Manifest.lock */,
 				BCA7255E1D23C6770005F7BE /* Sources */,
 				BCA7255F1D23C6770005F7BE /* Frameworks */,
 				BCA725601D23C6770005F7BE /* Resources */,
+				0887306C8412022FAD110AEF /* [CP] Embed Pods Frameworks */,
+				B15B0729B568628DDD616843 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +294,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0887306C8412022FAD110AEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B15B0729B568628DDD616843 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3CD655DC566B980D786130C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCA7255E1D23C6770005F7BE /* Sources */ = {
@@ -412,6 +487,7 @@
 		};
 		BCA725901D23C6780005F7BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RelaxTime/Info.plist;
@@ -423,6 +499,7 @@
 		};
 		BCA725911D23C6780005F7BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RelaxTime/Info.plist;
@@ -499,6 +576,7 @@
 				BCA725911D23C6780005F7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCA725921D23C6780005F7BE /* Build configuration list for PBXNativeTarget "RelaxTimeTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +585,7 @@
 				BCA725941D23C6780005F7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCA725951D23C6780005F7BE /* Build configuration list for PBXNativeTarget "RelaxTimeUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +594,7 @@
 				BCA725971D23C6780005F7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
