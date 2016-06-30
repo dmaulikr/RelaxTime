@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A9192AD1D241B9D00517BAB /* SYHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9192AC1D241B9D00517BAB /* SYHomeModel.m */; };
 		35E7DC10A8121C6EAA053C9F /* libPods-RelaxTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */; };
 		BC4AB58E1D23EF5800BFEA15 /* SYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB58C1D23EF5800BFEA15 /* SYHomeViewController.m */; };
 		BC4AB58F1D23EF5800BFEA15 /* SYHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4AB58D1D23EF5800BFEA15 /* SYHomeViewController.xib */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A9192AB1D241B9D00517BAB /* SYHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeModel.h; sourceTree = "<group>"; };
+		1A9192AC1D241B9D00517BAB /* SYHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeModel.m; sourceTree = "<group>"; };
 		2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.release.xcconfig"; sourceTree = "<group>"; };
 		74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.debug.xcconfig"; sourceTree = "<group>"; };
 		BC4AB58B1D23EF5800BFEA15 /* SYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeViewController.h; sourceTree = "<group>"; };
@@ -300,6 +303,8 @@
 		BCA725A91D23C9200005F7BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1A9192AB1D241B9D00517BAB /* SYHomeModel.h */,
+				1A9192AC1D241B9D00517BAB /* SYHomeModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -620,6 +625,7 @@
 				BCA725BF1D23C9200005F7BE /* main.m in Sources */,
 				BCA725C81D23CCE10005F7BE /* SYTabBarViewController.m in Sources */,
 				BC4AB58E1D23EF5800BFEA15 /* SYHomeViewController.m in Sources */,
+				1A9192AD1D241B9D00517BAB /* SYHomeModel.m in Sources */,
 				BCA725BB1D23C9200005F7BE /* AppDelegate.m in Sources */,
 				BCA725BE1D23C9200005F7BE /* UIView+XMGExtension.m in Sources */,
 				BC4AB5981D23FB5000BFEA15 /* SYHomeTableViewCell.m in Sources */,

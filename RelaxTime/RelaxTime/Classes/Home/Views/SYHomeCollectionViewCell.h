@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class SYHomeModel;
+
 @interface SYHomeCollectionViewCell : UICollectionViewCell
 
+@property(nonatomic, strong) SYHomeModel *model;
 @end

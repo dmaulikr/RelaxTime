@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SYHomeModel;
 
 @interface SYHomeTableViewCell : UITableViewCell
 
+@property(nonatomic, strong) SYHomeModel *model;
 @end

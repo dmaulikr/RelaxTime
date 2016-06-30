@@ -8,7 +8,7 @@
 
 #import "SYHomeCollectionViewCell.h"
 #import "SYHomeTableViewCell.h"
-
+#import "SYHomeModel.h"
 @interface SYHomeCollectionViewCell()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,8 +22,9 @@
 - (void)awakeFromNib {
     // Initialization code
     
-    self.autoresizingMask = NO;
-    self.tableView.contentInset = UIEdgeInsetsMake( 70, 0, HEIGHT / 2, 0);
+    SYLogFunc;
+   // self.autoresizingMask = NO;
+    self.tableView.contentInset = UIEdgeInsetsMake( 70, 0, 200, 0);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -36,6 +37,16 @@
   
 }
 
+#pragma mark - 模型赋值
+-(void)setModel:(SYHomeModel *)model{
+    
+    _model = model;
+    
+   
+    [self.tableView reloadData];
+    //NSLog(@"%f",self.tableView.contentOffset.y);
+    
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
@@ -44,7 +55,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
    SYHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
+    cell.model = _model;
   
     return cell;
 }

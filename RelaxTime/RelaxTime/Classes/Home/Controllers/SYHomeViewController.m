@@ -8,6 +8,7 @@
 
 #import "SYHomeViewController.h"
 #import "SYHomeCollectionViewCell.h"
+#import "SYHomeModel.h"
 
 @interface SYHomeViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 //喜欢数量
@@ -24,6 +25,13 @@
 
 @implementation SYHomeViewController
 
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [SVProgressHUD dismiss];
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -32,10 +40,44 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self creatUI];
+    [self getData];
+    [SVProgressHUD show];
     
    
 }
 
+
+#pragma mark - 数据请求
+-(void)getData{
+    
+    
+    [self.requestManager GET:Home_URl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        //
+        //取出数组
+        NSArray * array = responseObject[@"data"];
+        [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYHomeModel class] json:array]];
+        //NSLog(@"%@",self.dataArray);
+        [self.collectionView reloadData];
+        
+        [self refreshLikeLabel];
+        
+        [SVProgressHUD dismiss];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        //
+        [SVProgressHUD showErrorWithStatus:@"请求失败"];
+        SYLog(@"首页数据请求失败");
+    }];
+    
+   
+}
+
+#pragma mark - 刷新喜欢数量
+-(void)refreshLikeLabel{
+    //取出模型
+    NSInteger num =  self.collectionView.contentOffset.x / WIDTH;
+    SYHomeModel *model = self.dataArray[num];
+    self.likeLabel.text = model.praisenum ;
+}
 #pragma mark -懒加载
 -(NSMutableArray *)dataArray{
     if (!_dataArray) {
@@ -55,23 +97,34 @@
 #pragma mark - collectionView代理方法事件
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 10;
+    return self.dataArray.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     SYHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
+    cell.model = self.dataArray[indexPath.row];
+    
     return cell;
 
 }
-
+//设置cell大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(WIDTH, HEIGHT);
 }
+//设置间隔
 
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     return 0;
+}
+
+
+#pragma mark - scollviewView代理方法
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    [self refreshLikeLabel];
+    
 }
 
 #pragma mark -按钮点击事件
