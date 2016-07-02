@@ -25,6 +25,8 @@
     self.window.rootViewController = tabBar;
     
     [self.window makeKeyAndVisible];
+    //设置显示事件
+    [SVProgressHUD setMinimumDismissTimeInterval:1];
     
     return YES;
 }

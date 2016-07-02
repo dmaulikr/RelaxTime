@@ -9,41 +9,38 @@
 #import "SYHomeViewController.h"
 #import "SYHomeCollectionViewCell.h"
 #import "SYHomeModel.h"
+#import "SYHomeBeforeController.h"
 
 @interface SYHomeViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
-//喜欢数量
-@property (weak, nonatomic) IBOutlet UILabel *likeLabel;
-//喜欢按钮
-@property (weak, nonatomic) IBOutlet UIButton *likeButton;
-//collection
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-//数据源
-@property(nonatomic ,strong) NSMutableArray * dataArray;
+
 
 @end
 
 @implementation SYHomeViewController
 
--(void)viewWillDisappear:(BOOL)animated{
-    
-    [SVProgressHUD dismiss];
+//停止网络请求
+-(void)dealloc{
+    [self.requestManager.operationQueue cancelAllOperations];
     
 }
+
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = @"闲时";
+    self.navigationItem.title = @"闲Time";
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self creatUI];
     [self getData];
     [SVProgressHUD show];
     
-   
 }
 
 
@@ -58,8 +55,7 @@
         [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYHomeModel class] json:array]];
         //NSLog(@"%@",self.dataArray);
         [self.collectionView reloadData];
-        
-        [self refreshLikeLabel];
+   
         
         [SVProgressHUD dismiss];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -71,20 +67,8 @@
    
 }
 
-#pragma mark - 刷新喜欢数量
--(void)refreshLikeLabel{
-    //取出模型
-    NSInteger num =  self.collectionView.contentOffset.x / WIDTH;
-    SYHomeModel *model = self.dataArray[num];
-    self.likeLabel.text = model.praisenum ;
-}
-#pragma mark -懒加载
--(NSMutableArray *)dataArray{
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
-    }
-    return _dataArray;
-}
+
+
 
 #pragma mark - 创建视图
 -(void)creatUI{
@@ -119,29 +103,44 @@
     return 0;
 }
 
-
-#pragma mark - scollviewView代理方法
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    [self refreshLikeLabel];
-    
+//点击事件
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    //NSLog(@"collctionCELL被点击了");
 }
 
+
+#pragma mark - scrollview代理  判断是否推出往期
+
+//松手推出
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+
+    
+    //判断是否拉到最后一个cell
+    //拉过多少才推出控制器
+    CGFloat pullInset = 50;
+    //需要的偏移量
+    CGFloat MaxPull = ((self.dataArray.count - 1) * WIDTH) + pullInset;
+    
+    //推出控制器
+    if (self.collectionView.contentOffset.x  > MaxPull) {
+        
+        SYHomeBeforeController *beforeVc = [[SYHomeBeforeController alloc]init];
+        
+        [self.navigationController pushViewController:beforeVc animated:YES];
+    }
+}
 #pragma mark -按钮点击事件
 //用户
 -(void)userClick{
+    
+    
 }
 //搜索
 -(void)searchClick{
     
 }
 
-//喜欢
-- (IBAction)likeBtnClick:(id)sender {
-}
-//分享
-- (IBAction)shareBtnClick:(id)sender {
-}
+
 
 
 - (void)didReceiveMemoryWarning {

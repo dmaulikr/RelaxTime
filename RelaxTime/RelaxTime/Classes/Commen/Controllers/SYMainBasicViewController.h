@@ -12,6 +12,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SYMainBasicViewController : UIViewController
+
 @property(nonatomic ,strong)  AFHTTPSessionManager* requestManager;
 
+@property(nonatomic ,strong) NSMutableArray * dataArray;
 @end

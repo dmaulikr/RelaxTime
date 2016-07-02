@@ -7,14 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A04CEE81D255F7100743C24 /* SYHomeBeforeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A04CEE71D255F7100743C24 /* SYHomeBeforeDetailController.m */; };
+		1A04CEEC1D25659600743C24 /* SYWaterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A04CEEA1D25659600743C24 /* SYWaterCell.m */; };
+		1A04CEED1D25659600743C24 /* SYWaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04CEEB1D25659600743C24 /* SYWaterCell.xib */; };
+		1A6AB7511D26B2A60018FDEB /* SYReadTopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6AB7501D26B2A60018FDEB /* SYReadTopModel.m */; };
 		1A9192AD1D241B9D00517BAB /* SYHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9192AC1D241B9D00517BAB /* SYHomeModel.m */; };
 		35E7DC10A8121C6EAA053C9F /* libPods-RelaxTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */; };
+		BC36E7301D25357A00463357 /* SYHomeBeforeController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC36E72F1D25357A00463357 /* SYHomeBeforeController.m */; };
 		BC4AB58E1D23EF5800BFEA15 /* SYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB58C1D23EF5800BFEA15 /* SYHomeViewController.m */; };
 		BC4AB58F1D23EF5800BFEA15 /* SYHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4AB58D1D23EF5800BFEA15 /* SYHomeViewController.xib */; };
 		BC4AB5931D23F6B600BFEA15 /* SYHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB5911D23F6B600BFEA15 /* SYHomeCollectionViewCell.m */; };
 		BC4AB5941D23F6B600BFEA15 /* SYHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4AB5921D23F6B600BFEA15 /* SYHomeCollectionViewCell.xib */; };
 		BC4AB5981D23FB5000BFEA15 /* SYHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB5961D23FB5000BFEA15 /* SYHomeTableViewCell.m */; };
 		BC4AB5991D23FB5000BFEA15 /* SYHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4AB5971D23FB5000BFEA15 /* SYHomeTableViewCell.xib */; };
+		BC67E8B41D2544500042C649 /* SYHomeBeforeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC67E8B21D2544500042C649 /* SYHomeBeforeCell.m */; };
+		BC67E8B51D2544500042C649 /* SYHomeBeforeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC67E8B31D2544500042C649 /* SYHomeBeforeCell.xib */; };
+		BC67E8BE1D254B3D0042C649 /* SYDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC67E8BC1D254B3D0042C649 /* SYDetailCollectionViewCell.m */; };
+		BC67E8BF1D254B3D0042C649 /* SYDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC67E8BD1D254B3D0042C649 /* SYDetailCollectionViewCell.xib */; };
+		BC7E7F3E1D26356C00CC8506 /* SYHomeBeforeSingleController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7F3D1D26356C00CC8506 /* SYHomeBeforeSingleController.m */; };
+		BC7E7F401D2650D700CC8506 /* SYReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7E7F3F1D2650D700CC8506 /* SYReadViewController.xib */; };
+		BC7E7F441D26548100CC8506 /* SYReadTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7F421D26548100CC8506 /* SYReadTopCell.m */; };
+		BC7E7F451D26548100CC8506 /* SYReadTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7E7F431D26548100CC8506 /* SYReadTopCell.xib */; };
+		BC7E7F491D26549800CC8506 /* SYReadBottomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7F471D26549800CC8506 /* SYReadBottomCell.m */; };
+		BC7E7F4A1D26549800CC8506 /* SYReadBottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7E7F481D26549800CC8506 /* SYReadBottomCell.xib */; };
+		BC7E7F4E1D265A1200CC8506 /* SYReadBottomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7F4C1D265A1200CC8506 /* SYReadBottomTableCell.m */; };
+		BC7E7F4F1D265A1200CC8506 /* SYReadBottomTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7E7F4D1D265A1200CC8506 /* SYReadBottomTableCell.xib */; };
+		BC7E7F561D26679300CC8506 /* SYReadEssayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7F551D26679300CC8506 /* SYReadEssayModel.m */; };
+		BC7E7F591D2667B000CC8506 /* SYReadSeriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7F581D2667B000CC8506 /* SYReadSeriesModel.m */; };
+		BC7E7F5C1D2667C000CC8506 /* SYReadQuesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7F5B1D2667C000CC8506 /* SYReadQuesModel.m */; };
 		BCA725701D23C6780005F7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA7256E1D23C6780005F7BE /* Main.storyboard */; };
 		BCA725751D23C6780005F7BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA725731D23C6780005F7BE /* LaunchScreen.storyboard */; };
 		BCA725801D23C6780005F7BE /* RelaxTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7257F1D23C6780005F7BE /* RelaxTimeTests.m */; };
@@ -33,6 +53,8 @@
 		BCA725D71D23DB090005F7BE /* SYReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725D61D23DB090005F7BE /* SYReadViewController.m */; };
 		BCA725D91D23DF810005F7BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA725D81D23DF810005F7BE /* Assets.xcassets */; };
 		BCA725DF1D23E6EB0005F7BE /* SYMainBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725DE1D23E6EB0005F7BE /* SYMainBasicViewController.m */; };
+		BCFE96191D24EB940021307D /* SYShowPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFE96181D24EB940021307D /* SYShowPicViewController.m */; };
+		BCFE961B1D2504F20021307D /* SYShowPicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFE961A1D2504F20021307D /* SYShowPicViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +75,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A04CEE61D255F7100743C24 /* SYHomeBeforeDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeBeforeDetailController.h; sourceTree = "<group>"; };
+		1A04CEE71D255F7100743C24 /* SYHomeBeforeDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeBeforeDetailController.m; sourceTree = "<group>"; };
+		1A04CEE91D25659600743C24 /* SYWaterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYWaterCell.h; sourceTree = "<group>"; };
+		1A04CEEA1D25659600743C24 /* SYWaterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYWaterCell.m; sourceTree = "<group>"; };
+		1A04CEEB1D25659600743C24 /* SYWaterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYWaterCell.xib; sourceTree = "<group>"; };
+		1A6AB74F1D26B2A60018FDEB /* SYReadTopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadTopModel.h; sourceTree = "<group>"; };
+		1A6AB7501D26B2A60018FDEB /* SYReadTopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadTopModel.m; sourceTree = "<group>"; };
 		1A9192AB1D241B9D00517BAB /* SYHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeModel.h; sourceTree = "<group>"; };
 		1A9192AC1D241B9D00517BAB /* SYHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeModel.m; sourceTree = "<group>"; };
 		2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.release.xcconfig"; sourceTree = "<group>"; };
 		74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.debug.xcconfig"; sourceTree = "<group>"; };
+		BC36E72E1D25357A00463357 /* SYHomeBeforeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeBeforeController.h; sourceTree = "<group>"; };
+		BC36E72F1D25357A00463357 /* SYHomeBeforeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeBeforeController.m; sourceTree = "<group>"; };
 		BC4AB58B1D23EF5800BFEA15 /* SYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeViewController.h; sourceTree = "<group>"; };
 		BC4AB58C1D23EF5800BFEA15 /* SYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeViewController.m; sourceTree = "<group>"; };
 		BC4AB58D1D23EF5800BFEA15 /* SYHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYHomeViewController.xib; sourceTree = "<group>"; };
@@ -66,6 +97,30 @@
 		BC4AB5951D23FB5000BFEA15 /* SYHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeTableViewCell.h; sourceTree = "<group>"; };
 		BC4AB5961D23FB5000BFEA15 /* SYHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeTableViewCell.m; sourceTree = "<group>"; };
 		BC4AB5971D23FB5000BFEA15 /* SYHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYHomeTableViewCell.xib; sourceTree = "<group>"; };
+		BC67E8B11D2544500042C649 /* SYHomeBeforeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeBeforeCell.h; sourceTree = "<group>"; };
+		BC67E8B21D2544500042C649 /* SYHomeBeforeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeBeforeCell.m; sourceTree = "<group>"; };
+		BC67E8B31D2544500042C649 /* SYHomeBeforeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYHomeBeforeCell.xib; sourceTree = "<group>"; };
+		BC67E8BB1D254B3D0042C649 /* SYDetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDetailCollectionViewCell.h; sourceTree = "<group>"; };
+		BC67E8BC1D254B3D0042C649 /* SYDetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDetailCollectionViewCell.m; sourceTree = "<group>"; };
+		BC67E8BD1D254B3D0042C649 /* SYDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC7E7F3C1D26356C00CC8506 /* SYHomeBeforeSingleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeBeforeSingleController.h; sourceTree = "<group>"; };
+		BC7E7F3D1D26356C00CC8506 /* SYHomeBeforeSingleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeBeforeSingleController.m; sourceTree = "<group>"; };
+		BC7E7F3F1D2650D700CC8506 /* SYReadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYReadViewController.xib; sourceTree = "<group>"; };
+		BC7E7F411D26548100CC8506 /* SYReadTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadTopCell.h; sourceTree = "<group>"; };
+		BC7E7F421D26548100CC8506 /* SYReadTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadTopCell.m; sourceTree = "<group>"; };
+		BC7E7F431D26548100CC8506 /* SYReadTopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYReadTopCell.xib; sourceTree = "<group>"; };
+		BC7E7F461D26549800CC8506 /* SYReadBottomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadBottomCell.h; sourceTree = "<group>"; };
+		BC7E7F471D26549800CC8506 /* SYReadBottomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadBottomCell.m; sourceTree = "<group>"; };
+		BC7E7F481D26549800CC8506 /* SYReadBottomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYReadBottomCell.xib; sourceTree = "<group>"; };
+		BC7E7F4B1D265A1200CC8506 /* SYReadBottomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadBottomTableCell.h; sourceTree = "<group>"; };
+		BC7E7F4C1D265A1200CC8506 /* SYReadBottomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadBottomTableCell.m; sourceTree = "<group>"; };
+		BC7E7F4D1D265A1200CC8506 /* SYReadBottomTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYReadBottomTableCell.xib; sourceTree = "<group>"; };
+		BC7E7F541D26679300CC8506 /* SYReadEssayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadEssayModel.h; sourceTree = "<group>"; };
+		BC7E7F551D26679300CC8506 /* SYReadEssayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadEssayModel.m; sourceTree = "<group>"; };
+		BC7E7F571D2667B000CC8506 /* SYReadSeriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadSeriesModel.h; sourceTree = "<group>"; };
+		BC7E7F581D2667B000CC8506 /* SYReadSeriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadSeriesModel.m; sourceTree = "<group>"; };
+		BC7E7F5A1D2667C000CC8506 /* SYReadQuesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadQuesModel.h; sourceTree = "<group>"; };
+		BC7E7F5B1D2667C000CC8506 /* SYReadQuesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadQuesModel.m; sourceTree = "<group>"; };
 		BCA725621D23C6770005F7BE /* RelaxTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelaxTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA7256F1D23C6780005F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCA725741D23C6780005F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,6 +159,9 @@
 		BCA725D81D23DF810005F7BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCA725DD1D23E6EB0005F7BE /* SYMainBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMainBasicViewController.h; sourceTree = "<group>"; };
 		BCA725DE1D23E6EB0005F7BE /* SYMainBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMainBasicViewController.m; sourceTree = "<group>"; };
+		BCFE96171D24EB940021307D /* SYShowPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYShowPicViewController.h; sourceTree = "<group>"; };
+		BCFE96181D24EB940021307D /* SYShowPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYShowPicViewController.m; sourceTree = "<group>"; };
+		BCFE961A1D2504F20021307D /* SYShowPicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYShowPicViewController.xib; sourceTree = "<group>"; };
 		D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RelaxTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +206,64 @@
 				2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC36E72D1D25350200463357 /* SYHomeBeforViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1A04CEE61D255F7100743C24 /* SYHomeBeforeDetailController.h */,
+				1A04CEE71D255F7100743C24 /* SYHomeBeforeDetailController.m */,
+				BC36E72E1D25357A00463357 /* SYHomeBeforeController.h */,
+				BC36E72F1D25357A00463357 /* SYHomeBeforeController.m */,
+				BC7E7F3C1D26356C00CC8506 /* SYHomeBeforeSingleController.h */,
+				BC7E7F3D1D26356C00CC8506 /* SYHomeBeforeSingleController.m */,
+			);
+			name = SYHomeBeforViewController;
+			sourceTree = "<group>";
+		};
+		BC7E7F501D2666D000CC8506 /* bottomModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC7E7F541D26679300CC8506 /* SYReadEssayModel.h */,
+				BC7E7F551D26679300CC8506 /* SYReadEssayModel.m */,
+				BC7E7F571D2667B000CC8506 /* SYReadSeriesModel.h */,
+				BC7E7F581D2667B000CC8506 /* SYReadSeriesModel.m */,
+				BC7E7F5A1D2667C000CC8506 /* SYReadQuesModel.h */,
+				BC7E7F5B1D2667C000CC8506 /* SYReadQuesModel.m */,
+			);
+			name = bottomModel;
+			sourceTree = "<group>";
+		};
+		BC7E7F511D2666E100CC8506 /* topModel */ = {
+			isa = PBXGroup;
+			children = (
+				1A6AB74F1D26B2A60018FDEB /* SYReadTopModel.h */,
+				1A6AB7501D26B2A60018FDEB /* SYReadTopModel.m */,
+			);
+			name = topModel;
+			sourceTree = "<group>";
+		};
+		BC7E7F521D2666EB00CC8506 /* topViews */ = {
+			isa = PBXGroup;
+			children = (
+				BC7E7F411D26548100CC8506 /* SYReadTopCell.h */,
+				BC7E7F421D26548100CC8506 /* SYReadTopCell.m */,
+				BC7E7F431D26548100CC8506 /* SYReadTopCell.xib */,
+			);
+			name = topViews;
+			sourceTree = "<group>";
+		};
+		BC7E7F531D26670300CC8506 /* bottomViews */ = {
+			isa = PBXGroup;
+			children = (
+				BC7E7F461D26549800CC8506 /* SYReadBottomCell.h */,
+				BC7E7F471D26549800CC8506 /* SYReadBottomCell.m */,
+				BC7E7F481D26549800CC8506 /* SYReadBottomCell.xib */,
+				BC7E7F4B1D265A1200CC8506 /* SYReadBottomTableCell.h */,
+				BC7E7F4C1D265A1200CC8506 /* SYReadBottomTableCell.m */,
+				BC7E7F4D1D265A1200CC8506 /* SYReadBottomTableCell.xib */,
+			);
+			name = bottomViews;
 			sourceTree = "<group>";
 		};
 		BCA725591D23C6770005F7BE = {
@@ -293,6 +409,8 @@
 		BCA725A81D23C9200005F7BE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC36E72D1D25350200463357 /* SYHomeBeforViewController */,
+				BCFE96161D24EB190021307D /* SYShowPicViewController */,
 				BC4AB58B1D23EF5800BFEA15 /* SYHomeViewController.h */,
 				BC4AB58C1D23EF5800BFEA15 /* SYHomeViewController.m */,
 				BC4AB58D1D23EF5800BFEA15 /* SYHomeViewController.xib */,
@@ -318,6 +436,15 @@
 				BC4AB5951D23FB5000BFEA15 /* SYHomeTableViewCell.h */,
 				BC4AB5961D23FB5000BFEA15 /* SYHomeTableViewCell.m */,
 				BC4AB5971D23FB5000BFEA15 /* SYHomeTableViewCell.xib */,
+				BC67E8B11D2544500042C649 /* SYHomeBeforeCell.h */,
+				BC67E8B21D2544500042C649 /* SYHomeBeforeCell.m */,
+				BC67E8B31D2544500042C649 /* SYHomeBeforeCell.xib */,
+				BC67E8BB1D254B3D0042C649 /* SYDetailCollectionViewCell.h */,
+				BC67E8BC1D254B3D0042C649 /* SYDetailCollectionViewCell.m */,
+				BC67E8BD1D254B3D0042C649 /* SYDetailCollectionViewCell.xib */,
+				1A04CEE91D25659600743C24 /* SYWaterCell.h */,
+				1A04CEEA1D25659600743C24 /* SYWaterCell.m */,
+				1A04CEEB1D25659600743C24 /* SYWaterCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -413,6 +540,7 @@
 			children = (
 				BCA725D51D23DB090005F7BE /* SYReadViewController.h */,
 				BCA725D61D23DB090005F7BE /* SYReadViewController.m */,
+				BC7E7F3F1D2650D700CC8506 /* SYReadViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -420,6 +548,8 @@
 		BCA725B91D23C9200005F7BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BC7E7F511D2666E100CC8506 /* topModel */,
+				BC7E7F501D2666D000CC8506 /* bottomModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -427,8 +557,20 @@
 		BCA725BA1D23C9200005F7BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC7E7F531D26670300CC8506 /* bottomViews */,
+				BC7E7F521D2666EB00CC8506 /* topViews */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BCFE96161D24EB190021307D /* SYShowPicViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BCFE96171D24EB940021307D /* SYShowPicViewController.h */,
+				BCFE96181D24EB940021307D /* SYShowPicViewController.m */,
+				BCFE961A1D2504F20021307D /* SYShowPicViewController.xib */,
+			);
+			path = SYShowPicViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,11 +684,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4AB5991D23FB5000BFEA15 /* SYHomeTableViewCell.xib in Resources */,
+				BC7E7F451D26548100CC8506 /* SYReadTopCell.xib in Resources */,
+				BC7E7F4A1D26549800CC8506 /* SYReadBottomCell.xib in Resources */,
 				BCA725751D23C6780005F7BE /* LaunchScreen.storyboard in Resources */,
+				BC7E7F401D2650D700CC8506 /* SYReadViewController.xib in Resources */,
+				BCFE961B1D2504F20021307D /* SYShowPicViewController.xib in Resources */,
 				BC4AB58F1D23EF5800BFEA15 /* SYHomeViewController.xib in Resources */,
+				BC67E8BF1D254B3D0042C649 /* SYDetailCollectionViewCell.xib in Resources */,
 				BCA725D91D23DF810005F7BE /* Assets.xcassets in Resources */,
+				BC67E8B51D2544500042C649 /* SYHomeBeforeCell.xib in Resources */,
 				BC4AB5941D23F6B600BFEA15 /* SYHomeCollectionViewCell.xib in Resources */,
+				BC7E7F4F1D265A1200CC8506 /* SYReadBottomTableCell.xib in Resources */,
 				BCA725701D23C6780005F7BE /* Main.storyboard in Resources */,
+				1A04CEED1D25659600743C24 /* SYWaterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,20 +772,34 @@
 				BCA725DF1D23E6EB0005F7BE /* SYMainBasicViewController.m in Sources */,
 				BCA725C01D23C9200005F7BE /* ViewController.m in Sources */,
 				BCA725D41D23DAE20005F7BE /* SYMusicViewController.m in Sources */,
+				BC7E7F5C1D2667C000CC8506 /* SYReadQuesModel.m in Sources */,
+				BC7E7F561D26679300CC8506 /* SYReadEssayModel.m in Sources */,
 				BCA725BF1D23C9200005F7BE /* main.m in Sources */,
+				BC7E7F591D2667B000CC8506 /* SYReadSeriesModel.m in Sources */,
 				BCA725C81D23CCE10005F7BE /* SYTabBarViewController.m in Sources */,
 				BC4AB58E1D23EF5800BFEA15 /* SYHomeViewController.m in Sources */,
 				1A9192AD1D241B9D00517BAB /* SYHomeModel.m in Sources */,
 				BCA725BB1D23C9200005F7BE /* AppDelegate.m in Sources */,
+				BCFE96191D24EB940021307D /* SYShowPicViewController.m in Sources */,
 				BCA725BE1D23C9200005F7BE /* UIView+XMGExtension.m in Sources */,
 				BC4AB5981D23FB5000BFEA15 /* SYHomeTableViewCell.m in Sources */,
 				BCA725BC1D23C9200005F7BE /* NSDate+XMGExtension.m in Sources */,
 				BCA725CB1D23CD250005F7BE /* SYBasicViewController.m in Sources */,
+				BC7E7F441D26548100CC8506 /* SYReadTopCell.m in Sources */,
+				1A6AB7511D26B2A60018FDEB /* SYReadTopModel.m in Sources */,
+				BC67E8B41D2544500042C649 /* SYHomeBeforeCell.m in Sources */,
+				BC67E8BE1D254B3D0042C649 /* SYDetailCollectionViewCell.m in Sources */,
+				BC7E7F3E1D26356C00CC8506 /* SYHomeBeforeSingleController.m in Sources */,
 				BCA725D71D23DB090005F7BE /* SYReadViewController.m in Sources */,
+				1A04CEEC1D25659600743C24 /* SYWaterCell.m in Sources */,
+				BC7E7F4E1D265A1200CC8506 /* SYReadBottomTableCell.m in Sources */,
 				BCA725BD1D23C9200005F7BE /* UIBarButtonItem+XMGExtension.m in Sources */,
 				BCA725C51D23CCB70005F7BE /* SYNavgationController.m in Sources */,
 				BCA725D11D23DAD20005F7BE /* SYMovieViewController.m in Sources */,
+				BC7E7F491D26549800CC8506 /* SYReadBottomCell.m in Sources */,
 				BC4AB5931D23F6B600BFEA15 /* SYHomeCollectionViewCell.m in Sources */,
+				1A04CEE81D255F7100743C24 /* SYHomeBeforeDetailController.m in Sources */,
+				BC36E7301D25357A00463357 /* SYHomeBeforeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

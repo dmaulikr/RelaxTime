@@ -35,4 +35,14 @@
 
 @property (nonatomic, copy) NSString *hpcontent_id;
 
+//图片是否下载完成
+@property(nonatomic ,assign) BOOL isDownLoadImage;
+
+//瀑布流cell高度
+@property(nonatomic,assign) CGFloat cellHeight;
+
+
+//是否喜欢
+@property(nonatomic,assign) BOOL isLike;
+
 @end

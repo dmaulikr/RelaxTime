@@ -14,7 +14,7 @@
 #import <AFNetworking.h>
 #import <SVProgressHUD.h>
 #import <UIImageView+WebCache.h>
-#import <UIImageView+AFNetworking.h>
+
 #import <YYModel.h>
 #import <Masonry.h>
 
@@ -26,10 +26,13 @@
 #import "UIView+XMGExtension.h"
 
 
-//全局统一背景颜色
+//全局统一颜色
 
-#define GlobalBlueColor SYColorRBG(85, 150, 250)
+#define GlobalColor245  SYColorRBG(245, 245, 245)
+#define GlobalColor238  SYColorRBG(238, 238, 238)
+#define GlobalColor SYColorRBG(238, 238, 238)
 
+#define CellGlobalColor SYColorRBG(250, 250, 250)
 //只在调试时打印
 #ifdef DEBUG
 #define SYLog(...) NSLog(__VA_ARGS__)
@@ -47,6 +50,9 @@
 
 #define WIDTH  [[UIScreen mainScreen] bounds].size.width
 #define HEIGHT  [[UIScreen mainScreen] bounds].size.height
+
+//瀑布流cell间距
+#define MarginCell  20
 
 //url设置
 #import "DefineUrl.h"

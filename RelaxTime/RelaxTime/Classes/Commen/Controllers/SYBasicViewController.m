@@ -24,6 +24,8 @@
     // 设置导航栏右边边的按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"nav_seach" highImage:@"nav_seach" target:self action:@selector(userClick)];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
 }
 
 #pragma mark - 按钮点击事件

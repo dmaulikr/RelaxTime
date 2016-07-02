@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="229" height="327"/>
                 <subviews>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E2c-wD-thp">
-                        <rect key="frame" x="8" y="0.0" width="213" height="327"/>
+                        <rect key="frame" x="10" y="0.0" width="209" height="327"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tableView>
                 </subviews>
@@ -22,9 +22,9 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="E2c-wD-thp" secondAttribute="trailing" constant="8" id="7FM-a3-oWS"/>
+                <constraint firstAttribute="trailing" secondItem="E2c-wD-thp" secondAttribute="trailing" constant="10" id="6S1-xU-Gto"/>
                 <constraint firstAttribute="bottom" secondItem="E2c-wD-thp" secondAttribute="bottom" id="BXg-qu-pYB"/>
-                <constraint firstItem="E2c-wD-thp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="XFm-AU-wsB"/>
+                <constraint firstItem="E2c-wD-thp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="bAS-v5-96L"/>
                 <constraint firstItem="E2c-wD-thp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tMW-wf-6hk"/>
             </constraints>
             <size key="customSize" width="229" height="327"/>

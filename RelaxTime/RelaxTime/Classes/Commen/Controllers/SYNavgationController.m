@@ -19,9 +19,11 @@
  */
 +(void)initialize{
     
-    [[UINavigationBar appearance]setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20], NSForegroundColorAttributeName: SYColorRBG(100, 100, 100)}];
+    [[UINavigationBar appearance]setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName: SYColorRBG(100, 100, 100)}];
     
-    [[UINavigationBar appearance] setTintColor:GlobalBlueColor];
+    [[UINavigationBar appearance] setTintColor:SYColorRBG(85, 150, 250)];
+    
+    [[UINavigationBar appearance]setBarTintColor:GlobalColor];
     
 }
 
@@ -52,7 +54,7 @@
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         //        [button sizeToFit];
         // 让按钮的内容往左边偏移10
-        button.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+       
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
         [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];

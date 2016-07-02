@@ -22,9 +22,8 @@
 - (void)awakeFromNib {
     // Initialization code
     
-    SYLogFunc;
-   // self.autoresizingMask = NO;
-    self.tableView.contentInset = UIEdgeInsetsMake( 70, 0, 200, 0);
+   // SYLogFunc;
+    self.tableView.contentInset = UIEdgeInsetsMake( 80, 0, 80, 0);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -43,11 +42,13 @@
     _model = model;
     
    
+   
     [self.tableView reloadData];
-    //NSLog(@"%f",self.tableView.contentOffset.y);
+   
     
 }
 
+#pragma mark - tableView代理
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
@@ -58,6 +59,15 @@
     cell.model = _model;
   
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   // NSLog(@"tableCell被点击了");
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+  
 }
 
 @end

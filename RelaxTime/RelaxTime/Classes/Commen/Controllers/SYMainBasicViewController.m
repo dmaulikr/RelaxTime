@@ -14,11 +14,31 @@
 
 @implementation SYMainBasicViewController
 
+
+-(void)dealloc{
+    [self.requestManager.operationQueue cancelAllOperations];
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [SVProgressHUD dismiss];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+      self.automaticallyAdjustsScrollViewInsets = NO;
+    self.view.backgroundColor = GlobalColor245;
+   
 }
 
+-(NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray= [NSMutableArray array];
+    }
+    return _dataArray;
+}
 
 #pragma mark - 懒加载
 //AF-manager

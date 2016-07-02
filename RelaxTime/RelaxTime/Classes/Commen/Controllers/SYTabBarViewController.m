@@ -25,10 +25,8 @@
     // 后面带有UI_APPEARANCE_SELECTOR的方法, 都可以通过appearance对象来统一设置
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
-    attrs[NSForegroundColorAttributeName] = GlobalBlueColor;
+    attrs[NSForegroundColorAttributeName] = SYColorRBG(85, 150, 250);
     ;
-    
-    
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
     
     selectedAttrs[NSFontAttributeName] = attrs[NSFontAttributeName];
@@ -38,6 +36,9 @@
     UITabBarItem *item = [UITabBarItem appearance];
     [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
     [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
+    
+    //设置bar颜色
+    [[UITabBar appearance]setBarTintColor:GlobalColor];
 }
 
 - (void)viewDidLoad {

@@ -14,7 +14,7 @@
 #define Home_URl   @"http://v3.wufazhuce.com:8000/api/hp/more/0"
 //后面拼接 月份日期 2016-06
 
-#define Home_before_URL @"http://v3.wufazhuce.com:8000/api/hp/bymonth/2016-06"
+#define Home_before_URL @"http://v3.wufazhuce.com:8000/api/hp/bymonth/"
 /*******************************/
 
 /***********查询接口 get ***/
