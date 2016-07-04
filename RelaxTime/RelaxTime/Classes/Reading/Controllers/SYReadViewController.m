@@ -13,8 +13,11 @@
 #import "SYReadSeriesModel.h"
 #import "SYReadEssayModel.h"
 #import "SYReadTopModel.h"
+#import "SYReadDetailController.h"
+#import "SYReadTopViewController.h"
 
-@interface SYReadViewController ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+
+@interface SYReadViewController ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,SYReadCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *topCollectionView;
 
@@ -28,6 +31,8 @@
 @property(nonatomic ,strong) NSMutableArray * dataArrayBottom;
 
 @property(nonatomic,strong) NSTimer* timer;
+
+
 
 @end
 
@@ -60,6 +65,9 @@
     }
     return _dataArrayBottom;
 }
+
+
+
 #pragma mark - 设置UI
 -(void)setUI{
 
@@ -103,13 +111,12 @@
         //显示pageControler设置
         _pageController.hidden = NO;
         _pageController.numberOfPages = self.dataArrayTop.count - 2;
+        _pageController.currentPage = 0;
         
         //添加计时器
-       self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(timeGo) userInfo:nil repeats:YES];
+       self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(timeGo) userInfo:nil repeats:YES];
         
-        
-        
-        
+        [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         //
@@ -118,15 +125,19 @@
 }
 
 #pragma mark - 定时器事件
-
 -(void)timeGo{
     
     //改变偏移量
    [ self.topCollectionView setContentOffset:CGPointMake(self.topCollectionView.contentOffset.x + WIDTH, 0) animated:YES];
-    //重置偏移量和pageControllor
-    [self changeContenOffestAndCurrentPage:self.topCollectionView];
     
 }
+
+//动画结束后
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    //重置偏移量和pageControllor
+    [self changeContenOffestAndCurrentPage:self.topCollectionView];
+}
+
 #pragma mark - 下部数据处理
 -(void)dealBottomDataWithResponse:(id)responseObject{
     //取出包含 散文 连载  问答 的字典
@@ -138,13 +149,14 @@
     NSArray *essayArray = dicAll[@"essay"];
     [arrayTemp addObject:[NSArray yy_modelArrayWithClass:[SYReadEssayModel class] json:essayArray]];
     
-    //取出问答数组转成模型后存入数据源
-    NSArray *questionArray = dicAll[@"question"];
-    [arrayTemp addObject:[NSArray yy_modelArrayWithClass:[SYReadQuesModel class] json:questionArray]];
     
     //取出连载数组转成模型后存入数据源
     NSArray *seriesArray = dicAll[@"serial"];
     [arrayTemp addObject:[NSArray yy_modelArrayWithClass:[SYReadSeriesModel class] json:seriesArray]];
+    
+    //取出问答数组转成模型后存入数据源
+    NSArray *questionArray = dicAll[@"question"];
+    [arrayTemp addObject:[NSArray yy_modelArrayWithClass:[SYReadQuesModel class] json:questionArray]];
     
     //处理数组结构 转成10个数组 每个数组中有三个模型  外层10次循环 内层3次
     for ( int i = 0; i < [arrayTemp[0] count]; i ++) {
@@ -158,6 +170,7 @@
     }
    
 }
+
 #pragma mark - UICollection相关的代理方法
 //返回cell个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -178,6 +191,7 @@
         SYReadTopModel *model = self.dataArrayTop[indexPath.row];
         [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.cover] placeholderImage:[UIImage imageNamed:@"default"]];
         
+       
         return cell;
         
     }
@@ -187,6 +201,8 @@
   
     cell.dataArray = self.dataArrayBottom[indexPath.row];
    // NSLog(@"%@",cell.dataArray);
+    //设置代理 cell内部tableView cell被点击的事件
+    cell.delegate = self;
     return cell;
     
 }
@@ -200,21 +216,39 @@
  
 }
 
+#pragma mark - 上方collection点击事件
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (collectionView == self.topCollectionView) {
+        SYReadTopViewController *vc = [[SYReadTopViewController alloc]init];
+        //取出模型
+        SYReadTopModel *model = self.dataArrayTop[indexPath.row ];
+        //赋参数
+        vc._id = model._id;
+        vc.bgColor = model.bgcolor;
+        vc.cover = model.cover;
+        
+        SYNavgationController *nav = [[SYNavgationController alloc]initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+}
+
 #pragma mark - scrollView代理 改变偏移量
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    //判断第一张和最后一张改变偏移量
+    if (scrollView == self.topCollectionView) {
+        
+        [self changeContenOffestAndCurrentPage:scrollView];
+    }
+    
   
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(timeGo) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(timeGo) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
     
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
- 
-    //判断第一张和最后一张改变偏移量
-    if (scrollView == self.topCollectionView) {
-        [self changeContenOffestAndCurrentPage:scrollView];
-     }
-    
+    //
 }
 
 //在即将开始拖拽时销毁计时器
@@ -239,7 +273,20 @@
     self.pageController.currentPage = scrollView.contentOffset.x / WIDTH - 1;
     
 }
+
+
+ #pragma mark - readCell 代理方法 推出控制器
+-(void)pushControllerWithType:(ReadType)type andItemsID:(NSString *)itemsID{
     
+    SYReadDetailController * detailVC  = [[SYReadDetailController alloc]init];
+    //文章种类
+    
+    detailVC.type = type;
+    //id
+    detailVC.itemID = itemsID;
+    
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

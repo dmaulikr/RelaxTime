@@ -41,13 +41,13 @@
 - (void)awakeFromNib {
     // Initialization code
     self.typeLabel.layer.cornerRadius = 5;
-    self.typeLabel.layer.borderColor = [UIColor blueColor].CGColor;
+    self.typeLabel.layer.borderColor = GlobalColorBLUE.CGColor;
     self.typeLabel.layer.borderWidth = 1;
     self.backgroundColor = GlobalColor245;
     
     self.layer.cornerRadius = 5;
     self.layer.borderWidth = 1;
-    self.layer.borderColor = SYColorRBG(200, 200, 200).CGColor;
+    self.layer.borderColor = GlobalColorBLUE.CGColor;
    
 }
 

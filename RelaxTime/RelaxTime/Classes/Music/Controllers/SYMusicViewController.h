@@ -2,7 +2,7 @@
 //  SYMusicViewController.h
 //  RelaxTime
 //
-//  Created by 千锋 on 16/6/29.
+//  Created by imac on 16/7/3.
 //  Copyright © 2016年 abc. All rights reserved.
 //
 

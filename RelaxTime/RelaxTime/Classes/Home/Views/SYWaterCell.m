@@ -24,7 +24,7 @@
     self.layer.masksToBounds = YES;
   
    // self.backgroundColor = CellGlobalColor;
-    self.backgroundColor = SYColorRBG(140, 140, 140);
+    self.backgroundColor = SYColorRGB(140, 140, 140);
 }
 
 

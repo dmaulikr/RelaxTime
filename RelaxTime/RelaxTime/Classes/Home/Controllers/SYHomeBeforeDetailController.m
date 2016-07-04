@@ -44,7 +44,7 @@
 #pragma mark - UI
 -(void)creatUI{
     
-    self.view.backgroundColor = SYColorRBG(235,235 ,235);
+    self.view.backgroundColor = SYColorRGB(235,235 ,235);
     
     //创建布局对象
     XRWaterfallLayout *layout = [[XRWaterfallLayout alloc]initWithColumnCount:2];

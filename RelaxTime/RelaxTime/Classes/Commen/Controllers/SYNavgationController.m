@@ -19,9 +19,9 @@
  */
 +(void)initialize{
     
-    [[UINavigationBar appearance]setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName: SYColorRBG(100, 100, 100)}];
+    [[UINavigationBar appearance]setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName: GlobalColorBLUE}];
     
-    [[UINavigationBar appearance] setTintColor:SYColorRBG(85, 150, 250)];
+    [[UINavigationBar appearance] setTintColor:SYColorRGB(85, 150, 250)];
     
     [[UINavigationBar appearance]setBarTintColor:GlobalColor];
     
@@ -44,23 +44,23 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (self.childViewControllers.count > 0) { // 如果push进来的不是第一个控制器
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-       
-        [button setImage:[[UIImage imageNamed:@"navigationButtonReturn"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-        //[button setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
-        button.size = CGSizeMake(30, 30);
-        // 让按钮内部的所有内容左对齐
-        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        //        [button sizeToFit];
-        // 让按钮的内容往左边偏移10
-       
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        
-        // 修改导航栏左边的item
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        button.tintColor =GlobalColorBLUE;
+//       
+//        [button setImage:[[UIImage imageNamed:@"navigationButtonReturn"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+//        //[button setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+//        button.size = CGSizeMake(30, 30);
+//        // 让按钮内部的所有内容左对齐
+//        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//        //        [button sizeToFit];
+//        // 让按钮的内容往左边偏移10
+//       
+//        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [button setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+//        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        // 修改导航栏左边的item
+//        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
         // 隐藏tabbar
         viewController.hidesBottomBarWhenPushed = YES;

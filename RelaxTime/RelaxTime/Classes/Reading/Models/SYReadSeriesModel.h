@@ -35,7 +35,27 @@
 @property(nonatomic ,copy) NSString * read_num;
 
 //系列id
-@property(nonatomic ,copy) NSString *serial_id;
+@property(nonatomic ,copy) NSString *item_id;
+
+//文章内容
+@property(nonatomic ,copy) NSString *content;
+
+//喜欢数
+@property(nonatomic ,copy) NSString *praisenum;
+//分享数
+@property(nonatomic ,copy) NSString *sharenum;
+//评论数
+@property(nonatomic ,copy) NSString *commentnum;
+
+/**
+ *  通过计算得出显示的内容高度
+ */
+
+@property(nonatomic ,assign) CGFloat contentViewHeight;
+
+
+
+
 @end
 
 /**

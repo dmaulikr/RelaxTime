@@ -12,7 +12,9 @@
 + (instancetype)itemWithImage:(NSString *)image highImage:(NSString *)highImage target:(id)target action:(SEL)action
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.tintColor = SYColorRBG(100, 100, 100);
+    
+    button.tintColor = GlobalColorBLUE;
+    
     [button setBackgroundImage:[[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:highImage] forState:UIControlStateHighlighted];
     button.size = button.currentBackgroundImage.size;

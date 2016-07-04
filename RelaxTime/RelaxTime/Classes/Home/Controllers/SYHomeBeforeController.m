@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = SYColorRBG(235, 235, 235);
+    self.view.backgroundColor = SYColorRGB(235, 235, 235);
     
     self.title = @"往期回顾";
     //注册cell

@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
-     self.backgroundColor = SYColorRBG(240, 240, 240);
+     self.backgroundColor = SYColorRGB(240, 240, 240);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

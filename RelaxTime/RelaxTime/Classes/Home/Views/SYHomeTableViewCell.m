@@ -24,18 +24,23 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
 //喜欢数量
 @property (weak, nonatomic) IBOutlet UILabel *likeNumLabel;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 @end
 
 @implementation SYHomeTableViewCell
 
 - (void)awakeFromNib {
      //Initialization code
-    self.layer.cornerRadius = 8;
+    self.layer.cornerRadius = 10;
     self.layer.borderWidth = 1;
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.layer.borderColor = GlobalColorBLUE.CGColor;
     self.clipsToBounds = YES;
     
     self.backgroundColor =  CellGlobalColor;
+    
+    //self.bottomView.layer.borderColor = GlobalColorBLUE.CGColor;
+  
+
    // SYLogFunc;
     
     //给图片添加单击手势
@@ -65,6 +70,7 @@
 #pragma mark -按钮点击事件
 - (IBAction)shareBtn:(id)sender {
     
+    [SVProgressHUD showErrorWithStatus:@"敬请期待哦"];
   
 }
 

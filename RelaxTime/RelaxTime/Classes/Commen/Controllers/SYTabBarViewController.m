@@ -25,12 +25,12 @@
     // 后面带有UI_APPEARANCE_SELECTOR的方法, 都可以通过appearance对象来统一设置
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
-    attrs[NSForegroundColorAttributeName] = SYColorRBG(85, 150, 250);
+    attrs[NSForegroundColorAttributeName] = SYColorRGB(85, 150, 250);
     ;
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
     
     selectedAttrs[NSFontAttributeName] = attrs[NSFontAttributeName];
-    selectedAttrs[NSForegroundColorAttributeName] = SYColorRBG(85, 150, 250);
+    selectedAttrs[NSForegroundColorAttributeName] = SYColorRGB(85, 150, 250);
     
     //设置选中前后颜色
     UITabBarItem *item = [UITabBarItem appearance];

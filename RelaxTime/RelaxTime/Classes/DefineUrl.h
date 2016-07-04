@@ -54,25 +54,26 @@
  */
 //点击cell   加上类型 和 id请求 内容 （模型都不相同）
 //====================
-// 连载   serialcontent
-  #define Read_essay_URL   @"http://v3.wufazhuce.com:8000/api/(essay? serialcontent? question)/ (各自的id)"
-//点击短篇cell  请求短篇推荐 （模型都不相同）
-#define Read_essay_relate_URL  @"http://v3.wufazhuce.com:8000/api/related/(essay? serial? question)/(各自的id)"
-//点击短篇cell  评论   加载更多评论  以评论模型的id继续请求 （评论模型都是一样的）
-#define Read_essay_comment_URL @"http://v3.wufazhuce.com:8000/api/comment/praiseandtime/(essay? serial? question)/(各自的id)/（0）"
+// 连载   serialcontent  //(essay? serialcontent? question)/ (各自的id)
+  #define Read_detailContent_URL   @"http://v3.wufazhuce.com:8000/api/"
+
+// 请求短篇推荐 （模型都不相同） (essay? serial? question)/(各自的id)
+#define Read_detail_relate_URL  @"http://v3.wufazhuce.com:8000/api/related/"
+//  评论   加载更多评论  以评论模型的id继续请求 （评论模型都是一样的） (essay? serial? question)/(各自的id)/（0）
+#define Read_detail_comment_URL @"http://v3.wufazhuce.com:8000/api/comment/praiseandtime/"
 //======================
 //http://v3.wufazhuce.com:8000/api/comment/praiseandtime/essay/1446/23264
 
 
 /***********音乐接口 get ***/
-#define Music_first_URL @"http://v3.wufazhuce.com:8000/api/music/idlist/0";
+#define Music_first_URL @"http://v3.wufazhuce.com:8000/api/music/idlist/0"
 //从上面的请求中取第一个数字继续请求
 //内容
-#define Music_detail_URL @"http://v3.wufazhuce.com:8000/api/music/detail/695";
+#define Music_detail_URL @"http://v3.wufazhuce.com:8000/api/music/detail/"
 //推荐
-#define Music_Relate_URL @"http://v3.wufazhuce.com:8000/api/related/music/695"
+#define Music_Relate_URL @"http://v3.wufazhuce.com:8000/api/related/music/"
 //评论
-#define Music_comment_URL @"http://v3.wufazhuce.com:8000/api/comment/praiseandtime/music/695/0";
+#define Music_comment_URL @"http://v3.wufazhuce.com:8000/api/comment/praiseandtime/music/"
 
 
 /***********电影 get ***/

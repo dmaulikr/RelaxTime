@@ -23,7 +23,7 @@
     // Initialization code
     
    // SYLogFunc;
-    self.tableView.contentInset = UIEdgeInsetsMake( 80, 0, 80, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake( 80, 0, 150, 0);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -41,7 +41,8 @@
     
     _model = model;
     
-   
+     self.tableView.contentOffset = CGPointMake(0, -80);
+    [self layoutIfNeeded];
    
     [self.tableView reloadData];
    

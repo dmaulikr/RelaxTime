@@ -18,21 +18,32 @@
 #import <YYModel.h>
 #import <Masonry.h>
 
+
+//导航
+
+#import "SYNavgationController.h"
 //类别
 #import "UIBarButtonItem+XMGExtension.h"
 
 #import "NSDate+XMGExtension.h"
 
 #import "UIView+XMGExtension.h"
+#import "UIColor+SYExtension.h"
 
+
+typedef NS_ENUM(NSInteger, ReadType) {
+    essay = 1,
+    serial,
+    question,
+};
 
 //全局统一颜色
+ #define GlobalColorBLUE   SYColorRGB(85, 150, 250)
+#define GlobalColor245  SYColorRGB(245, 245, 245)
+#define GlobalColor238  SYColorRGB(238, 238, 238)
+#define GlobalColor SYColorRGB(238, 238, 238)
 
-#define GlobalColor245  SYColorRBG(245, 245, 245)
-#define GlobalColor238  SYColorRBG(238, 238, 238)
-#define GlobalColor SYColorRBG(238, 238, 238)
-
-#define CellGlobalColor SYColorRBG(250, 250, 250)
+#define CellGlobalColor SYColorRGB(250, 250, 250)
 //只在调试时打印
 #ifdef DEBUG
 #define SYLog(...) NSLog(__VA_ARGS__)
@@ -44,15 +55,26 @@
 #define SYLogFunc  SYLog(@"%s", __FUNCTION__);
 
 // 颜色
-#define SYColorRBG(r, g, b)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define SYColorRGB(r, g, b)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
-#define SYColorRBGA(r, g, b, a)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define SYColorRGBA(r, g, b, a)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
 #define WIDTH  [[UIScreen mainScreen] bounds].size.width
 #define HEIGHT  [[UIScreen mainScreen] bounds].size.height
 
 //瀑布流cell间距
 #define MarginCell  20
+
+//阅读页contentView相关
+#define _ReadTitleFont 20
+#define _ReadTextFont 16
+#define _ReadPicToTop 10
+#define _ReadPicHeight 50
+#define _ReadPicToTitle 20
+#define _ReadTitleWidth  (WIDTH - (20 + 50))
+#define _ReadTitleToText 20
+#define _ReadTextWidth  (WIDTH - (10 + 10))
+#define _ReadTextToBottom 20
 
 //url设置
 #import "DefineUrl.h"

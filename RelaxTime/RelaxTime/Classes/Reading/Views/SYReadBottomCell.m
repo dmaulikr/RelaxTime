@@ -9,6 +9,7 @@
 #import "SYReadBottomCell.h"
 #import "SYReadBottomTableCell.h"
 
+
 @interface SYReadBottomCell()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -66,5 +67,16 @@
     return cell;
 }
 
-
+//cell被点击
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //SYLogFunc;
+    //取出对应模型的id值
+    id model = self.dataArray[indexPath.row];
+    //esaay ->type 1
+    //serial ->type 2
+    //question->type 3
+    [self.delegate pushControllerWithType:indexPath.row + 1 andItemsID: [model valueForKey:@"item_id"]];
+    
+}
 @end
