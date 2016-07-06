@@ -19,10 +19,10 @@
     // Do any additional setup after loading the view.
     
     // 设置导航栏左边的按钮
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"nav_seach" highImage:@"nav_seach" target:self action:@selector(searchClick)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"nav_seach" highImage:@"nav_seach" target:self action:@selector(searchClick)];
     
     // 设置导航栏右边边的按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"nav_seach" highImage:@"nav_seach" target:self action:@selector(userClick)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"default" highImage:@"default" target:self action:@selector(userClick)];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     

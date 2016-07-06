@@ -66,6 +66,11 @@
     }
 }
 
+-(void)setFrame:(CGRect)frame{
+    frame.size.height = frame.size.height - 5;
+    [super setFrame:frame];
+}
+
 //问题模型赋值
 -(void)setQuesModel:(SYReadQuesModel *)quesModel{
     _quesModel = quesModel;

@@ -16,7 +16,10 @@
 
 
 -(void)dealloc{
+    
     [self.requestManager.operationQueue cancelAllOperations];
+    
+    [[SDWebImageManager sharedManager]cancelAll];
     
 }
 

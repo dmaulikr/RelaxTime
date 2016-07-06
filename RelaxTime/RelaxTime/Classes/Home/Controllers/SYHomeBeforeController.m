@@ -17,8 +17,12 @@
 
 @implementation SYHomeBeforeController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   
     
     self.view.backgroundColor = SYColorRGB(235, 235, 235);
     

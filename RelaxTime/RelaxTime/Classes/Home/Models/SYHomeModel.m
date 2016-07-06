@@ -19,8 +19,7 @@
         CGFloat cellWidth = (WIDTH - MarginCell* 2) / 2;
         
         
-        CGRect rect = [self.hp_content boundingRectWithSize:CGSizeMake(cellWidth- 10, 10000) options:1
-                                                 attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12]} context:nil];
+        CGRect rect = [self.hp_content boundingRectWithSize:CGSizeMake(cellWidth- 10, 10000) options:1 attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12]} context:nil];
         //NSLog(@"%f",rect.size.height);
         CGFloat picHeight = cellWidth * 3 / 4;//图片比例
         
@@ -30,5 +29,9 @@
     }
     return _cellHeight;
 
+}
+
+-(NSString *)last_update_date{
+    return [[_last_update_date componentsSeparatedByString:@" "]firstObject];
 }
 @end

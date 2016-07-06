@@ -7,7 +7,7 @@
 //
 
 #import "SYMovieViewController.h"
-
+#import "SYSegmentController.h"
 @interface SYMovieViewController ()
 
 @end
@@ -17,8 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    SYSegmentController * segment = [[SYSegmentController alloc]initWithItems:@[@"音乐故事",@"歌词", @"歌曲信息"]];
+    [segment addTarget:self action:@selector(btnClick:)];
+    
+    segment.frame = CGRectMake( 0, 100, WIDTH, 50);
+    
+    [self.view addSubview:segment];
+  
 }
 
+-(void)btnClick:(SYSegmentController *)seg{
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

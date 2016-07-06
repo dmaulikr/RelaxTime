@@ -16,6 +16,10 @@
 
 @implementation SYHomeBeforeSingleController
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     

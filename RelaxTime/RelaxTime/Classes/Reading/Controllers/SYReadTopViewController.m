@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [SVProgressHUD show];
+   
     
     [self setUI];
     
@@ -43,9 +43,17 @@
     //获取数据
     [self getdata];
     
-    
+   
    
  
+}
+-(void)viewDidAppear:(BOOL)animated{
+    if (self.dataArray.count == 0) {
+        
+          [SVProgressHUD show];
+    }
+  
+    
 }
 #pragma mark - 隐藏状态栏
 -(void)viewWillAppear:(BOOL)animated{
@@ -96,10 +104,6 @@
         weaksSelf.tabbleView.tableHeaderView = weaksSelf.headView;
         
     }];
-    
-    
-    
-
 }
 
 #pragma mark - UI
@@ -112,7 +116,9 @@
     [self.tabbleView registerNib:[UINib nibWithNibName:@"SYReadTopTwoCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     
     //设置背景颜色
-    self.view.backgroundColor  = [UIColor colorWithHexString:self.bgColor];}
+    self.view.backgroundColor  = [UIColor colorWithHexString:self.bgColor];
+    self.tabbleView.hidden = YES;
+}
 
 #pragma mark - dismiss
 
@@ -133,10 +139,13 @@
         NSArray *array = responseObject[@"data"];
         
         [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYReadTopTwoModel class] json:array]];
+     
+            self.tabbleView.hidden = NO;
         
-        [self.tabbleView reloadData];
+            [self.tabbleView reloadData];
+           
+     [SVProgressHUD dismiss];
         
-        [SVProgressHUD dismiss];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"请求失败"];
     }];

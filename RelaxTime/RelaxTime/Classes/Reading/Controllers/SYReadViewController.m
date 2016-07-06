@@ -15,6 +15,7 @@
 #import "SYReadTopModel.h"
 #import "SYReadDetailController.h"
 #import "SYReadTopViewController.h"
+#import "SYSearchControllerViewController.h"
 
 
 @interface SYReadViewController ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,SYReadCellDelegate>
@@ -46,9 +47,15 @@
     
     _pageController.hidden = YES;
     [self setUI];
+    
+     [SVProgressHUD show];
+    
     [self getdata];
-    [SVProgressHUD show];
+    
+
+    
 }
+
 
 #pragma mark - 懒加载
 
@@ -76,7 +83,6 @@
      [self.bottomCollectionView registerNib:[UINib nibWithNibName:@"SYReadBottomCell" bundle:nil] forCellWithReuseIdentifier:BottomCellID];
     
     
-    
 }
 #pragma mark - 请求数据
 -(void)getdata{
@@ -87,11 +93,16 @@
         //处理下部数据
         [self dealBottomDataWithResponse:responseObject];
         //刷新
+    dispatch_async(dispatch_get_main_queue(), ^{
         [self.bottomCollectionView reloadData];
+         [SVProgressHUD dismiss];
+    });
         
-        [SVProgressHUD dismiss];
+        
+       
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"请求失败"];
+         SYLog(@"read下方请求失败");
     }];
     
     //请求下方数据
@@ -103,6 +114,8 @@
         //设置数据源 前后各加一个元素
         [self.dataArrayTop insertObject:self.dataArrayTop.lastObject atIndex:0];
         [self.dataArrayTop addObject:self.dataArrayTop[1]];
+        
+        
         //设置偏移量
         self.topCollectionView.contentOffset = CGPointMake(WIDTH, 0);
         //刷新数据
@@ -120,7 +133,7 @@
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         //
-        SYLog(@"请求失败");
+        SYLog(@"read页下方请求失败");
     }];
 }
 
@@ -235,29 +248,51 @@
 
 #pragma mark - scrollView代理 改变偏移量
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    //SYLogFunc;
     //判断第一张和最后一张改变偏移量
     if (scrollView == self.topCollectionView) {
         
         [self changeContenOffestAndCurrentPage:scrollView];
+        //重置timer
+        [self resetTimer];
     }
+
     
-  
+}
+
+#pragma mark - 定时器重置操作
+-(void)resetTimer{
+    //之前的销毁
+    
+    [self.timer invalidate];
+    self.timer = nil;
+    
     self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(timeGo) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
     
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    //
-}
-
 //在即将开始拖拽时销毁计时器
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     //定时销毁
-    [self.timer invalidate];
-    self.timer = nil;
+   // SYLogFunc;
+    if (scrollView == self.topCollectionView) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+
     
 }
+//在停止拖拽时启动计时器 因为可能不调用DidEndDecelerating方法
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    //SYLogFunc;
+    if (scrollView == self.topCollectionView) {
+            [self resetTimer];
+    }
+
+}
+
+
 #pragma mark - 改变偏移量 和 currentpage
 -(void)changeContenOffestAndCurrentPage:(UIScrollView *) scrollView{
     //如果第一张或者最后一张 改变偏移量
@@ -287,6 +322,23 @@
     
     [self.navigationController pushViewController:detailVC animated:YES];
 }
+
+#pragma mark - 搜索 
+-(void)searchClick{
+    //搜索
+    
+    SYSearchControllerViewController *searchVc = [[SYSearchControllerViewController alloc]init];
+    searchVc.type = readVC;
+    SYNavgationController *nav = [[SYNavgationController alloc]initWithRootViewController:searchVc];
+    
+        
+        [self presentViewController:nav animated:YES completion:^{
+            //
+        }];
+        
+   
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

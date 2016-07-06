@@ -10,6 +10,10 @@
 		1A04CEE81D255F7100743C24 /* SYHomeBeforeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A04CEE71D255F7100743C24 /* SYHomeBeforeDetailController.m */; };
 		1A04CEEC1D25659600743C24 /* SYWaterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A04CEEA1D25659600743C24 /* SYWaterCell.m */; };
 		1A04CEED1D25659600743C24 /* SYWaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04CEEB1D25659600743C24 /* SYWaterCell.xib */; };
+		1A451E021D2BF5F500AB316C /* SYhomeSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A451E001D2BF5F500AB316C /* SYhomeSearchCell.m */; };
+		1A451E031D2BF5F500AB316C /* SYhomeSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A451E011D2BF5F500AB316C /* SYhomeSearchCell.xib */; };
+		1A451E071D2C05CD00AB316C /* SYReadSeachCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A451E051D2C05CD00AB316C /* SYReadSeachCell.m */; };
+		1A451E081D2C05CD00AB316C /* SYReadSeachCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A451E061D2C05CD00AB316C /* SYReadSeachCell.xib */; };
 		1A6AB7511D26B2A60018FDEB /* SYReadTopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6AB7501D26B2A60018FDEB /* SYReadTopModel.m */; };
 		1A6DC50B1D29054A00DF78A6 /* SYMusicContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DC50A1D29054A00DF78A6 /* SYMusicContentView.m */; };
 		1A6DC50D1D29055A00DF78A6 /* SYMusicContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6DC50C1D29055A00DF78A6 /* SYMusicContentView.xib */; };
@@ -35,6 +39,10 @@
 		BC67E8B51D2544500042C649 /* SYHomeBeforeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC67E8B31D2544500042C649 /* SYHomeBeforeCell.xib */; };
 		BC67E8BE1D254B3D0042C649 /* SYDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC67E8BC1D254B3D0042C649 /* SYDetailCollectionViewCell.m */; };
 		BC67E8BF1D254B3D0042C649 /* SYDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC67E8BD1D254B3D0042C649 /* SYDetailCollectionViewCell.xib */; };
+		BC722B5C1D2BC11F005A1745 /* XMGStatusBarHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC722B591D2BC11F005A1745 /* XMGStatusBarHUD.bundle */; };
+		BC722B5D1D2BC11F005A1745 /* XMGStatusBarHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BC722B5B1D2BC11F005A1745 /* XMGStatusBarHUD.m */; };
+		BC722B621D2BD7E0005A1745 /* SYSearchControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC722B601D2BD7E0005A1745 /* SYSearchControllerViewController.m */; };
+		BC722B631D2BD7E0005A1745 /* SYSearchControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC722B611D2BD7E0005A1745 /* SYSearchControllerViewController.xib */; };
 		BC7E7F3E1D26356C00CC8506 /* SYHomeBeforeSingleController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7F3D1D26356C00CC8506 /* SYHomeBeforeSingleController.m */; };
 		BC7E7F401D2650D700CC8506 /* SYReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7E7F3F1D2650D700CC8506 /* SYReadViewController.xib */; };
 		BC7E7F441D26548100CC8506 /* SYReadTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7F421D26548100CC8506 /* SYReadTopCell.m */; };
@@ -70,6 +78,7 @@
 		BCA725D71D23DB090005F7BE /* SYReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725D61D23DB090005F7BE /* SYReadViewController.m */; };
 		BCA725D91D23DF810005F7BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA725D81D23DF810005F7BE /* Assets.xcassets */; };
 		BCA725DF1D23E6EB0005F7BE /* SYMainBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725DE1D23E6EB0005F7BE /* SYMainBasicViewController.m */; };
+		BCFC2D951D2A6C7200D6B27C /* SYSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFC2D941D2A6C7200D6B27C /* SYSegmentController.m */; };
 		BCFE96191D24EB940021307D /* SYShowPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFE96181D24EB940021307D /* SYShowPicViewController.m */; };
 		BCFE961B1D2504F20021307D /* SYShowPicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFE961A1D2504F20021307D /* SYShowPicViewController.xib */; };
 /* End PBXBuildFile section */
@@ -97,6 +106,12 @@
 		1A04CEE91D25659600743C24 /* SYWaterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYWaterCell.h; sourceTree = "<group>"; };
 		1A04CEEA1D25659600743C24 /* SYWaterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYWaterCell.m; sourceTree = "<group>"; };
 		1A04CEEB1D25659600743C24 /* SYWaterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYWaterCell.xib; sourceTree = "<group>"; };
+		1A451DFF1D2BF5F500AB316C /* SYhomeSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYhomeSearchCell.h; sourceTree = "<group>"; };
+		1A451E001D2BF5F500AB316C /* SYhomeSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYhomeSearchCell.m; sourceTree = "<group>"; };
+		1A451E011D2BF5F500AB316C /* SYhomeSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYhomeSearchCell.xib; sourceTree = "<group>"; };
+		1A451E041D2C05CD00AB316C /* SYReadSeachCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadSeachCell.h; sourceTree = "<group>"; };
+		1A451E051D2C05CD00AB316C /* SYReadSeachCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadSeachCell.m; sourceTree = "<group>"; };
+		1A451E061D2C05CD00AB316C /* SYReadSeachCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYReadSeachCell.xib; sourceTree = "<group>"; };
 		1A6AB74F1D26B2A60018FDEB /* SYReadTopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadTopModel.h; sourceTree = "<group>"; };
 		1A6AB7501D26B2A60018FDEB /* SYReadTopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadTopModel.m; sourceTree = "<group>"; };
 		1A6DC5091D29054A00DF78A6 /* SYMusicContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMusicContentView.h; sourceTree = "<group>"; };
@@ -138,6 +153,12 @@
 		BC67E8BB1D254B3D0042C649 /* SYDetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDetailCollectionViewCell.h; sourceTree = "<group>"; };
 		BC67E8BC1D254B3D0042C649 /* SYDetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDetailCollectionViewCell.m; sourceTree = "<group>"; };
 		BC67E8BD1D254B3D0042C649 /* SYDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC722B591D2BC11F005A1745 /* XMGStatusBarHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XMGStatusBarHUD.bundle; sourceTree = "<group>"; };
+		BC722B5A1D2BC11F005A1745 /* XMGStatusBarHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGStatusBarHUD.h; sourceTree = "<group>"; };
+		BC722B5B1D2BC11F005A1745 /* XMGStatusBarHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGStatusBarHUD.m; sourceTree = "<group>"; };
+		BC722B5F1D2BD7E0005A1745 /* SYSearchControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSearchControllerViewController.h; sourceTree = "<group>"; };
+		BC722B601D2BD7E0005A1745 /* SYSearchControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSearchControllerViewController.m; sourceTree = "<group>"; };
+		BC722B611D2BD7E0005A1745 /* SYSearchControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYSearchControllerViewController.xib; sourceTree = "<group>"; };
 		BC7E7F3C1D26356C00CC8506 /* SYHomeBeforeSingleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeBeforeSingleController.h; sourceTree = "<group>"; };
 		BC7E7F3D1D26356C00CC8506 /* SYHomeBeforeSingleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeBeforeSingleController.m; sourceTree = "<group>"; };
 		BC7E7F3F1D2650D700CC8506 /* SYReadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYReadViewController.xib; sourceTree = "<group>"; };
@@ -203,6 +224,8 @@
 		BCA725D81D23DF810005F7BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCA725DD1D23E6EB0005F7BE /* SYMainBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMainBasicViewController.h; sourceTree = "<group>"; };
 		BCA725DE1D23E6EB0005F7BE /* SYMainBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMainBasicViewController.m; sourceTree = "<group>"; };
+		BCFC2D931D2A6C7200D6B27C /* SYSegmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSegmentController.h; sourceTree = "<group>"; };
+		BCFC2D941D2A6C7200D6B27C /* SYSegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSegmentController.m; sourceTree = "<group>"; };
 		BCFE96171D24EB940021307D /* SYShowPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYShowPicViewController.h; sourceTree = "<group>"; };
 		BCFE96181D24EB940021307D /* SYShowPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYShowPicViewController.m; sourceTree = "<group>"; };
 		BCFE961A1D2504F20021307D /* SYShowPicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYShowPicViewController.xib; sourceTree = "<group>"; };
@@ -282,6 +305,34 @@
 				BC7E7F3D1D26356C00CC8506 /* SYHomeBeforeSingleController.m */,
 			);
 			name = SYHomeBeforViewController;
+			sourceTree = "<group>";
+		};
+		BC722B571D2BC102005A1745 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BC722B581D2BC11F005A1745 /* XMGStatusBarHUD */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		BC722B581D2BC11F005A1745 /* XMGStatusBarHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BC722B591D2BC11F005A1745 /* XMGStatusBarHUD.bundle */,
+				BC722B5A1D2BC11F005A1745 /* XMGStatusBarHUD.h */,
+				BC722B5B1D2BC11F005A1745 /* XMGStatusBarHUD.m */,
+			);
+			path = XMGStatusBarHUD;
+			sourceTree = "<group>";
+		};
+		BC722B5E1D2BD7A4005A1745 /* SYSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				BC722B5F1D2BD7E0005A1745 /* SYSearchControllerViewController.h */,
+				BC722B601D2BD7E0005A1745 /* SYSearchControllerViewController.m */,
+				BC722B611D2BD7E0005A1745 /* SYSearchControllerViewController.xib */,
+			);
+			name = SYSearchController;
 			sourceTree = "<group>";
 		};
 		BC7E7F501D2666D000CC8506 /* bottomModel */ = {
@@ -435,6 +486,7 @@
 		BCA725991D23C9200005F7BE /* Commen */ = {
 			isa = PBXGroup;
 			children = (
+				BC722B571D2BC102005A1745 /* Tools */,
 				BCA7259A1D23C9200005F7BE /* AppDelegate.h */,
 				BCA7259B1D23C9200005F7BE /* AppDelegate.m */,
 				BCA7259C1D23C9200005F7BE /* Category */,
@@ -502,6 +554,7 @@
 		BCA725A81D23C9200005F7BE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC722B5E1D2BD7A4005A1745 /* SYSearchController */,
 				BC36E72D1D25350200463357 /* SYHomeBeforViewController */,
 				BCFE96161D24EB190021307D /* SYShowPicViewController */,
 				BC4AB58B1D23EF5800BFEA15 /* SYHomeViewController.h */,
@@ -538,6 +591,9 @@
 				1A04CEE91D25659600743C24 /* SYWaterCell.h */,
 				1A04CEEA1D25659600743C24 /* SYWaterCell.m */,
 				1A04CEEB1D25659600743C24 /* SYWaterCell.xib */,
+				1A451DFF1D2BF5F500AB316C /* SYhomeSearchCell.h */,
+				1A451E001D2BF5F500AB316C /* SYhomeSearchCell.m */,
+				1A451E011D2BF5F500AB316C /* SYhomeSearchCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -607,6 +663,8 @@
 		BCA725B21D23C9200005F7BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BCFC2D931D2A6C7200D6B27C /* SYSegmentController.h */,
+				BCFC2D941D2A6C7200D6B27C /* SYSegmentController.m */,
 				1A6DC5091D29054A00DF78A6 /* SYMusicContentView.h */,
 				1A6DC50A1D29054A00DF78A6 /* SYMusicContentView.m */,
 				1A6DC50C1D29055A00DF78A6 /* SYMusicContentView.xib */,
@@ -662,6 +720,9 @@
 			children = (
 				BC7E7F531D26670300CC8506 /* bottomViews */,
 				BC7E7F521D2666EB00CC8506 /* topViews */,
+				1A451E041D2C05CD00AB316C /* SYReadSeachCell.h */,
+				1A451E051D2C05CD00AB316C /* SYReadSeachCell.m */,
+				1A451E061D2C05CD00AB316C /* SYReadSeachCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -747,7 +808,7 @@
 				TargetAttributes = {
 					BCA725611D23C6770005F7BE = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = UZV288DNAJ;
+						DevelopmentTeam = GCJX6JY5WY;
 					};
 					BCA7257A1D23C6780005F7BE = {
 						CreatedOnToolsVersion = 7.2;
@@ -788,10 +849,14 @@
 			files = (
 				1A6DC5121D29169200DF78A6 /* SYMusicViewController.xib in Resources */,
 				BC4AB5991D23FB5000BFEA15 /* SYHomeTableViewCell.xib in Resources */,
+				1A451E081D2C05CD00AB316C /* SYReadSeachCell.xib in Resources */,
 				BC805EEF1D27906B00A52EF8 /* SYReadCommentCell.xib in Resources */,
 				BC7E7F451D26548100CC8506 /* SYReadTopCell.xib in Resources */,
 				BC7E7F4A1D26549800CC8506 /* SYReadBottomCell.xib in Resources */,
 				BCA725751D23C6780005F7BE /* LaunchScreen.storyboard in Resources */,
+				BC722B5C1D2BC11F005A1745 /* XMGStatusBarHUD.bundle in Resources */,
+				BC722B631D2BD7E0005A1745 /* SYSearchControllerViewController.xib in Resources */,
+				1A451E031D2BF5F500AB316C /* SYhomeSearchCell.xib in Resources */,
 				1A6DC50D1D29055A00DF78A6 /* SYMusicContentView.xib in Resources */,
 				BC7E7F401D2650D700CC8506 /* SYReadViewController.xib in Resources */,
 				BCFE961B1D2504F20021307D /* SYShowPicViewController.xib in Resources */,
@@ -884,6 +949,7 @@
 				1A77F9041D28177700C5200B /* UIColor+SYExtension.m in Sources */,
 				BC7E7F5C1D2667C000CC8506 /* SYReadQuesModel.m in Sources */,
 				BC7E7F561D26679300CC8506 /* SYReadEssayModel.m in Sources */,
+				BCFC2D951D2A6C7200D6B27C /* SYSegmentController.m in Sources */,
 				BCA725BF1D23C9200005F7BE /* main.m in Sources */,
 				1A6DC5111D29169200DF78A6 /* SYMusicViewController.m in Sources */,
 				1A6DC5181D29480000DF78A6 /* SYMusicModel.m in Sources */,
@@ -909,8 +975,12 @@
 				BC805EEE1D27906B00A52EF8 /* SYReadCommentCell.m in Sources */,
 				BC7E7F4E1D265A1200CC8506 /* SYReadBottomTableCell.m in Sources */,
 				BCA725BD1D23C9200005F7BE /* UIBarButtonItem+XMGExtension.m in Sources */,
+				BC722B5D1D2BC11F005A1745 /* XMGStatusBarHUD.m in Sources */,
 				BC805EE11D276E9000A52EF8 /* SYReadCommentModel.m in Sources */,
+				1A451E021D2BF5F500AB316C /* SYhomeSearchCell.m in Sources */,
 				BCA725C51D23CCB70005F7BE /* SYNavgationController.m in Sources */,
+				BC722B621D2BD7E0005A1745 /* SYSearchControllerViewController.m in Sources */,
+				1A451E071D2C05CD00AB316C /* SYReadSeachCell.m in Sources */,
 				BCA725D11D23DAD20005F7BE /* SYMovieViewController.m in Sources */,
 				BC7E7F491D26549800CC8506 /* SYReadBottomCell.m in Sources */,
 				BC805EF21D279AFD00A52EF8 /* SYReadContentView.m in Sources */,
@@ -1059,11 +1129,12 @@
 			baseConfigurationReference = 74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/RelaxTime/Classes/PrefixHeader.pch";
 				INFOPLIST_FILE = RelaxTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1073,11 +1144,12 @@
 			baseConfigurationReference = 2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/RelaxTime/Classes/PrefixHeader.pch";
 				INFOPLIST_FILE = RelaxTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

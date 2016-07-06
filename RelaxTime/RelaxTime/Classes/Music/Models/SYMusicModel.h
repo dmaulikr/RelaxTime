@@ -16,7 +16,8 @@
  */
 @interface SYMusicModel : NSObject<YYModel>
 
-
+//歌名
+@property(nonatomic,copy) NSString* title;
 //专辑信息
 @property(nonatomic,copy) NSString* info;
 //封面
@@ -40,7 +41,28 @@
 
 @property(nonatomic,strong) SYMusicAuthor* author;
 
+
+
+/**
+ *  音乐故事对应的contentView高度
+ */
+@property(nonatomic ,assign) CGFloat musicStroyTextHeight;
+
+/**
+ *  歌词对应的contentView高度
+ */
+@property(nonatomic ,assign) CGFloat lyrHeight;
+
+/**
+ *  歌曲信息对应的contentView高度
+ */
+@property(nonatomic ,assign) CGFloat infoHeigt;
+
 @end
+
+
+
+
 /**
  *  音乐故事作者
  */
@@ -49,7 +71,13 @@
 @property(nonatomic,copy) NSString * user_id;
 @property(nonatomic,copy) NSString * user_name;
 
+
 @end
+
+
+
+
+
 /**
  *  音乐作者
  */
@@ -66,6 +94,8 @@
  *  作者头像
  */
 @property(nonatomic,copy) NSString * web_url;
+
+
 
 
 @end

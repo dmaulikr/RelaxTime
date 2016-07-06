@@ -11,6 +11,8 @@
 #import "SYHomeModel.h"
 #import "SYHomeBeforeController.h"
 
+#import "SYSearchControllerViewController.h"
+
 @interface SYHomeViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -20,14 +22,6 @@
 @end
 
 @implementation SYHomeViewController
-
-//停止网络请求
--(void)dealloc{
-    [self.requestManager.operationQueue cancelAllOperations];
-    
-}
-
-
 
 
 - (void)viewDidLoad {
@@ -49,15 +43,16 @@
     
     
     [self.requestManager GET:Home_URl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        //
+       
         //取出数组
         NSArray * array = responseObject[@"data"];
         [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYHomeModel class] json:array]];
         //NSLog(@"%@",self.dataArray);
-        [self.collectionView reloadData];
-   
-        
-        [SVProgressHUD dismiss];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+            [SVProgressHUD dismiss];
+        });
+     
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         //
         [SVProgressHUD showErrorWithStatus:@"请求失败"];
@@ -66,9 +61,6 @@
     
    
 }
-
-
-
 
 #pragma mark - 创建视图
 -(void)creatUI{
@@ -137,6 +129,17 @@
 }
 //搜索
 -(void)searchClick{
+    
+      SYSearchControllerViewController *searchVc = [[SYSearchControllerViewController alloc]init];
+    searchVc.type = homeVC;
+    
+    SYNavgationController *nav = [[SYNavgationController alloc]initWithRootViewController:searchVc];
+    
+  
+    
+    [self presentViewController:nav animated:YES completion:^{
+        //
+    }];
     
 }
 

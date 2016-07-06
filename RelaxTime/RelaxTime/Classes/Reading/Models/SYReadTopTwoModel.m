@@ -10,4 +10,8 @@
 
 @implementation SYReadTopTwoModel
 
++(NSDictionary *)modelCustomPropertyMapper{
+
+    return @{@"id":@"_id"};
+}
 @end

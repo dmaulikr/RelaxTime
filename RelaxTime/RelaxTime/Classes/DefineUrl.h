@@ -22,17 +22,17 @@
 //参数 hp 插图 reading 阅读 music 音乐 movie 电影 作者 author
 
 //总查询
-#define Search_URL  @"http://v3.wufazhuce.com:8000/api/search/";
+#define Search_URL  @"http://v3.wufazhuce.com:8000/api/search/"
 //插图
-#define Search_hp_URL  @"http://v3.wufazhuce.com:8000/api/search/hp/";
+#define Search_hp_URL  @"http://v3.wufazhuce.com:8000/api/search/hp/"
 //阅读
-#define Search_read_URL  @"http://v3.wufazhuce.com:8000/api/search/reading/";
+#define Search_read_URL  @"http://v3.wufazhuce.com:8000/api/search/reading/"
 // 音乐
-#define Search_Music_URL  @"http://v3.wufazhuce.com:8000/api/search/music/";
+#define Search_Music_URL  @"http://v3.wufazhuce.com:8000/api/search/music/"
 //电影
-#define Search_Movie_URL  @"http://v3.wufazhuce.com:8000/api/search/movie/";
+#define Search_Movie_URL  @"http://v3.wufazhuce.com:8000/api/search/movie/"
 //作者
-#define Search_Author_URL  @"http://v3.wufazhuce.com:8000/api/search/author/";
+#define Search_Author_URL  @"http://v3.wufazhuce.com:8000/api/search/author/"
 /*******************************/
 
 
