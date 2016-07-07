@@ -120,6 +120,9 @@
         
         [self.navigationController pushViewController:beforeVc animated:YES];
     }
+    
+    //清理缓存
+    [[SDWebImageManager sharedManager].imageCache clearMemory];
 }
 #pragma mark -按钮点击事件
 //用户

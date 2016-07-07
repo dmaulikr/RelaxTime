@@ -17,6 +17,7 @@
 
 #import <YYModel.h>
 #import <Masonry.h>
+#import <MBProgressHUD.h>
 
 #import "XMGStatusBarHUD.h"
 //导航
@@ -29,6 +30,8 @@
 
 #import "UIView+XMGExtension.h"
 #import "UIColor+SYExtension.h"
+
+
 
 
 typedef NS_ENUM(NSInteger, ReadType) {
@@ -53,6 +56,12 @@ typedef NS_ENUM(NSInteger, ReadType) {
 
 //打印调用的方法
 #define SYLogFunc  SYLog(@"%s", __FUNCTION__);
+
+#pragma mark - 字体
+static NSString *const movieScoreListFont = @"ArensdorffInk-Regular";
+static NSString *const movieScoreDetailFont = @"Cruickshank";
+
+
 
 // 颜色
 #define SYColorRGB(r, g, b)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]

@@ -30,7 +30,7 @@
     self.tableView.frame = CGRectMake(0, 0, WIDTH - 20, HEIGHT);
     self.tableView.center = CGPointMake(WIDTH /2, HEIGHT /2);
     self.tableView.backgroundColor = [UIColor clearColor];
-    
+    self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0);
     
     self.tableView.delegate = self;

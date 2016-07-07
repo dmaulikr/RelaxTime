@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,28 +7,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="135" id="KGk-i7-Jjw" customClass="SYReadSeachCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="136" id="KGk-i7-Jjw" customClass="SYReadSeachCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="287" height="134"/>
+                <rect key="frame" x="0.0" y="0.0" width="287" height="135"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC4-A0-jNv">
-                        <rect key="frame" x="32" y="56" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1o4-LX-te4">
-                        <rect key="frame" x="112" y="56" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1o4-LX-te4">
+                        <rect key="frame" x="70" y="57" width="207" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Waq-k1-UEk"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="短篇" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC4-A0-jNv">
+                        <rect key="frame" x="20" y="57" width="30" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="SRC-cz-e6u"/>
+                            <constraint firstAttribute="width" constant="30" id="YBQ-br-J3d"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="JC4-A0-jNv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7dl-nE-uAm"/>
+                    <constraint firstItem="JC4-A0-jNv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="8sF-RS-bxZ"/>
+                    <constraint firstItem="1o4-LX-te4" firstAttribute="leading" secondItem="JC4-A0-jNv" secondAttribute="trailing" constant="20" id="FlB-yL-ucb"/>
+                    <constraint firstAttribute="trailing" secondItem="1o4-LX-te4" secondAttribute="trailing" constant="10" id="SY3-57-dP1"/>
+                    <constraint firstItem="1o4-LX-te4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iTP-lZ-5um"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="149" y="264.5"/>
+            <connections>
+                <outlet property="titleLabel" destination="1o4-LX-te4" id="4DY-Zd-LpW"/>
+                <outlet property="typeLabel" destination="JC4-A0-jNv" id="eYC-0i-LRZ"/>
+            </connections>
+            <point key="canvasLocation" x="149" y="265"/>
         </tableViewCell>
     </objects>
 </document>

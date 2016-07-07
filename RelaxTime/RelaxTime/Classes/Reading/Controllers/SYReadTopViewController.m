@@ -47,14 +47,8 @@
    
  
 }
--(void)viewDidAppear:(BOOL)animated{
-    if (self.dataArray.count == 0) {
-        
-          [SVProgressHUD show];
-    }
-  
-    
-}
+
+
 #pragma mark - 隐藏状态栏
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = YES;

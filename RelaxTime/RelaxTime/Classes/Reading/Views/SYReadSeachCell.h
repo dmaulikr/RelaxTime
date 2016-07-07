@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SYReadTopTwoModel;
 
 @interface SYReadSeachCell : UITableViewCell
+
+@property(nonatomic,strong) SYReadTopTwoModel* model;
 
 @end

@@ -10,4 +10,5 @@ target ‘RelaxTime’ do
   pod ‘SVProgressHUD’
   pod 'XRWaterfallLayout'
   pod ‘DACircularProgress’
+  pod 'MBProgressHUD'
 end

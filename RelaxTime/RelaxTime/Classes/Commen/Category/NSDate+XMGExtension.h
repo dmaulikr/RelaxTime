@@ -28,4 +28,12 @@
  * 是否为昨天
  */
 - (BOOL)isYesterday;
+/**
+ *判断投个时间是否是未来几天包含今天
+ */
+- (BOOL) isAfterSomeDays ;
+/**
+ *  时候是明天
+ */
+- (BOOL)isTomorrow;
 @end

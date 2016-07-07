@@ -459,13 +459,8 @@
     [_player play];
 }
 
-#pragma mark - 最开始设置tableView的偏移量 
--(void)viewDidLayoutSubviews{
 
-   self.tableView.contentOffset = CGPointMake(0, WIDTH - 100);
-   
-    
-}
+
 
 #pragma mark - 移除监听
 -(void)dealloc{

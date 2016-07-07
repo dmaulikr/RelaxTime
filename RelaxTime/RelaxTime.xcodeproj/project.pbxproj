@@ -29,6 +29,20 @@
 		1A9192AD1D241B9D00517BAB /* SYHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9192AC1D241B9D00517BAB /* SYHomeModel.m */; };
 		35E7DC10A8121C6EAA053C9F /* libPods-RelaxTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */; };
 		BC36E7301D25357A00463357 /* SYHomeBeforeController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC36E72F1D25357A00463357 /* SYHomeBeforeController.m */; };
+		BC3C13BA1D2D2F6700DD5A8F /* Arensdorff_Ink.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13B81D2D2F6700DD5A8F /* Arensdorff_Ink.otf */; };
+		BC3C13BB1D2D2F6700DD5A8F /* CRUICKSH.TTF in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13B91D2D2F6700DD5A8F /* CRUICKSH.TTF */; };
+		BC3C13C41D2D355400DD5A8F /* SYMovieDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C13C21D2D355400DD5A8F /* SYMovieDetailController.m */; };
+		BC3C13C51D2D355400DD5A8F /* SYMovieDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13C31D2D355400DD5A8F /* SYMovieDetailController.xib */; };
+		BC3C13D41D2D364700DD5A8F /* ZFBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C13C81D2D364700DD5A8F /* ZFBrightnessView.m */; };
+		BC3C13D51D2D364700DD5A8F /* ZFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13C91D2D364700DD5A8F /* ZFPlayer.bundle */; };
+		BC3C13D61D2D364700DD5A8F /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C13CC1D2D364700DD5A8F /* ZFPlayerControlView.m */; };
+		BC3C13D71D2D364700DD5A8F /* ZFDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C13CF1D2D364700DD5A8F /* ZFDownloadManager.m */; };
+		BC3C13D81D2D364700DD5A8F /* ZFSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C13D11D2D364700DD5A8F /* ZFSessionModel.m */; };
+		BC3C13D91D2D364700DD5A8F /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C13D31D2D364700DD5A8F /* ZFPlayerView.m */; };
+		BC3C13DD1D2D36D500DD5A8F /* SYPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C13DB1D2D36D500DD5A8F /* SYPlayViewController.m */; };
+		BC3C13DE1D2D36D500DD5A8F /* SYPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13DC1D2D36D500DD5A8F /* SYPlayViewController.xib */; };
+		BC3C13E11D2D371000DD5A8F /* SYMovieDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C13E01D2D371000DD5A8F /* SYMovieDetailModel.m */; };
+		BC3C13E41D2D3D4D00DD5A8F /* SYMovieStoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3C13E31D2D3D4D00DD5A8F /* SYMovieStoryModel.m */; };
 		BC4AB58E1D23EF5800BFEA15 /* SYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB58C1D23EF5800BFEA15 /* SYHomeViewController.m */; };
 		BC4AB58F1D23EF5800BFEA15 /* SYHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4AB58D1D23EF5800BFEA15 /* SYHomeViewController.xib */; };
 		BC4AB5931D23F6B600BFEA15 /* SYHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB5911D23F6B600BFEA15 /* SYHomeCollectionViewCell.m */; };
@@ -61,6 +75,13 @@
 		BC805EEF1D27906B00A52EF8 /* SYReadCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC805EED1D27906B00A52EF8 /* SYReadCommentCell.xib */; };
 		BC805EF21D279AFD00A52EF8 /* SYReadContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC805EF11D279AFD00A52EF8 /* SYReadContentView.m */; };
 		BC805EF41D279B1F00A52EF8 /* SYReadContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC805EF31D279B1F00A52EF8 /* SYReadContentView.xib */; };
+		BC99FF2B1D2D1FD000D73948 /* SYMovieListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC99FF291D2D1FD000D73948 /* SYMovieListCell.m */; };
+		BC99FF2C1D2D1FD000D73948 /* SYMovieListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC99FF2A1D2D1FD000D73948 /* SYMovieListCell.xib */; };
+		BC99FF2F1D2D1FFE00D73948 /* SYMovieListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC99FF2E1D2D1FFE00D73948 /* SYMovieListModel.m */; };
+		BC9B4A1B1D2DE32C00AECEF8 /* SYMovieContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9B4A181D2DE32C00AECEF8 /* SYMovieContentView.xib */; };
+		BC9B4A1F1D2DE96100AECEF8 /* SYMovieContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9B4A1E1D2DE96100AECEF8 /* SYMovieContentView.m */; };
+		BC9B4A231D2E2EAD00AECEF8 /* SYMoviePicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9B4A211D2E2EAD00AECEF8 /* SYMoviePicCell.m */; };
+		BC9B4A241D2E2EAD00AECEF8 /* SYMoviePicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9B4A221D2E2EAD00AECEF8 /* SYMoviePicCell.xib */; };
 		BCA725701D23C6780005F7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA7256E1D23C6780005F7BE /* Main.storyboard */; };
 		BCA725751D23C6780005F7BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA725731D23C6780005F7BE /* LaunchScreen.storyboard */; };
 		BCA725801D23C6780005F7BE /* RelaxTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7257F1D23C6780005F7BE /* RelaxTimeTests.m */; };
@@ -138,6 +159,30 @@
 		74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.debug.xcconfig"; sourceTree = "<group>"; };
 		BC36E72E1D25357A00463357 /* SYHomeBeforeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeBeforeController.h; sourceTree = "<group>"; };
 		BC36E72F1D25357A00463357 /* SYHomeBeforeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeBeforeController.m; sourceTree = "<group>"; };
+		BC3C13B81D2D2F6700DD5A8F /* Arensdorff_Ink.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arensdorff_Ink.otf; sourceTree = "<group>"; };
+		BC3C13B91D2D2F6700DD5A8F /* CRUICKSH.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = CRUICKSH.TTF; sourceTree = "<group>"; };
+		BC3C13C11D2D355400DD5A8F /* SYMovieDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMovieDetailController.h; sourceTree = "<group>"; };
+		BC3C13C21D2D355400DD5A8F /* SYMovieDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMovieDetailController.m; sourceTree = "<group>"; };
+		BC3C13C31D2D355400DD5A8F /* SYMovieDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYMovieDetailController.xib; sourceTree = "<group>"; };
+		BC3C13C71D2D364700DD5A8F /* ZFBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBrightnessView.h; sourceTree = "<group>"; };
+		BC3C13C81D2D364700DD5A8F /* ZFBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBrightnessView.m; sourceTree = "<group>"; };
+		BC3C13C91D2D364700DD5A8F /* ZFPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZFPlayer.bundle; sourceTree = "<group>"; };
+		BC3C13CA1D2D364700DD5A8F /* ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayer.h; sourceTree = "<group>"; };
+		BC3C13CB1D2D364700DD5A8F /* ZFPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerControlView.h; sourceTree = "<group>"; };
+		BC3C13CC1D2D364700DD5A8F /* ZFPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerControlView.m; sourceTree = "<group>"; };
+		BC3C13CE1D2D364700DD5A8F /* ZFDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDownloadManager.h; sourceTree = "<group>"; };
+		BC3C13CF1D2D364700DD5A8F /* ZFDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDownloadManager.m; sourceTree = "<group>"; };
+		BC3C13D01D2D364700DD5A8F /* ZFSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSessionModel.h; sourceTree = "<group>"; };
+		BC3C13D11D2D364700DD5A8F /* ZFSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSessionModel.m; sourceTree = "<group>"; };
+		BC3C13D21D2D364700DD5A8F /* ZFPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerView.h; sourceTree = "<group>"; };
+		BC3C13D31D2D364700DD5A8F /* ZFPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerView.m; sourceTree = "<group>"; };
+		BC3C13DA1D2D36D500DD5A8F /* SYPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPlayViewController.h; sourceTree = "<group>"; };
+		BC3C13DB1D2D36D500DD5A8F /* SYPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPlayViewController.m; sourceTree = "<group>"; };
+		BC3C13DC1D2D36D500DD5A8F /* SYPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYPlayViewController.xib; sourceTree = "<group>"; };
+		BC3C13DF1D2D371000DD5A8F /* SYMovieDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMovieDetailModel.h; sourceTree = "<group>"; };
+		BC3C13E01D2D371000DD5A8F /* SYMovieDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMovieDetailModel.m; sourceTree = "<group>"; };
+		BC3C13E21D2D3D4D00DD5A8F /* SYMovieStoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMovieStoryModel.h; sourceTree = "<group>"; };
+		BC3C13E31D2D3D4D00DD5A8F /* SYMovieStoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMovieStoryModel.m; sourceTree = "<group>"; };
 		BC4AB58B1D23EF5800BFEA15 /* SYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeViewController.h; sourceTree = "<group>"; };
 		BC4AB58C1D23EF5800BFEA15 /* SYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeViewController.m; sourceTree = "<group>"; };
 		BC4AB58D1D23EF5800BFEA15 /* SYHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYHomeViewController.xib; sourceTree = "<group>"; };
@@ -188,6 +233,17 @@
 		BC805EF01D279AFD00A52EF8 /* SYReadContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadContentView.h; sourceTree = "<group>"; };
 		BC805EF11D279AFD00A52EF8 /* SYReadContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadContentView.m; sourceTree = "<group>"; };
 		BC805EF31D279B1F00A52EF8 /* SYReadContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYReadContentView.xib; sourceTree = "<group>"; };
+		BC99FF281D2D1FD000D73948 /* SYMovieListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMovieListCell.h; sourceTree = "<group>"; };
+		BC99FF291D2D1FD000D73948 /* SYMovieListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMovieListCell.m; sourceTree = "<group>"; };
+		BC99FF2A1D2D1FD000D73948 /* SYMovieListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYMovieListCell.xib; sourceTree = "<group>"; };
+		BC99FF2D1D2D1FFE00D73948 /* SYMovieListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMovieListModel.h; sourceTree = "<group>"; };
+		BC99FF2E1D2D1FFE00D73948 /* SYMovieListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMovieListModel.m; sourceTree = "<group>"; };
+		BC9B4A181D2DE32C00AECEF8 /* SYMovieContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYMovieContentView.xib; sourceTree = "<group>"; };
+		BC9B4A1D1D2DE96100AECEF8 /* SYMovieContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMovieContentView.h; sourceTree = "<group>"; };
+		BC9B4A1E1D2DE96100AECEF8 /* SYMovieContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMovieContentView.m; sourceTree = "<group>"; };
+		BC9B4A201D2E2EAD00AECEF8 /* SYMoviePicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMoviePicCell.h; sourceTree = "<group>"; };
+		BC9B4A211D2E2EAD00AECEF8 /* SYMoviePicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMoviePicCell.m; sourceTree = "<group>"; };
+		BC9B4A221D2E2EAD00AECEF8 /* SYMoviePicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYMoviePicCell.xib; sourceTree = "<group>"; };
 		BCA725621D23C6770005F7BE /* RelaxTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelaxTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA7256F1D23C6780005F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCA725741D23C6780005F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -305,6 +361,42 @@
 				BC7E7F3D1D26356C00CC8506 /* SYHomeBeforeSingleController.m */,
 			);
 			name = SYHomeBeforViewController;
+			sourceTree = "<group>";
+		};
+		BC3C13B71D2D2F6700DD5A8F /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BC3C13B81D2D2F6700DD5A8F /* Arensdorff_Ink.otf */,
+				BC3C13B91D2D2F6700DD5A8F /* CRUICKSH.TTF */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		BC3C13C61D2D364700DD5A8F /* ZFPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				BC3C13C71D2D364700DD5A8F /* ZFBrightnessView.h */,
+				BC3C13C81D2D364700DD5A8F /* ZFBrightnessView.m */,
+				BC3C13C91D2D364700DD5A8F /* ZFPlayer.bundle */,
+				BC3C13CA1D2D364700DD5A8F /* ZFPlayer.h */,
+				BC3C13CB1D2D364700DD5A8F /* ZFPlayerControlView.h */,
+				BC3C13CC1D2D364700DD5A8F /* ZFPlayerControlView.m */,
+				BC3C13CD1D2D364700DD5A8F /* ZFPlayerDownload */,
+				BC3C13D21D2D364700DD5A8F /* ZFPlayerView.h */,
+				BC3C13D31D2D364700DD5A8F /* ZFPlayerView.m */,
+			);
+			path = ZFPlayer;
+			sourceTree = "<group>";
+		};
+		BC3C13CD1D2D364700DD5A8F /* ZFPlayerDownload */ = {
+			isa = PBXGroup;
+			children = (
+				BC3C13CE1D2D364700DD5A8F /* ZFDownloadManager.h */,
+				BC3C13CF1D2D364700DD5A8F /* ZFDownloadManager.m */,
+				BC3C13D01D2D364700DD5A8F /* ZFSessionModel.h */,
+				BC3C13D11D2D364700DD5A8F /* ZFSessionModel.m */,
+			);
+			path = ZFPlayerDownload;
 			sourceTree = "<group>";
 		};
 		BC722B571D2BC102005A1745 /* Tools */ = {
@@ -486,7 +578,9 @@
 		BCA725991D23C9200005F7BE /* Commen */ = {
 			isa = PBXGroup;
 			children = (
+				BC3C13B71D2D2F6700DD5A8F /* Font */,
 				BC722B571D2BC102005A1745 /* Tools */,
+				BC3C13C61D2D364700DD5A8F /* ZFPlayer */,
 				BCA7259A1D23C9200005F7BE /* AppDelegate.h */,
 				BCA7259B1D23C9200005F7BE /* AppDelegate.m */,
 				BCA7259C1D23C9200005F7BE /* Category */,
@@ -613,6 +707,12 @@
 			children = (
 				BCA725CF1D23DAD20005F7BE /* SYMovieViewController.h */,
 				BCA725D01D23DAD20005F7BE /* SYMovieViewController.m */,
+				BC3C13C11D2D355400DD5A8F /* SYMovieDetailController.h */,
+				BC3C13C21D2D355400DD5A8F /* SYMovieDetailController.m */,
+				BC3C13C31D2D355400DD5A8F /* SYMovieDetailController.xib */,
+				BC3C13DA1D2D36D500DD5A8F /* SYPlayViewController.h */,
+				BC3C13DB1D2D36D500DD5A8F /* SYPlayViewController.m */,
+				BC3C13DC1D2D36D500DD5A8F /* SYPlayViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -620,6 +720,12 @@
 		BCA725AD1D23C9200005F7BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BC99FF2D1D2D1FFE00D73948 /* SYMovieListModel.h */,
+				BC99FF2E1D2D1FFE00D73948 /* SYMovieListModel.m */,
+				BC3C13DF1D2D371000DD5A8F /* SYMovieDetailModel.h */,
+				BC3C13E01D2D371000DD5A8F /* SYMovieDetailModel.m */,
+				BC3C13E21D2D3D4D00DD5A8F /* SYMovieStoryModel.h */,
+				BC3C13E31D2D3D4D00DD5A8F /* SYMovieStoryModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -627,6 +733,15 @@
 		BCA725AE1D23C9200005F7BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC99FF281D2D1FD000D73948 /* SYMovieListCell.h */,
+				BC99FF291D2D1FD000D73948 /* SYMovieListCell.m */,
+				BC99FF2A1D2D1FD000D73948 /* SYMovieListCell.xib */,
+				BC9B4A1D1D2DE96100AECEF8 /* SYMovieContentView.h */,
+				BC9B4A1E1D2DE96100AECEF8 /* SYMovieContentView.m */,
+				BC9B4A181D2DE32C00AECEF8 /* SYMovieContentView.xib */,
+				BC9B4A201D2E2EAD00AECEF8 /* SYMoviePicCell.h */,
+				BC9B4A211D2E2EAD00AECEF8 /* SYMoviePicCell.m */,
+				BC9B4A221D2E2EAD00AECEF8 /* SYMoviePicCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -847,16 +962,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3C13BB1D2D2F6700DD5A8F /* CRUICKSH.TTF in Resources */,
 				1A6DC5121D29169200DF78A6 /* SYMusicViewController.xib in Resources */,
 				BC4AB5991D23FB5000BFEA15 /* SYHomeTableViewCell.xib in Resources */,
 				1A451E081D2C05CD00AB316C /* SYReadSeachCell.xib in Resources */,
+				BC3C13D51D2D364700DD5A8F /* ZFPlayer.bundle in Resources */,
 				BC805EEF1D27906B00A52EF8 /* SYReadCommentCell.xib in Resources */,
+				BC3C13C51D2D355400DD5A8F /* SYMovieDetailController.xib in Resources */,
+				BC9B4A241D2E2EAD00AECEF8 /* SYMoviePicCell.xib in Resources */,
 				BC7E7F451D26548100CC8506 /* SYReadTopCell.xib in Resources */,
+				BC3C13BA1D2D2F6700DD5A8F /* Arensdorff_Ink.otf in Resources */,
+				BC9B4A1B1D2DE32C00AECEF8 /* SYMovieContentView.xib in Resources */,
 				BC7E7F4A1D26549800CC8506 /* SYReadBottomCell.xib in Resources */,
 				BCA725751D23C6780005F7BE /* LaunchScreen.storyboard in Resources */,
 				BC722B5C1D2BC11F005A1745 /* XMGStatusBarHUD.bundle in Resources */,
 				BC722B631D2BD7E0005A1745 /* SYSearchControllerViewController.xib in Resources */,
+				BC3C13DE1D2D36D500DD5A8F /* SYPlayViewController.xib in Resources */,
 				1A451E031D2BF5F500AB316C /* SYhomeSearchCell.xib in Resources */,
+				BC99FF2C1D2D1FD000D73948 /* SYMovieListCell.xib in Resources */,
 				1A6DC50D1D29055A00DF78A6 /* SYMusicContentView.xib in Resources */,
 				BC7E7F401D2650D700CC8506 /* SYReadViewController.xib in Resources */,
 				BCFE961B1D2504F20021307D /* SYShowPicViewController.xib in Resources */,
@@ -949,38 +1072,51 @@
 				1A77F9041D28177700C5200B /* UIColor+SYExtension.m in Sources */,
 				BC7E7F5C1D2667C000CC8506 /* SYReadQuesModel.m in Sources */,
 				BC7E7F561D26679300CC8506 /* SYReadEssayModel.m in Sources */,
+				BC9B4A231D2E2EAD00AECEF8 /* SYMoviePicCell.m in Sources */,
+				BC3C13D91D2D364700DD5A8F /* ZFPlayerView.m in Sources */,
+				BC3C13D71D2D364700DD5A8F /* ZFDownloadManager.m in Sources */,
+				BC3C13C41D2D355400DD5A8F /* SYMovieDetailController.m in Sources */,
 				BCFC2D951D2A6C7200D6B27C /* SYSegmentController.m in Sources */,
 				BCA725BF1D23C9200005F7BE /* main.m in Sources */,
 				1A6DC5111D29169200DF78A6 /* SYMusicViewController.m in Sources */,
 				1A6DC5181D29480000DF78A6 /* SYMusicModel.m in Sources */,
 				BC7E7F591D2667B000CC8506 /* SYReadSeriesModel.m in Sources */,
 				BCA725C81D23CCE10005F7BE /* SYTabBarViewController.m in Sources */,
+				BC3C13DD1D2D36D500DD5A8F /* SYPlayViewController.m in Sources */,
 				BC4AB58E1D23EF5800BFEA15 /* SYHomeViewController.m in Sources */,
 				1A9192AD1D241B9D00517BAB /* SYHomeModel.m in Sources */,
 				1A77F8F31D28075000C5200B /* SYReadTopViewController.m in Sources */,
+				BC3C13D41D2D364700DD5A8F /* ZFBrightnessView.m in Sources */,
+				BC3C13D81D2D364700DD5A8F /* ZFSessionModel.m in Sources */,
 				BCA725BB1D23C9200005F7BE /* AppDelegate.m in Sources */,
 				BCFE96191D24EB940021307D /* SYShowPicViewController.m in Sources */,
 				BCA725BE1D23C9200005F7BE /* UIView+XMGExtension.m in Sources */,
+				BC99FF2B1D2D1FD000D73948 /* SYMovieListCell.m in Sources */,
 				BC4AB5981D23FB5000BFEA15 /* SYHomeTableViewCell.m in Sources */,
 				BCA725BC1D23C9200005F7BE /* NSDate+XMGExtension.m in Sources */,
 				BCA725CB1D23CD250005F7BE /* SYBasicViewController.m in Sources */,
 				BC7E7F441D26548100CC8506 /* SYReadTopCell.m in Sources */,
+				BC99FF2F1D2D1FFE00D73948 /* SYMovieListModel.m in Sources */,
 				1A6AB7511D26B2A60018FDEB /* SYReadTopModel.m in Sources */,
 				BC805ED91D274C7E00A52EF8 /* SYReadDetailController.m in Sources */,
 				BC67E8B41D2544500042C649 /* SYHomeBeforeCell.m in Sources */,
 				BC67E8BE1D254B3D0042C649 /* SYDetailCollectionViewCell.m in Sources */,
 				BC7E7F3E1D26356C00CC8506 /* SYHomeBeforeSingleController.m in Sources */,
 				BCA725D71D23DB090005F7BE /* SYReadViewController.m in Sources */,
+				BC3C13E41D2D3D4D00DD5A8F /* SYMovieStoryModel.m in Sources */,
 				1A04CEEC1D25659600743C24 /* SYWaterCell.m in Sources */,
 				BC805EEE1D27906B00A52EF8 /* SYReadCommentCell.m in Sources */,
 				BC7E7F4E1D265A1200CC8506 /* SYReadBottomTableCell.m in Sources */,
 				BCA725BD1D23C9200005F7BE /* UIBarButtonItem+XMGExtension.m in Sources */,
+				BC3C13E11D2D371000DD5A8F /* SYMovieDetailModel.m in Sources */,
 				BC722B5D1D2BC11F005A1745 /* XMGStatusBarHUD.m in Sources */,
 				BC805EE11D276E9000A52EF8 /* SYReadCommentModel.m in Sources */,
 				1A451E021D2BF5F500AB316C /* SYhomeSearchCell.m in Sources */,
 				BCA725C51D23CCB70005F7BE /* SYNavgationController.m in Sources */,
+				BC9B4A1F1D2DE96100AECEF8 /* SYMovieContentView.m in Sources */,
 				BC722B621D2BD7E0005A1745 /* SYSearchControllerViewController.m in Sources */,
 				1A451E071D2C05CD00AB316C /* SYReadSeachCell.m in Sources */,
+				BC3C13D61D2D364700DD5A8F /* ZFPlayerControlView.m in Sources */,
 				BCA725D11D23DAD20005F7BE /* SYMovieViewController.m in Sources */,
 				BC7E7F491D26549800CC8506 /* SYReadBottomCell.m in Sources */,
 				BC805EF21D279AFD00A52EF8 /* SYReadContentView.m in Sources */,

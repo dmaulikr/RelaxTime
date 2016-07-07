@@ -10,6 +10,8 @@
 #import "SYHomeModel.h"
 #import "SYhomeSearchCell.h"
 #import "SYHomeBeforeSingleController.h"
+#import "SYReadSeachCell.h"
+#import "SYReadDetailController.h"
 
 #import "SYReadTopTwoModel.h"
 
@@ -17,6 +19,8 @@
 
 @property (strong, nonatomic)  UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+//当前的url请求
+@property(nonatomic ,strong) NSString * currentUrl;
 
 
 @end
@@ -51,36 +55,70 @@
     [self.view bringSubviewToFront:seacrhBar];
     seacrhBar.delegate = self;
    
+    if(self.type == homeVC)
+        
+    {
         self.tableView.rowHeight = 90;
+    }else{
+        self.tableView.rowHeight = 60;
+    }
    
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"SYhomeSearchCell" bundle:nil] forCellReuseIdentifier:@"homeCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SYReadSeachCell" bundle:nil] forCellReuseIdentifier:@"readCell"];
 }
 
 #pragma mark - 数据请求
 -(void)getDataWithSearchWord:(NSString *)searchWord{
     
+    [SVProgressHUD show];
+    
   NSString * url = [self dealwithWord:searchWord];
     
+    SYLog(@"请求中");
+    //赋值当前网络请求
+    self.currentUrl = url;
+    
     [self.requestManager GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-  // NSLog(@"%@",responseObject);
+   //NSLog(@"%@",responseObject);
+        //判断不是这次的请求就返回
+        SYLog(@"请求成功");
+        if (self.currentUrl != url) {
+            SYLog(@"不是当前的数据请求,不处理");
+            return ;
+        }
+        
+        //如果是 清空数组
+        [self.dataArray removeAllObjects];
+        
         if (self.type == homeVC) {
                [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYHomeModel class] json:responseObject[@"data"]]];
         }else{
             [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYReadTopTwoModel class] json:responseObject[@"data"]]];
+         
         }
  
+      
+        
         [self.tableView reloadData];
+        
+        if (self.dataArray.count == 0) {
+            [SVProgressHUD showErrorWithStatus:@"无搜索结果"];
+        }else{
+          [SVProgressHUD dismiss];
+        }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         //
+        
     }];
     
 }
 
 #pragma mark - tableView代理方法
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     return self.dataArray.count;
 }
 
@@ -96,8 +134,12 @@
     }
     
     
+    SYReadSeachCell *cell = [tableView dequeueReusableCellWithIdentifier:@"readCell" forIndexPath:indexPath];
+    
+    cell.model = self.dataArray[indexPath.row];
+    
   
-    return nil;
+    return cell;
 
 }
 
@@ -110,6 +152,23 @@
         single.model = self.dataArray[indexPath.row];
         
         [self.navigationController pushViewController:single animated:YES];
+    }else{
+        
+        SYReadDetailController *read = [[SYReadDetailController alloc]init];
+        
+        //取出模型
+        SYReadTopTwoModel *model = self.dataArray[indexPath.row];
+        if ([model.type isEqualToString:@"essay"]) {
+             read.type = essay;
+        }else if([model.type isEqualToString:@"serialcontent"]){
+             read.type = serial;
+        }else{
+            read.type = question ;
+        }
+      
+       
+        read.itemID = model._id;
+     [self.navigationController pushViewController:read animated:YES];
     }
 
     

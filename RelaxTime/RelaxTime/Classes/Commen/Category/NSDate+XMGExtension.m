@@ -78,4 +78,65 @@
     && cmps.day == 1;
 }
 
+
+- (BOOL) isAfterSomeDays {
+    
+    NSDate *now = [NSDate date];
+    
+    // date ==  2014-04-30 10:05:28 --> 2014-04-30 00:00:00
+    // now == 2014-05-01 09:22:10 --> 2014-05-01 00:00:00
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    
+    // 2014-04-30
+    NSString *dateStr = [fmt stringFromDate:self];
+    // 2014-10-18
+    NSString *nowStr = [fmt stringFromDate:now];
+    
+    // 2014-10-30 00:00:00
+    NSDate *date = [fmt dateFromString:dateStr];
+    // 2014-10-18 00:00:00
+    now = [fmt dateFromString:nowStr];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSDateComponents *cmps = [calendar components:unit fromDate:date toDate:now options:0];
+    
+    if (cmps.year < 0) {
+        return YES;
+    } else if (cmps.year == 0 && cmps.month < 0) {
+        return YES;
+    } else if (cmps.year == 0 && cmps.month == 0 && cmps.day <= 0){
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL)isTomorrow {
+    
+    NSDate *now = [NSDate date];
+    
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    
+    // 2014-04-30
+    NSString *dateStr = [fmt stringFromDate:self];
+    // 2014-10-18
+    NSString *nowStr = [fmt stringFromDate:now];
+    
+    // 2014-10-30 00:00:00
+    NSDate *date = [fmt dateFromString:dateStr];
+    // 2014-10-18 00:00:00
+    now = [fmt dateFromString:nowStr];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSDateComponents *cmps = [calendar components:unit fromDate:now toDate:date options:0];
+    
+    return cmps.year == 0 && cmps.month == 0 && cmps.day == 1;
+}
+
 @end

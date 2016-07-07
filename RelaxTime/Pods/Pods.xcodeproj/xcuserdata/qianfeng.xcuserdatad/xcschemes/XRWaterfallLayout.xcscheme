@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '246E97ADED79D2CB3EE6E3A469F40836'
+               BlueprintIdentifier = '39CC1D45789EB11A801A15B10D299ED6'
                BlueprintName = 'XRWaterfallLayout'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libXRWaterfallLayout.a'>

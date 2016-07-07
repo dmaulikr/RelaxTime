@@ -328,7 +328,9 @@
     //搜索
     
     SYSearchControllerViewController *searchVc = [[SYSearchControllerViewController alloc]init];
+    
     searchVc.type = readVC;
+    
     SYNavgationController *nav = [[SYNavgationController alloc]initWithRootViewController:searchVc];
     
         

@@ -78,18 +78,18 @@
 
 /***********电影 get ***/
 //以模型的id进行刷新操作
-#define Movie_URL @"http://v3.wufazhuce.com:8000/api/movie/list/0";
+#define Movie_URL @"http://v3.wufazhuce.com:8000/api/movie/list/"
 //#define Movie_URL @"http://v3.wufazhuce.com:8000/api/movie/list/34";
 
 //详情
-#define Movie_detail_URL @"http://v3.wufazhuce.com:8000/api/movie/detail/85"
+#define Movie_detail_URL @"http://v3.wufazhuce.com:8000/api/movie/detail/%@"
 //评论
-#define Movie_comment_URL @" http://v3.wufazhuce.com:8000/api/comment/praiseandtime/movie/85/0"
+#define Movie_comment_URL @"http://v3.wufazhuce.com:8000/api/comment/praiseandtime/movie/%@/%@"
 //电影故事第一次一个
-#define Movie_StoryFirst_URL @"http://v3.wufazhuce.com:8000/api/movie/84/story/1/0";
+#define Movie_StoryFirst_URL @"http://v3.wufazhuce.com:8000/api/movie/%@/story/1/0"
 
 //加载更多  以id加载
-#define Movie_StorySecond_URL @"http://v3.wufazhuce.com:8000/api/movie/84/story/0/0";
+#define Movie_StorySecond_URL @"http://v3.wufazhuce.com:8000/api/movie/84/story/0/0"
 
 
 
