@@ -13,11 +13,13 @@
 
 #import "SYSearchControllerViewController.h"
 
+
 @interface SYHomeViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-
+//重新加载view
+@property (weak, nonatomic) IBOutlet SYAgainDownView *againDownView;
 
 @end
 
@@ -35,6 +37,17 @@
     [self getData];
     [SVProgressHUD show];
     
+    //重新加载的view
+    self.againDownView.hidden = YES;
+    __weak typeof (self) weakSelf = self;
+    self.againDownView.block = ^(){
+        SYLog(@"重新加载");
+        [weakSelf getData];
+        [SVProgressHUD show];
+        weakSelf.againDownView.hidden = YES;
+    };
+    
+    
 }
 
 
@@ -49,14 +62,17 @@
         [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYHomeModel class] json:array]];
         //NSLog(@"%@",self.dataArray);
         dispatch_async(dispatch_get_main_queue(), ^{
+             self.againDownView.hidden = YES;
             [self.collectionView reloadData];
             [SVProgressHUD dismiss];
         });
      
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         //
-        [SVProgressHUD showErrorWithStatus:@"请求失败"];
+        //[SVProgressHUD showErrorWithStatus:@"请求失败"];
+        [SVProgressHUD dismiss];
         SYLog(@"首页数据请求失败");
+        self.againDownView.hidden = NO;
     }];
     
    

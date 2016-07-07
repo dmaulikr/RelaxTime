@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYMusicViewController">
             <connections>
+                <outlet property="againDownLabel" destination="oov-Sn-kVT" id="lZs-Np-xoM"/>
                 <outlet property="tableView" destination="zCT-hl-6wW" id="2IU-82-oIp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,13 +25,23 @@
                         <outlet property="delegate" destination="-1" id="44O-X2-3pt"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oov-Sn-kVT" customClass="SYAgainDownView">
+                    <rect key="frame" x="200" y="200" width="200" height="200"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Vm2-1N-VgT"/>
+                        <constraint firstAttribute="width" constant="200" id="ejP-yD-068"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="zCT-hl-6wW" secondAttribute="bottom" id="0ja-ef-ptA"/>
                 <constraint firstItem="zCT-hl-6wW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4m3-xv-kCH"/>
                 <constraint firstAttribute="trailing" secondItem="zCT-hl-6wW" secondAttribute="trailing" id="9F6-sG-lVJ"/>
+                <constraint firstItem="oov-Sn-kVT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HH6-Cw-T17"/>
                 <constraint firstItem="zCT-hl-6wW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Z6u-aL-bqO"/>
+                <constraint firstItem="oov-Sn-kVT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bxQ-Je-hB4"/>
             </constraints>
         </view>
     </objects>

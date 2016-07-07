@@ -32,7 +32,7 @@
 #import "UIColor+SYExtension.h"
 
 
-
+#import "SYAgainDownView.h"
 
 typedef NS_ENUM(NSInteger, ReadType) {
     essay = 1,

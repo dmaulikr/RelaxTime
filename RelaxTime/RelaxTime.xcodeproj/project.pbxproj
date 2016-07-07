@@ -82,6 +82,7 @@
 		BC9B4A1F1D2DE96100AECEF8 /* SYMovieContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9B4A1E1D2DE96100AECEF8 /* SYMovieContentView.m */; };
 		BC9B4A231D2E2EAD00AECEF8 /* SYMoviePicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9B4A211D2E2EAD00AECEF8 /* SYMoviePicCell.m */; };
 		BC9B4A241D2E2EAD00AECEF8 /* SYMoviePicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9B4A221D2E2EAD00AECEF8 /* SYMoviePicCell.xib */; };
+		BC9B4A271D2E611D00AECEF8 /* SYAgainDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9B4A261D2E611D00AECEF8 /* SYAgainDownView.m */; };
 		BCA725701D23C6780005F7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA7256E1D23C6780005F7BE /* Main.storyboard */; };
 		BCA725751D23C6780005F7BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA725731D23C6780005F7BE /* LaunchScreen.storyboard */; };
 		BCA725801D23C6780005F7BE /* RelaxTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7257F1D23C6780005F7BE /* RelaxTimeTests.m */; };
@@ -244,6 +245,8 @@
 		BC9B4A201D2E2EAD00AECEF8 /* SYMoviePicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMoviePicCell.h; sourceTree = "<group>"; };
 		BC9B4A211D2E2EAD00AECEF8 /* SYMoviePicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMoviePicCell.m; sourceTree = "<group>"; };
 		BC9B4A221D2E2EAD00AECEF8 /* SYMoviePicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYMoviePicCell.xib; sourceTree = "<group>"; };
+		BC9B4A251D2E611D00AECEF8 /* SYAgainDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAgainDownView.h; sourceTree = "<group>"; };
+		BC9B4A261D2E611D00AECEF8 /* SYAgainDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAgainDownView.m; sourceTree = "<group>"; };
 		BCA725621D23C6770005F7BE /* RelaxTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelaxTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA7256F1D23C6780005F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCA725741D23C6780005F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -631,6 +634,8 @@
 		BCA725A61D23C9200005F7BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC9B4A251D2E611D00AECEF8 /* SYAgainDownView.h */,
+				BC9B4A261D2E611D00AECEF8 /* SYAgainDownView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1098,6 +1103,7 @@
 				BC7E7F441D26548100CC8506 /* SYReadTopCell.m in Sources */,
 				BC99FF2F1D2D1FFE00D73948 /* SYMovieListModel.m in Sources */,
 				1A6AB7511D26B2A60018FDEB /* SYReadTopModel.m in Sources */,
+				BC9B4A271D2E611D00AECEF8 /* SYAgainDownView.m in Sources */,
 				BC805ED91D274C7E00A52EF8 /* SYReadDetailController.m in Sources */,
 				BC67E8B41D2544500042C649 /* SYHomeBeforeCell.m in Sources */,
 				BC67E8BE1D254B3D0042C649 /* SYDetailCollectionViewCell.m in Sources */,

@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYHomeViewController">
             <connections>
+                <outlet property="againDownView" destination="nYe-fw-RLZ" id="BR6-iK-VSv"/>
                 <outlet property="collectionView" destination="xR5-y5-TxP" id="BeR-n2-aBV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,13 +32,23 @@
                         <outlet property="delegate" destination="-1" id="OxP-PI-TtM"/>
                     </connections>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYe-fw-RLZ" customClass="SYAgainDownView">
+                    <rect key="frame" x="138" y="284" width="100" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="ekQ-Eg-HK3"/>
+                        <constraint firstAttribute="width" constant="100" id="ptD-9f-NGg"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="xR5-y5-TxP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9iG-H6-s0L"/>
+                <constraint firstItem="nYe-fw-RLZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="AJe-bn-U6l"/>
                 <constraint firstAttribute="bottom" secondItem="xR5-y5-TxP" secondAttribute="bottom" id="ETn-ub-rRJ"/>
                 <constraint firstAttribute="trailing" secondItem="xR5-y5-TxP" secondAttribute="trailing" id="jAV-rX-fdD"/>
                 <constraint firstItem="xR5-y5-TxP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="o7Y-fW-JSi"/>
+                <constraint firstItem="nYe-fw-RLZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uH3-3a-ECV"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="257.5" y="389.5"/>

@@ -32,8 +32,9 @@
 @property(nonatomic ,strong) NSMutableArray * dataArrayBottom;
 
 @property(nonatomic,strong) NSTimer* timer;
+@property (weak, nonatomic) IBOutlet SYAgainDownView *topDownAgainView;
 
-
+@property (weak, nonatomic) IBOutlet SYAgainDownView *bottomDownView;
 
 @end
 
@@ -46,7 +47,27 @@
     // Do any additional setup after loading the view.
     
     _pageController.hidden = YES;
-    [self setUI];
+    
+    //设置重新下载
+    __weak typeof (self) weakSelf = self;
+    self.topDownAgainView.hidden = YES;
+    
+    self.topDownAgainView.block = ^() {
+        [SVProgressHUD show];
+        [weakSelf getdata];
+        weakSelf.topDownAgainView.hidden = YES;
+    };
+    
+    self.bottomDownView.hidden = YES;
+    [self.bottomDownView setBlock:^{
+        [SVProgressHUD show];
+        [weakSelf getdata];
+        weakSelf.bottomDownView.hidden = YES;
+    }];
+    
+    
+     [self setUI];
+    
     
      [SVProgressHUD show];
     
@@ -88,53 +109,70 @@
 -(void)getdata{
 
     //请求下方数据
-    [self.requestManager GET:Read_Bottom_URL parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-      
-        //处理下部数据
-        [self dealBottomDataWithResponse:responseObject];
-        //刷新
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.bottomCollectionView reloadData];
-         [SVProgressHUD dismiss];
-    });
-        
-        
-       
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"请求失败"];
-         SYLog(@"read下方请求失败");
-    }];
+    if (self.dataArrayBottom.count ==0) {
+           __weak typeof (self) weakSelf = self;
+        [self.requestManager GET:Read_Bottom_URL parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+            //处理下部数据
+            [self dealBottomDataWithResponse:responseObject];
+            
+         
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.bottomCollectionView reloadData];
+                [SVProgressHUD dismiss];
+                
+                weakSelf.bottomDownView.hidden = YES;
+            });
+            
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            //[SVProgressHUD showErrorWithStatus:@"请求失败"];
+            SYLog(@"read下方请求失败");
+             [SVProgressHUD dismiss];
+            
+              weakSelf.bottomDownView.hidden = NO;
+        }];
+
+    }
     
-    //请求下方数据
-    [self.requestManager GET:Read_Scroll_URL parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-        NSArray * array = responseObject[@"data"];
-        [self.dataArrayTop addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYReadTopModel class] json:array]];
-        
-        //设置数据源 前后各加一个元素
-        [self.dataArrayTop insertObject:self.dataArrayTop.lastObject atIndex:0];
-        [self.dataArrayTop addObject:self.dataArrayTop[1]];
-        
-        
-        //设置偏移量
-        self.topCollectionView.contentOffset = CGPointMake(WIDTH, 0);
-        //刷新数据
-        [self.topCollectionView reloadData];
-        
-        //显示pageControler设置
-        _pageController.hidden = NO;
-        _pageController.numberOfPages = self.dataArrayTop.count - 2;
-        _pageController.currentPage = 0;
-        
-        //添加计时器
-       self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(timeGo) userInfo:nil repeats:YES];
-        
-        [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        //
-        SYLog(@"read页下方请求失败");
-    }];
+    if (self.dataArrayTop.count == 0) {
+        //请求上方数据
+        [self.requestManager GET:Read_Scroll_URL parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+            NSArray * array = responseObject[@"data"];
+            [self.dataArrayTop addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYReadTopModel class] json:array]];
+            
+            //设置数据源 前后各加一个元素
+            [self.dataArrayTop insertObject:self.dataArrayTop.lastObject atIndex:0];
+            [self.dataArrayTop addObject:self.dataArrayTop[1]];
+            
+            
+            //设置偏移量
+            self.topCollectionView.contentOffset = CGPointMake(WIDTH, 0);
+            //刷新数据
+            [self.topCollectionView reloadData];
+            
+            //显示pageControler设置
+            _pageController.hidden = NO;
+            _pageController.numberOfPages = self.dataArrayTop.count - 2;
+            _pageController.currentPage = 0;
+            
+            //添加计时器
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(timeGo) userInfo:nil repeats:YES];
+            
+            [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+            //请求成功 隐藏
+            self.topDownAgainView.hidden = YES;
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            //
+            SYLog(@"read页下方请求失败");
+             [SVProgressHUD dismiss];
+            //请求失败 显示
+            self.topDownAgainView.hidden = NO;
+        }];
+    }
+    
 }
 
 #pragma mark - 定时器事件

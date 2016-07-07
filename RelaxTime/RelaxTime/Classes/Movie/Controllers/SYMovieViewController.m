@@ -19,6 +19,11 @@
 //电影的id
 @property (nonatomic, copy) NSString *movieId;
 
+@property(nonatomic ,strong) SYAgainDownView * againDownView;
+
+//是否是第一次加载
+@property(nonatomic ,assign) BOOL hasDown;
+
 @end
 
 NSString *const movieListCellIdentifer = @"movieListCell";
@@ -32,6 +37,21 @@ NSString *const movieListCellIdentifer = @"movieListCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //设置重新下载
+    self.againDownView = [[SYAgainDownView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    self.againDownView.center = CGPointMake(WIDTH / 2, HEIGHT /2);
+    
+    [self.view addSubview:self.againDownView];
+    
+    self.againDownView.hidden = YES;
+    __weak typeof (self) weakSelf = self;
+    [self.againDownView setBlock:^{
+        [SVProgressHUD show];
+        [weakSelf requestMovieData:@"0"];
+        weakSelf.againDownView.hidden = YES;
+    }];
+    
+    //
     self.view.backgroundColor = GlobalColor238;
     
     [self setupTableView];
@@ -68,6 +88,7 @@ NSString *const movieListCellIdentifer = @"movieListCell";
     __weak typeof(self) weakSelf = self;
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
         self.movieId = @"0";
        
         [weakSelf requestMovieData:self.movieId];
@@ -99,7 +120,7 @@ NSString *const movieListCellIdentifer = @"movieListCell";
     [self.requestManager GET:requestStr parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
        // NSLog(@"%@",responseObject);
         
-        [SVProgressHUD dismiss];
+        
         NSArray *array = [NSArray yy_modelArrayWithClass:[SYMovieListModel class] json:responseObject[@"data"]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -117,6 +138,10 @@ NSString *const movieListCellIdentifer = @"movieListCell";
             [weakSelf.tableView reloadData];
             [weakSelf.tableView.mj_header endRefreshing];
             [weakSelf.tableView.mj_footer endRefreshing];
+            [SVProgressHUD dismiss];
+             weakSelf.againDownView.hidden = YES;
+            //不是第一次加载了
+            weakSelf.hasDown = YES;
         });
         
         
@@ -124,9 +149,15 @@ NSString *const movieListCellIdentifer = @"movieListCell";
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [SVProgressHUD showErrorWithStatus:@"加载失败"];
+            //[SVProgressHUD showErrorWithStatus:@"加载失败"];
+            [SVProgressHUD dismiss];
             [weakSelf.tableView.mj_footer endRefreshing];
             [weakSelf.tableView.mj_header endRefreshing];
+            //第一次加载失败就显示这个东西
+            if (weakSelf.hasDown == NO) {
+                weakSelf.againDownView.hidden = NO;
+            };
+            
             
         });
         

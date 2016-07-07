@@ -22,6 +22,7 @@
 
 }
 
+@property (weak, nonatomic) IBOutlet SYAgainDownView *againDownLabel;
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -55,6 +56,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
+    //设置重新加载
+    self.againDownLabel.hidden = YES;
+    
+    __weak typeof (self) weakSelf = self;
+    [self.againDownLabel setBlock:^{
+        
+        [SVProgressHUD show];
+        [weakSelf getMusicArray];
+        weakSelf.againDownLabel.hidden = YES;
+    }];
     
     [self creatUI];
     
@@ -125,8 +139,13 @@
         
         //取出评论模型的id
         SYReadCommentModel *model = self.dataCommentArray.lastObject;
+        //没有模型 请求第一次的
+        if (!model) {
+            [self getMusicCommentWithID:self.currentMusicID andUserId:@"0"];
+        }else{
         //请求多余评论数据
-        [self getMusicCommentWithID:self.currentMusicID andUserId:model._id];
+            [self getMusicCommentWithID:self.currentMusicID andUserId:model._id];
+        }
         
     }];
    
@@ -204,8 +223,9 @@
      
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"请求失败"];
+        //[SVProgressHUD showErrorWithStatus:@"请求失败"];
         SYLog(@"音乐数组请求失败");
+        weakSelf.againDownLabel.hidden = NO;
     }];
 }
 
@@ -245,7 +265,9 @@
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         SYLog(@" 音乐详情请求失败");
-        [SVProgressHUD showErrorWithStatus:@"请求失败"];
+        //[SVProgressHUD showErrorWithStatus:@"请求失败"];
+        [SVProgressHUD dismiss];
+         self.againDownLabel.hidden = NO;
     }];
     
     //第一次请求评论数据
@@ -293,7 +315,7 @@
         
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"评论请求失败"];
+       // [SVProgressHUD showErrorWithStatus:@"评论加载失败"];
         SYLog(@"音乐评论请求失败");
     }];
     
