@@ -21,6 +21,11 @@
 //重新加载view
 @property (weak, nonatomic) IBOutlet SYAgainDownView *againDownView;
 
+//背景图
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
+//背景图数组
+@property(nonatomic ,strong) NSArray * picArray;
+
 @end
 
 @implementation SYHomeViewController
@@ -83,6 +88,10 @@
     
     //注册cell
     [self.collectionView registerNib:[UINib nibWithNibName:@"SYHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+    
+    self.picArray = @[@"cat",@"longLu",@"tree"];
+    
+    self.bgImageView.image = [UIImage imageNamed:self.picArray[arc4random() % self.picArray.count]];
    
 }
 
@@ -116,6 +125,11 @@
     //NSLog(@"collctionCELL被点击了");
 }
 
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+     self.bgImageView.image = [UIImage imageNamed:self.picArray[arc4random() %self.picArray.count]];
+}
 
 #pragma mark - scrollview代理  判断是否推出往期
 

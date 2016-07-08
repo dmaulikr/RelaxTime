@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYHomeViewController">
             <connections>
                 <outlet property="againDownView" destination="nYe-fw-RLZ" id="BR6-iK-VSv"/>
+                <outlet property="bgImageView" destination="WXs-dj-pYP" id="aUf-lS-Cma"/>
                 <outlet property="collectionView" destination="xR5-y5-TxP" id="BeR-n2-aBV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,6 +18,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="WXs-dj-pYP">
+                    <rect key="frame" x="98" y="407" width="180" height="180"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="ApN-Nu-u5e"/>
+                        <constraint firstAttribute="width" constant="180" id="lQf-5f-EsF"/>
+                    </constraints>
+                </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xR5-y5-TxP">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -43,8 +52,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="WXs-dj-pYP" secondAttribute="bottom" constant="80" id="0GJ-j3-EhJ"/>
                 <constraint firstItem="xR5-y5-TxP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9iG-H6-s0L"/>
                 <constraint firstItem="nYe-fw-RLZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="AJe-bn-U6l"/>
+                <constraint firstItem="WXs-dj-pYP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AXi-RW-sXY"/>
                 <constraint firstAttribute="bottom" secondItem="xR5-y5-TxP" secondAttribute="bottom" id="ETn-ub-rRJ"/>
                 <constraint firstAttribute="trailing" secondItem="xR5-y5-TxP" secondAttribute="trailing" id="jAV-rX-fdD"/>
                 <constraint firstItem="xR5-y5-TxP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="o7Y-fW-JSi"/>
@@ -54,4 +65,7 @@
             <point key="canvasLocation" x="257.5" y="389.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="tree" width="121" height="274"/>
+    </resources>
 </document>

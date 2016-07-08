@@ -42,10 +42,14 @@ NSString *const movieListCellIdentifer = @"movieListCell";
     self.againDownView.center = CGPointMake(WIDTH / 2, HEIGHT /2);
     
     [self.view addSubview:self.againDownView];
+    [self.view bringSubviewToFront:self.againDownView];
     
     self.againDownView.hidden = YES;
+    
     __weak typeof (self) weakSelf = self;
+    
     [self.againDownView setBlock:^{
+        SYLog(@"重新请求电影数据");
         [SVProgressHUD show];
         [weakSelf requestMovieData:@"0"];
         weakSelf.againDownView.hidden = YES;

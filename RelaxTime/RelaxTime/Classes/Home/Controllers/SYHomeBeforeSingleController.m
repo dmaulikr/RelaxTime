@@ -23,6 +23,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    //背景
+    UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(WIDTH / 2 - 90, HEIGHT - 250, 180, 180)];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    NSArray * picArray = @[@"cat",@"longLu",@"tree"];
+    
+    imageView.image = [UIImage imageNamed:picArray[arc4random() % picArray.count]];
+    
+    //tableView
+    [self.view addSubview:imageView];
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = GlobalColor245;
 
@@ -42,6 +54,8 @@
     
     //自适应高度
     self.tableView.estimatedRowHeight = 10;
+    
+ 
     
 }
 
