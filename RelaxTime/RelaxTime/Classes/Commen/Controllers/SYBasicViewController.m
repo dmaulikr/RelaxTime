@@ -22,7 +22,7 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"nav_seach" highImage:@"nav_seach" target:self action:@selector(searchClick)];
     
     // 设置导航栏右边边的按钮
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"default" highImage:@"default" target:self action:@selector(userClick)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"userSet" highImage:@"userSet" target:self action:@selector(userClick)];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     

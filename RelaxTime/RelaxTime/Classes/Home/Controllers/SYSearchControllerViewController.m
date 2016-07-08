@@ -22,6 +22,7 @@
 //当前的url请求
 @property(nonatomic ,strong) NSString * currentUrl;
 
+@property (weak, nonatomic) IBOutlet UIView *tipview;
 
 @end
 
@@ -39,21 +40,25 @@
     self.navigationController.navigationBarHidden =YES;
 }
 
+
 #pragma mark - UI
 -(void)creatUI{
+    
+
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     //添加搜索框
-    UISearchBar *seacrhBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 20, WIDTH, 40)];
-    seacrhBar.showsCancelButton = YES;
-    seacrhBar.placeholder = @"搜索内容";
+   self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 20, WIDTH, 40)];
+    _searchBar.showsCancelButton = YES;
+    _searchBar.placeholder = @"搜索内容";
     
-    seacrhBar.tintColor = [UIColor grayColor];
+    [_searchBar becomeFirstResponder];
+    _searchBar.tintColor = [UIColor grayColor];
    // seacrhBar.barTintColor = SYColorRGB(100, 100, 100);
-    [self.view addSubview:seacrhBar];
-    [self.view bringSubviewToFront:seacrhBar];
-    seacrhBar.delegate = self;
+    [self.view addSubview:_searchBar];
+    [self.view bringSubviewToFront:_searchBar];
+    _searchBar.delegate = self;
    
     if(self.type == homeVC)
         
@@ -90,6 +95,7 @@
             return ;
         }
         
+        self.tipview.hidden = YES;
         //如果是 清空数组
         [self.dataArray removeAllObjects];
         
@@ -106,11 +112,14 @@
         
         if (self.dataArray.count == 0) {
             [SVProgressHUD showErrorWithStatus:@"无搜索结果"];
+            self.tipview.hidden = NO;
         }else{
           [SVProgressHUD dismiss];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         //
+         self.tipview.hidden = NO;
+        [SVProgressHUD showErrorWithStatus:@"搜索失败"];
         
     }];
     
@@ -145,6 +154,8 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+      [self.searchBar resignFirstResponder];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (self.type == homeVC) {
@@ -170,8 +181,16 @@
         read.itemID = model._id;
      [self.navigationController pushViewController:read animated:YES];
     }
+   
 
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     
+    //SYLogFunc;
+  
+        [self.searchBar resignFirstResponder];
+   
     
 }
 

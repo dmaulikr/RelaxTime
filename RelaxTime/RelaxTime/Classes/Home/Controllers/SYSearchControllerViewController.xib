@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYSearchControllerViewController">
             <connections>
                 <outlet property="tableView" destination="oVT-PM-zF5" id="ysV-m0-Kem"/>
+                <outlet property="tipview" destination="7zo-EZ-FUG" id="ZgZ-oP-Qdi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,6 +17,43 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zo-EZ-FUG">
+                    <rect key="frame" x="245" y="245" width="110" height="110"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="搜搜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBe-Ml-e3h">
+                            <rect key="frame" x="0.0" y="90" width="110" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="vPo-ke-d6O"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-JP-GkM">
+                            <rect key="frame" x="15" y="10" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="EYm-JX-CqX"/>
+                                <constraint firstAttribute="width" constant="80" id="q2N-3x-hpm"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="40"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="C1K-vF-QYa"/>
+                        <constraint firstAttribute="trailing" secondItem="XBe-Ml-e3h" secondAttribute="trailing" id="GSD-ef-VKx"/>
+                        <constraint firstItem="nUZ-JP-GkM" firstAttribute="top" secondItem="7zo-EZ-FUG" secondAttribute="top" constant="10" id="HH1-UB-JnV"/>
+                        <constraint firstItem="XBe-Ml-e3h" firstAttribute="leading" secondItem="7zo-EZ-FUG" secondAttribute="leading" id="Q3o-Vr-kz8"/>
+                        <constraint firstItem="nUZ-JP-GkM" firstAttribute="centerX" secondItem="7zo-EZ-FUG" secondAttribute="centerX" id="i8O-88-ZRp"/>
+                        <constraint firstItem="XBe-Ml-e3h" firstAttribute="top" secondItem="nUZ-JP-GkM" secondAttribute="bottom" id="lcp-L5-YYk"/>
+                        <constraint firstAttribute="width" constant="110" id="u0R-2a-zRa"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oVT-PM-zF5">
                     <rect key="frame" x="0.0" y="60" width="600" height="540"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -27,12 +65,17 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="7zo-EZ-FUG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="0vs-JX-E1z"/>
                 <constraint firstAttribute="bottom" secondItem="oVT-PM-zF5" secondAttribute="bottom" id="AB9-Tm-y0M"/>
                 <constraint firstItem="oVT-PM-zF5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="QdB-4n-nMw"/>
+                <constraint firstItem="7zo-EZ-FUG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ndW-SV-44e"/>
                 <constraint firstAttribute="trailing" secondItem="oVT-PM-zF5" secondAttribute="trailing" id="r6e-0Z-PYl"/>
                 <constraint firstItem="oVT-PM-zF5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rxZ-B4-m6F"/>
             </constraints>
             <point key="canvasLocation" x="226" y="313"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon" width="56" height="59"/>
+    </resources>
 </document>

@@ -52,7 +52,7 @@ NSString *const movieListCellIdentifer = @"movieListCell";
     }];
     
     //
-    self.view.backgroundColor = GlobalColor238;
+    self.view.backgroundColor = GlobalColor245;
     
     [self setupTableView];
   
