@@ -37,6 +37,16 @@ NSString *const movieListCellIdentifer = @"movieListCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //
+    self.view.backgroundColor = GlobalColor245;
+    
+    [self setupTableView];
+  
+    self.navigationItem.rightBarButtonItem = nil;
+    
+    [self requestMovieData:self.movieId];
+    
+    
     //设置重新下载
     self.againDownView = [[SYAgainDownView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
     self.againDownView.center = CGPointMake(WIDTH / 2, HEIGHT /2);
@@ -54,15 +64,7 @@ NSString *const movieListCellIdentifer = @"movieListCell";
         [weakSelf requestMovieData:@"0"];
         weakSelf.againDownView.hidden = YES;
     }];
-    
-    //
-    self.view.backgroundColor = GlobalColor245;
-    
-    [self setupTableView];
-  
-    self.navigationItem.rightBarButtonItem = nil;
-    
-    [self requestMovieData:self.movieId];
+
     
 }
 

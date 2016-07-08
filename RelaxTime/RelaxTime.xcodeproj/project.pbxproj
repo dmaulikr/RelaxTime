@@ -928,7 +928,7 @@
 				TargetAttributes = {
 					BCA725611D23C6770005F7BE = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = GCJX6JY5WY;
+						DevelopmentTeam = UZV288DNAJ;
 					};
 					BCA7257A1D23C6780005F7BE = {
 						CreatedOnToolsVersion = 7.2;
@@ -1276,7 +1276,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/RelaxTime/Classes/PrefixHeader.pch";
 				INFOPLIST_FILE = RelaxTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1291,7 +1291,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/RelaxTime/Classes/PrefixHeader.pch";
 				INFOPLIST_FILE = RelaxTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

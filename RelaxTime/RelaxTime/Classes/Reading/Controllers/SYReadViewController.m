@@ -118,6 +118,7 @@
             
          
             dispatch_async(dispatch_get_main_queue(), ^{
+                
                 [weakSelf.bottomCollectionView reloadData];
                 [SVProgressHUD dismiss];
                 
