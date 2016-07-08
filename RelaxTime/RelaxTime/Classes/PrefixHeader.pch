@@ -31,8 +31,13 @@
 #import "UIView+XMGExtension.h"
 #import "UIColor+SYExtension.h"
 
+//分享
+#import <Social/Social.h>
 
+
+//自定义view
 #import "SYAgainDownView.h"
+#import "SYCustomActivity.h"
 
 typedef NS_ENUM(NSInteger, ReadType) {
     essay = 1,

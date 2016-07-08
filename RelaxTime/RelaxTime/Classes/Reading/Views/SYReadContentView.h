@@ -10,6 +10,8 @@
 
 @interface SYReadContentView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *titlelabel;
+
 @property(nonatomic ,strong) id  model;
 
 @property (weak, nonatomic) IBOutlet UILabel *contentlabel;

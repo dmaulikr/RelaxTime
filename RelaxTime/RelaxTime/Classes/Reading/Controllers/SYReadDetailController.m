@@ -80,7 +80,52 @@
 }
 - (IBAction)share:(id)sender {
    
-    [SVProgressHUD showErrorWithStatus:@"敬请期待哦"];
+   
+    
+    NSString *textToShare = @"要分享内容title";
+    
+    NSString *description = @"这是我的内容---------";
+    
+    UIImage *imageToShare = [UIImage imageNamed:@"tree"];
+    
+    NSURL *urlToShare = [NSURL URLWithString:@"http://www.iashes.com/"];
+    
+    NSArray *activityItems = @[textToShare, description,imageToShare, urlToShare];
+    
+    //创建自定义的Activity，加到一个数组里边
+    
+    SYCustomActivity *act1 = [[SYCustomActivity alloc]initWithImage:[UIImage imageNamed:@"longLu"] atURL:@"http://www.iashes.com/" atTitle:@"share Sina" atShareContentArray:activityItems];
+    
+    //myActivity是自定义的类，继承于UIActivity
+    
+    SYCustomActivity *act2 = [[SYCustomActivity alloc]initWithImage:[UIImage imageNamed:@"cat"] atURL:@"http://www.iashes.com/admin.html" atTitle:@"share Renren" atShareContentArray:activityItems];
+    
+    NSArray *apps = @[act1,act2];
+    
+    //创建
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:apps];
+    
+    //关闭系统的一些分享
+    
+    activityVC.excludedActivityTypes = @[UIActivityTypePostToTwitter,
+                                         UIActivityTypeMessage,
+                                         
+                                         UIActivityTypePrint,
+                                         UIActivityTypeCopyToPasteboard,
+                                         UIActivityTypeAssignToContact,
+                                         UIActivityTypeSaveToCameraRoll,
+                                         UIActivityTypeAddToReadingList,
+                                         UIActivityTypePostToFlickr,
+                                         UIActivityTypePostToVimeo,
+                                         UIActivityTypePostToTencentWeibo,
+                                         UIActivityTypeAirDrop];
+    
+    //模态
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
+    
+
 }
 
 #pragma mark - 懒加载

@@ -10,6 +10,7 @@
 #import "SYHomeModel.h"
 #import "SYShowPicViewController.h"
 
+
 @interface SYHomeTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *picImageView;
@@ -74,19 +75,90 @@
     
     id vc =  [UIApplication sharedApplication].keyWindow.rootViewController;
    
+    /**
+     *  友盟简单版
+     */
+//    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:_model.hp_img_original_url];
+//    [UMSocialData defaultData].extConfig.title = @"[闲Time]语录";
+//    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
+//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
+//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
+//    
+//    [UMSocialSnsService presentSnsIconSheetView:vc
+//                                         appKey:UMAppKey
+//                                      shareText:_model.hp_content
+//                                     shareImage:[UIImage imageNamed:@"icon"]
+//                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ]
+//                                       delegate:vc];
     
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:_model.hp_img_original_url];
-    [UMSocialData defaultData].extConfig.title = @"[闲Time]语录";
-    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
     
-    [UMSocialSnsService presentSnsIconSheetView:vc
-                                         appKey:UMAppKey
-                                      shareText:_model.hp_content
-                                     shareImage:[UIImage imageNamed:@"icon"]
-                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ]
-                                       delegate:vc];
+    /**
+     * 系统简单版 可以自己自定义UI按钮弹出(自带的支持的只有新浪微博)  可以加在UIActivityViewController的自定义activity上弹出
+     */
+//    SLComposeViewController *svc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+//    SLComposeViewControllerCompletionHandler myblock = ^(SLComposeViewControllerResult result){
+//        if(result == SLComposeViewControllerResultCancelled){
+//            SYLog(@"cancel");
+//        }else{
+//            SYLog(@"done");
+//        }
+//        [svc dismissViewControllerAnimated:YES completion:nil];
+//    };
+//    svc.completionHandler = myblock;
+//    //设置预留文字
+//    [svc setInitialText:_model.hp_content];
+//    //设置预留图片
+//    [svc addImage:_picImageView.image];
+//    //设置链接
+//    [svc addURL: [NSURL URLWithString:@"http://www.baidu.com"]];
+//    [vc presentViewController:svc animated:YES completion:nil];
+    
+    
+    /**
+     *  系统自带
+     */
+    NSString *textToShare =@"[闲Time]语录" ;
+    
+    NSString *description = _model.hp_content;
+    
+    UIImage *imageToShare = _picImageView.image;
+    
+    NSURL *urlToShare = [NSURL URLWithString:@"http://www.xTime.com"];
+    
+    NSArray *activityItems = @[textToShare, description,imageToShare, urlToShare];
+    
+    //创建自定义的Activity，加到一个数组里边
+    
+//    SYCustomActivity *act1 = [[SYCustomActivity alloc]initWithImage:[UIImage imageNamed:@"longLu"] atURL:@"http://www.iashes.com/" atTitle:@"share Sina" atShareContentArray:activityItems];
+//    
+//    //myActivity是自定义的类，继承于UIActivity
+//    
+//    SYCustomActivity *act2 = [[SYCustomActivity alloc]initWithImage:[UIImage imageNamed:@"cat"] atURL:@"http://www.iashes.com/admin.html" atTitle:@"share Renren" atShareContentArray:activityItems];
+    
+    //NSArray *apps = @[act1,act2];
+    
+    //创建
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+    
+    //关闭系统的一些分享
+    
+    activityVC.excludedActivityTypes = @[UIActivityTypePostToTwitter,
+                                         UIActivityTypeMessage,
+                                         
+                                         UIActivityTypePrint,
+                                         UIActivityTypeCopyToPasteboard,
+                                         UIActivityTypeAssignToContact,
+                                         UIActivityTypeSaveToCameraRoll,
+                                         UIActivityTypeAddToReadingList,
+                                         UIActivityTypePostToFlickr,
+                                         UIActivityTypePostToVimeo,
+                                         UIActivityTypePostToTencentWeibo,
+                                         UIActivityTypeAirDrop];
+    
+    //模态
+    
+    [vc presentViewController:activityVC animated:YES completion:nil];
     
     
   
