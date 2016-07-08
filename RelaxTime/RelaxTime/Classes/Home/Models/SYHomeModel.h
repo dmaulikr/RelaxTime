@@ -10,6 +10,8 @@
 
 @interface SYHomeModel : NSObject<YYModel>
 
+@property (nonatomic, copy) NSString * web_url;
+
 //图片
 @property (nonatomic, copy) NSString *hp_img_original_url;
 //vol.xxxx

@@ -88,5 +88,19 @@ static NSString *const movieScoreDetailFont = @"Cruickshank";
 //url设置
 #import "DefineUrl.h"
 
+#import "UMSocial.h"
+
+#define UMAppKey @"577e7d99e0f55addc5003111"
+
+#define WXAppID @"wxd56afbc40f4fbaa1"
+#define WXAppSecret @"2cecd0ba9227c96cf2fea0191d946660"
+
+#define QQAppID @"1105454193"
+#define QQAppKey @"imNmOjMVAPDU8TSt"
+
+#define SinaAppID @"929315414"
+#define SinaAppSecret @"0ab1cd31ab6325fdfe9c9df102f506da"
+
+
 
 #endif /* PrefixHeader_pch */

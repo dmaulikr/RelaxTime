@@ -170,6 +170,21 @@
 //分享
 - (IBAction)share:(id)sender {
     
+    id vc = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    
+   
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeVideo url:_detailModel.video];
+    
+    [UMSocialData defaultData].extConfig.title = [NSString stringWithFormat:@"电影分享-[%@]",_detailModel.title];
+    
+    [UMSocialSnsService presentSnsIconSheetView:vc
+                                         appKey:UMAppKey
+                                      shareText:_storyModel.title
+                                     shareImage:self.imageView.image
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ]
+                                       delegate:vc];
+    
 }
 //播放
 - (IBAction)play:(id)sender {

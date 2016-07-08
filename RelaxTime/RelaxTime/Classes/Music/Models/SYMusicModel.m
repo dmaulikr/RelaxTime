@@ -42,7 +42,7 @@
 -(CGFloat)calculateWithString:(NSString *)str{
     
    CGRect rect  =  [str boundingRectWithSize:CGSizeMake(WIDTH - 20, MAXFLOAT) options:1 attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:15]} context:nil];
-    return rect.size.height;
+    return rect.size.height + 20;
 }
 @end
 

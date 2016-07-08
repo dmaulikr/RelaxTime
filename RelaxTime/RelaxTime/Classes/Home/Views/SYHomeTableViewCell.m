@@ -70,9 +70,28 @@
 #pragma mark -按钮点击事件
 - (IBAction)shareBtn:(id)sender {
     
-    [SVProgressHUD showErrorWithStatus:@"敬请期待哦"];
+    //[SVProgressHUD showErrorWithStatus:@"敬请期待哦"];
+    
+    id vc =  [UIApplication sharedApplication].keyWindow.rootViewController;
+   
+    
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:_model.hp_img_original_url];
+    [UMSocialData defaultData].extConfig.title = @"[闲Time]语录";
+    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
+    
+    [UMSocialSnsService presentSnsIconSheetView:vc
+                                         appKey:UMAppKey
+                                      shareText:_model.hp_content
+                                     shareImage:[UIImage imageNamed:@"icon"]
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ]
+                                       delegate:vc];
+    
+    
   
 }
+
 
 - (IBAction)likeBtn:(id)sender {
     
