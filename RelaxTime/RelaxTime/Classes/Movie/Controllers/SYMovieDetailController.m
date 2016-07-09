@@ -108,11 +108,52 @@
 #pragma mark - 播放视频
 -(void)SYMovieContentViewPlayButtonClick{
     
-    SYPlayViewController *playerVC = [[SYPlayViewController alloc] init];
-    playerVC.videoString = self.detailModel.video;
+    //先提示网络状况
+    Reachability *wifi = [Reachability reachabilityForLocalWiFi];
+    Reachability *contect = [Reachability reachabilityForInternetConnection];
     
-    [self.navigationController pushViewController:playerVC animated:YES];
-    
+    if ([wifi currentReachabilityStatus] != NotReachable) {
+        
+        SYLog(@"wifi连接");
+        SYPlayViewController *playerVC = [[SYPlayViewController alloc] init];
+        playerVC.videoString = self.detailModel.video;
+        
+        [self.navigationController pushViewController:playerVC animated:YES];
+        
+        
+    } else if([contect currentReachabilityStatus] != NotReachable){
+        
+        SYLog(@"手机流量连接");
+        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"不是WiFi状态" message:@"将会消耗手机流量播放" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //
+            SYLog(@"确定手机流量连接");
+            SYPlayViewController *playerVC = [[SYPlayViewController alloc] init];
+            playerVC.videoString = self.detailModel.video;
+            
+            [self.navigationController pushViewController:playerVC animated:YES];
+            
+        }];
+        
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            SYLog(@"取消手机流量连接");
+            return ;
+        }];
+        
+        [alertController addAction:action2];
+        [alertController addAction:action1];
+        
+        [self presentViewController:alertController animated:YES completion:^{
+            
+        }];
+        
+    } else {
+        
+        SYLog(@"没有网络");
+        [SVProgressHUD showErrorWithStatus:@"没有网络"];
+        return;
+    }
 }
 
 #pragma mark - 请求电影详情数据

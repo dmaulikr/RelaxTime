@@ -137,11 +137,9 @@
     //NSArray *apps = @[act1,act2];
     
     //创建
-    
     UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
     
     //关闭系统的一些分享
-    
     activityVC.excludedActivityTypes = @[UIActivityTypePostToTwitter,
                                          UIActivityTypeMessage,
                                          
@@ -158,8 +156,6 @@
     //模态
     
     [vc presentViewController:activityVC animated:YES completion:nil];
-    
-    
   
 }
 

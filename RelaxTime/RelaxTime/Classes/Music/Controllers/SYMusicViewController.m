@@ -17,11 +17,11 @@
 @interface SYMusicViewController ()<UITableViewDelegate, UITableViewDataSource,SYMusicContentViewDelegate>{
     
     //音乐播放器
-   AVPlayer * _player;
+    AVPlayer * _player;
     AVPlayerItem * _item;
     //评论数label
     UILabel *_label;
-
+    
 }
 
 @property (weak, nonatomic) IBOutlet SYAgainDownView *againDownLabel;
@@ -55,6 +55,7 @@
 
 @end
 
+
 @implementation SYMusicViewController
 
 #pragma mark - 生命周期
@@ -62,8 +63,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    
+
     //设置重新加载
     self.againDownLabel.hidden = YES;
     
@@ -72,7 +72,7 @@
         
         [SVProgressHUD show];
         [weakSelf getMusicArray];
-        weakSelf.againDownLabel.hidden = YES;
+         weakSelf.againDownLabel.hidden = YES;
     }];
     
     //
@@ -111,7 +111,9 @@
 
 -(SYMusicContentView *)musicContentView{
     if (!_musicContentView) {
+        
         _musicContentView = [[[NSBundle mainBundle]loadNibNamed:@"SYMusicContentView" owner:nil options:nil]lastObject];
+        
         //设置代理
         _musicContentView.delegate = self;
     }
@@ -143,6 +145,7 @@
         
         //取出评论模型的id
         SYReadCommentModel *model = self.dataCommentArray.lastObject;
+        
         //没有模型 请求第一次的
         if (!model) {
             [self getMusicCommentWithID:self.currentMusicID andUserId:@"0"];
@@ -150,17 +153,16 @@
         //请求多余评论数据
             [self getMusicCommentWithID:self.currentMusicID andUserId:model._id];
         }
-        
     }];
-   
-}
+ }
+
 
 #pragma mark - 创建player和监听
 -(void)setPlayer{
     
     //NSLog(@"%@",_currentModel.music_id);
     _player = [[AVPlayer alloc]initWithURL:[NSURL URLWithString:@" "]];
-    
+
     //获取播放器播放结束的时刻
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(repeatPlay) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
    
@@ -176,15 +178,18 @@
                  SYLog(@"KVO：正在加载");
                 
                 break;
+            //成功后就显示成功
             case AVPlayerStatusReadyToPlay:
-                if (self.musicContentView.playButton.selected) {
-                    [ XMGStatusBarHUD showSuccess:@"正在播放"];
-                }
+              
+                [XMGStatusBarHUD showSuccess:@"正在播放"];
+        
              
                 SYLog(@"KVO：加载成功");
         
                 break;
+            //失败也提示
             case AVPlayerStatusFailed:
+                 [XMGStatusBarHUD showError:@"加载失败"];
                SYLog(@"KVO：加载失败，网络或者服务器出现问题");
                 break;
             default:
@@ -408,34 +413,114 @@
 }
 //播放按钮被点击
 -(void)playButtonClick:(UIButton *)button{
-  
+   
+    //==先停止播放
+    [_player pause];
+    
     if (![self.currentModel.music_id containsString:@"http:"]) {
        
-        [SVProgressHUD showErrorWithStatus:@"暂不支持\n这首音乐播放"];
+        [SVProgressHUD showErrorWithStatus:@"暂不支持\n该音乐播放"];
     }else{
         
-        //判断播放或者暂停
-        if (button.selected) {
-            [XMGStatusBarHUD showMessage:@"暂停播放"];
-            button.selected = NO;
-            [_player pause];
-        }else{
-            if (_item.status == 1) {
-                  [XMGStatusBarHUD showSuccess:@"正在播放"];
-                button.selected = YES;
-            }else if (_item.status == 0){
-                [XMGStatusBarHUD showLoading:@"正在加载中"];
-                button.selected = YES;
+       /*=====判断以前的item和当前的item是否相同  是否切歌、====*/
+        
+        //&&&&&如果不相同 切歌
+        if (_item != _player.currentItem) {
+            
+            //先提示网络状况
+            Reachability *wifi = [Reachability reachabilityForLocalWiFi];
+            Reachability *contect = [Reachability reachabilityForInternetConnection];
+            
+            if ([wifi currentReachabilityStatus] != NotReachable) {
+                
+                SYLog(@"wifi连接");
+                //换歌
+                [_player replaceCurrentItemWithPlayerItem:_item];
+                //开始播放
+                [self startPlay];
+              
+            } else if([contect currentReachabilityStatus] != NotReachable){
+                
+                SYLog(@"手机流量连接");
+                UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"不是WiFi状态" message:@"将会消耗手机流量播放" preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    //
+                    SYLog(@"确定手机流量连接");
+                    //换歌
+                    [_player replaceCurrentItemWithPlayerItem:_item];
+                    
+                    //开始播放
+                    [self startPlay];
+                    
+                    
+                }];
+                
+                UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    SYLog(@"取消手机流量连接");
+                    return ;
+                }];
+                
+                [alertController addAction:action2];
+                [alertController addAction:action1];
+                
+                [self presentViewController:alertController animated:YES completion:^{
+                    
+                }];
+                
+            } else {
+                
+                SYLog(@"没有网络");
+                [SVProgressHUD showErrorWithStatus:@"没有网络"];
+                return;
+            }
+
+        }
+        //&&&&&&&如果还是当前的歌 只管暂停和播放
+        else{
+            if (button.selected) {
+                [self endPlay];
             }else{
-                 [XMGStatusBarHUD showError:@"加载失败"];
-                 button.selected = NO;
-            };
-           
-            [_player play];
+                [self startPlay];
+            }
+        
         }
     }
 }
 
+#pragma mark - 停止播放
+-(void)endPlay{
+    
+    SYLogFunc;
+    
+    [XMGStatusBarHUD showMessage:@"暂停播放"];
+    self.musicContentView.playButton.selected = NO;
+    [_player pause];
+    
+}
+
+#pragma mark - 开始播放
+-(void)startPlay{
+    
+     [_player play];
+    
+     SYLogFunc;
+    
+    if (_item.status == 1) {
+        [XMGStatusBarHUD showSuccess:@"正在播放"];
+        self.musicContentView.playButton.selected = YES;
+    }else if (_item.status == 0){
+        [XMGStatusBarHUD showLoading:@"正在加载中"];
+        self.musicContentView.playButton.selected = YES;
+    }else{
+        [XMGStatusBarHUD showError:@"加载失败"];
+        self.musicContentView.playButton.selected = NO;
+        
+    };
+
+}
+
+#pragma mark - 切换按钮被点击
 //切换按钮被点击
 -(void)changeBunttonClick:(UIButton *)button{
  
@@ -494,9 +579,7 @@
         
        // 更换播放音乐
         _item = [[AVPlayerItem alloc]initWithURL:[NSURL URLWithString:_currentModel.music_id]];
-        
-        [_player replaceCurrentItemWithPlayerItem:_item];
-        
+    
         //添加观察者 监听加载状态
         [_item addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
         

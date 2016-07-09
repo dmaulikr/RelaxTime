@@ -14,6 +14,7 @@
 		1A451E031D2BF5F500AB316C /* SYhomeSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A451E011D2BF5F500AB316C /* SYhomeSearchCell.xib */; };
 		1A451E071D2C05CD00AB316C /* SYReadSeachCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A451E051D2C05CD00AB316C /* SYReadSeachCell.m */; };
 		1A451E081D2C05CD00AB316C /* SYReadSeachCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A451E061D2C05CD00AB316C /* SYReadSeachCell.xib */; };
+		1A564B691D315122002BBA82 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A564B681D315122002BBA82 /* Reachability.m */; };
 		1A6AB7511D26B2A60018FDEB /* SYReadTopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6AB7501D26B2A60018FDEB /* SYReadTopModel.m */; };
 		1A6DC50B1D29054A00DF78A6 /* SYMusicContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DC50A1D29054A00DF78A6 /* SYMusicContentView.m */; };
 		1A6DC50D1D29055A00DF78A6 /* SYMusicContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6DC50C1D29055A00DF78A6 /* SYMusicContentView.xib */; };
@@ -168,6 +169,8 @@
 		1A451E041D2C05CD00AB316C /* SYReadSeachCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadSeachCell.h; sourceTree = "<group>"; };
 		1A451E051D2C05CD00AB316C /* SYReadSeachCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadSeachCell.m; sourceTree = "<group>"; };
 		1A451E061D2C05CD00AB316C /* SYReadSeachCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYReadSeachCell.xib; sourceTree = "<group>"; };
+		1A564B671D315122002BBA82 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1A564B681D315122002BBA82 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		1A6AB74F1D26B2A60018FDEB /* SYReadTopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadTopModel.h; sourceTree = "<group>"; };
 		1A6AB7501D26B2A60018FDEB /* SYReadTopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReadTopModel.m; sourceTree = "<group>"; };
 		1A6DC5091D29054A00DF78A6 /* SYMusicContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMusicContentView.h; sourceTree = "<group>"; };
@@ -450,6 +453,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1A564B661D315122002BBA82 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				1A564B671D315122002BBA82 /* Reachability.h */,
+				1A564B681D315122002BBA82 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		1A77F8F01D2806FA00C5200B /* SYReadTopVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +542,7 @@
 		BC722B571D2BC102005A1745 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1A564B661D315122002BBA82 /* Reachability */,
 				BCC6BE5A1D2FAF280003C1BC /* UMSocial_Sdk_5.2.1 */,
 				BC3C13C61D2D364700DD5A8F /* ZFPlayer */,
 				BC722B581D2BC11F005A1745 /* XMGStatusBarHUD */,
@@ -1169,6 +1182,11 @@
 					BCA725611D23C6770005F7BE = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = UZV288DNAJ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					BCA7257A1D23C6780005F7BE = {
 						CreatedOnToolsVersion = 7.2;
@@ -1385,6 +1403,7 @@
 				BCA725D11D23DAD20005F7BE /* SYMovieViewController.m in Sources */,
 				BC7E7F491D26549800CC8506 /* SYReadBottomCell.m in Sources */,
 				BC805EF21D279AFD00A52EF8 /* SYReadContentView.m in Sources */,
+				1A564B691D315122002BBA82 /* Reachability.m in Sources */,
 				1A72483D1D2FFFDE00374F33 /* SYCustomActivity.m in Sources */,
 				1A6DC50B1D29054A00DF78A6 /* SYMusicContentView.m in Sources */,
 				BC4AB5931D23F6B600BFEA15 /* SYHomeCollectionViewCell.m in Sources */,
