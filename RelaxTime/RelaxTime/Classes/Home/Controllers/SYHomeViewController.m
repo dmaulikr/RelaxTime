@@ -155,11 +155,7 @@
     [[SDWebImageManager sharedManager].imageCache clearMemory];
 }
 #pragma mark -按钮点击事件
-//用户
--(void)userClick{
-    
-    
-}
+
 //搜索
 -(void)searchClick{
     

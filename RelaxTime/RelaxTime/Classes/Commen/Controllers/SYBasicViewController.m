@@ -7,6 +7,7 @@
 //
 
 #import "SYBasicViewController.h"
+#import "SYSetController.h"
 
 @interface SYBasicViewController ()
 
@@ -19,10 +20,10 @@
     // Do any additional setup after loading the view.
     
     // 设置导航栏左边的按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"nav_seach" highImage:@"nav_seach" target:self action:@selector(searchClick)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"nav_seach" highImage:@"nav_seach" target:self action:@selector(searchClick)];
     
     // 设置导航栏右边边的按钮
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"userSet" highImage:@"userSet" target:self action:@selector(userClick)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"userSet" highImage:@"userSet" target:self action:@selector(userClick)];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -35,6 +36,14 @@
 }
 //用户
 -(void)userClick{
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    SYSetController *setVC = [sb instantiateViewControllerWithIdentifier:@"SYSetController"];
+    setVC.title = @"设置";
+    
+    [self.navigationController pushViewController:setVC animated:YES];
+    
 
 }
 

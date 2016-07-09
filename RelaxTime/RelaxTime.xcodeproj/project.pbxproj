@@ -29,6 +29,7 @@
 		1A77F9041D28177700C5200B /* UIColor+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A77F9031D28177700C5200B /* UIColor+SYExtension.m */; };
 		1A9192AD1D241B9D00517BAB /* SYHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9192AC1D241B9D00517BAB /* SYHomeModel.m */; };
 		35E7DC10A8121C6EAA053C9F /* libPods-RelaxTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D673FB52B6F2EADE281C8020 /* libPods-RelaxTime.a */; };
+		BC209C5A1D309FA2007BBF83 /* SYSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC209C591D309FA2007BBF83 /* SYSetController.m */; };
 		BC36E7301D25357A00463357 /* SYHomeBeforeController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC36E72F1D25357A00463357 /* SYHomeBeforeController.m */; };
 		BC3C13BA1D2D2F6700DD5A8F /* Arensdorff_Ink.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13B81D2D2F6700DD5A8F /* Arensdorff_Ink.otf */; };
 		BC3C13BB1D2D2F6700DD5A8F /* CRUICKSH.TTF in Resources */ = {isa = PBXBuildFile; fileRef = BC3C13B91D2D2F6700DD5A8F /* CRUICKSH.TTF */; };
@@ -50,6 +51,10 @@
 		BC4AB5941D23F6B600BFEA15 /* SYHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4AB5921D23F6B600BFEA15 /* SYHomeCollectionViewCell.xib */; };
 		BC4AB5981D23FB5000BFEA15 /* SYHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB5961D23FB5000BFEA15 /* SYHomeTableViewCell.m */; };
 		BC4AB5991D23FB5000BFEA15 /* SYHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4AB5971D23FB5000BFEA15 /* SYHomeTableViewCell.xib */; };
+		BC5B01941D30CE6A00E7E66F /* SYFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5B01931D30CE6A00E7E66F /* SYFileHelper.m */; };
+		BC5B01981D30E19900E7E66F /* SYLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5B01961D30E19900E7E66F /* SYLoginRegisterViewController.m */; };
+		BC5B01991D30E19900E7E66F /* SYLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5B01971D30E19900E7E66F /* SYLoginRegisterViewController.xib */; };
+		BC5B019C1D30F36600E7E66F /* SYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5B019B1D30F36600E7E66F /* SYTextField.m */; };
 		BC67E8B41D2544500042C649 /* SYHomeBeforeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC67E8B21D2544500042C649 /* SYHomeBeforeCell.m */; };
 		BC67E8B51D2544500042C649 /* SYHomeBeforeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC67E8B31D2544500042C649 /* SYHomeBeforeCell.xib */; };
 		BC67E8BE1D254B3D0042C649 /* SYDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC67E8BC1D254B3D0042C649 /* SYDetailCollectionViewCell.m */; };
@@ -189,6 +194,8 @@
 		1A9192AC1D241B9D00517BAB /* SYHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeModel.m; sourceTree = "<group>"; };
 		2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.release.xcconfig"; sourceTree = "<group>"; };
 		74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelaxTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelaxTime/Pods-RelaxTime.debug.xcconfig"; sourceTree = "<group>"; };
+		BC209C581D309FA2007BBF83 /* SYSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSetController.h; sourceTree = "<group>"; };
+		BC209C591D309FA2007BBF83 /* SYSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSetController.m; sourceTree = "<group>"; };
 		BC36E72E1D25357A00463357 /* SYHomeBeforeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeBeforeController.h; sourceTree = "<group>"; };
 		BC36E72F1D25357A00463357 /* SYHomeBeforeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeBeforeController.m; sourceTree = "<group>"; };
 		BC3C13B81D2D2F6700DD5A8F /* Arensdorff_Ink.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arensdorff_Ink.otf; sourceTree = "<group>"; };
@@ -224,6 +231,13 @@
 		BC4AB5951D23FB5000BFEA15 /* SYHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeTableViewCell.h; sourceTree = "<group>"; };
 		BC4AB5961D23FB5000BFEA15 /* SYHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeTableViewCell.m; sourceTree = "<group>"; };
 		BC4AB5971D23FB5000BFEA15 /* SYHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYHomeTableViewCell.xib; sourceTree = "<group>"; };
+		BC5B01921D30CE6A00E7E66F /* SYFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYFileHelper.h; sourceTree = "<group>"; };
+		BC5B01931D30CE6A00E7E66F /* SYFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYFileHelper.m; sourceTree = "<group>"; };
+		BC5B01951D30E19900E7E66F /* SYLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYLoginRegisterViewController.h; sourceTree = "<group>"; };
+		BC5B01961D30E19900E7E66F /* SYLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYLoginRegisterViewController.m; sourceTree = "<group>"; };
+		BC5B01971D30E19900E7E66F /* SYLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYLoginRegisterViewController.xib; sourceTree = "<group>"; };
+		BC5B019A1D30F36600E7E66F /* SYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTextField.h; sourceTree = "<group>"; };
+		BC5B019B1D30F36600E7E66F /* SYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTextField.m; sourceTree = "<group>"; };
 		BC67E8B11D2544500042C649 /* SYHomeBeforeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeBeforeCell.h; sourceTree = "<group>"; };
 		BC67E8B21D2544500042C649 /* SYHomeBeforeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeBeforeCell.m; sourceTree = "<group>"; };
 		BC67E8B31D2544500042C649 /* SYHomeBeforeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYHomeBeforeCell.xib; sourceTree = "<group>"; };
@@ -516,7 +530,11 @@
 		BC722B571D2BC102005A1745 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BCC6BE5A1D2FAF280003C1BC /* UMSocial_Sdk_5.2.1 */,
+				BC3C13C61D2D364700DD5A8F /* ZFPlayer */,
 				BC722B581D2BC11F005A1745 /* XMGStatusBarHUD */,
+				BC5B01921D30CE6A00E7E66F /* SYFileHelper.h */,
+				BC5B01931D30CE6A00E7E66F /* SYFileHelper.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -692,12 +710,10 @@
 		BCA725991D23C9200005F7BE /* Commen */ = {
 			isa = PBXGroup;
 			children = (
-				BCC6BE5A1D2FAF280003C1BC /* UMSocial_Sdk_5.2.1 */,
-				BC3C13B71D2D2F6700DD5A8F /* Font */,
-				BC722B571D2BC102005A1745 /* Tools */,
-				BC3C13C61D2D364700DD5A8F /* ZFPlayer */,
 				BCA7259A1D23C9200005F7BE /* AppDelegate.h */,
 				BCA7259B1D23C9200005F7BE /* AppDelegate.m */,
+				BC3C13B71D2D2F6700DD5A8F /* Font */,
+				BC722B571D2BC102005A1745 /* Tools */,
 				BCA7259C1D23C9200005F7BE /* Category */,
 				BCA725A31D23C9200005F7BE /* Controllers */,
 				BCA725A51D23C9200005F7BE /* Models */,
@@ -732,6 +748,11 @@
 				BCA725CA1D23CD250005F7BE /* SYBasicViewController.m */,
 				BCA725DD1D23E6EB0005F7BE /* SYMainBasicViewController.h */,
 				BCA725DE1D23E6EB0005F7BE /* SYMainBasicViewController.m */,
+				BC5B01951D30E19900E7E66F /* SYLoginRegisterViewController.h */,
+				BC5B01961D30E19900E7E66F /* SYLoginRegisterViewController.m */,
+				BC5B01971D30E19900E7E66F /* SYLoginRegisterViewController.xib */,
+				BC209C581D309FA2007BBF83 /* SYSetController.h */,
+				BC209C591D309FA2007BBF83 /* SYSetController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -746,6 +767,8 @@
 		BCA725A61D23C9200005F7BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC5B019A1D30F36600E7E66F /* SYTextField.h */,
+				BC5B019B1D30F36600E7E66F /* SYTextField.m */,
 				BC9B4A251D2E611D00AECEF8 /* SYAgainDownView.h */,
 				BC9B4A261D2E611D00AECEF8 /* SYAgainDownView.m */,
 				1A72483B1D2FFFDE00374F33 /* SYCustomActivity.h */,
@@ -1220,6 +1243,7 @@
 				BC805EDA1D274C7E00A52EF8 /* SYReadDetailController.xib in Resources */,
 				BC67E8BF1D254B3D0042C649 /* SYDetailCollectionViewCell.xib in Resources */,
 				BCC6BEA31D2FAFE20003C1BC /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				BC5B01991D30E19900E7E66F /* SYLoginRegisterViewController.xib in Resources */,
 				BCA725D91D23DF810005F7BE /* Assets.xcassets in Resources */,
 				BC67E8B51D2544500042C649 /* SYHomeBeforeCell.xib in Resources */,
 				BCC6BE751D2FAF280003C1BC /* UMSocialLocalizable.strings in Resources */,
@@ -1309,6 +1333,10 @@
 				BC7E7F5C1D2667C000CC8506 /* SYReadQuesModel.m in Sources */,
 				BC7E7F561D26679300CC8506 /* SYReadEssayModel.m in Sources */,
 				BC9B4A231D2E2EAD00AECEF8 /* SYMoviePicCell.m in Sources */,
+				BC5B01941D30CE6A00E7E66F /* SYFileHelper.m in Sources */,
+				BC209C5A1D309FA2007BBF83 /* SYSetController.m in Sources */,
+				BC5B019C1D30F36600E7E66F /* SYTextField.m in Sources */,
+				BC5B01981D30E19900E7E66F /* SYLoginRegisterViewController.m in Sources */,
 				BC3C13D91D2D364700DD5A8F /* ZFPlayerView.m in Sources */,
 				BC3C13D71D2D364700DD5A8F /* ZFDownloadManager.m in Sources */,
 				BC3C13C41D2D355400DD5A8F /* SYMovieDetailController.m in Sources */,

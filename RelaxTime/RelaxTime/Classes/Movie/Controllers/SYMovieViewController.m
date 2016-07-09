@@ -40,10 +40,13 @@ NSString *const movieListCellIdentifer = @"movieListCell";
     //
     self.view.backgroundColor = GlobalColor245;
     
+    //设置tableView
     [self setupTableView];
-  
-    self.navigationItem.rightBarButtonItem = nil;
+   
+    //隐藏
+    self.navigationItem.leftBarButtonItem = nil;
     
+    //请求数据
     [self requestMovieData:self.movieId];
     
     

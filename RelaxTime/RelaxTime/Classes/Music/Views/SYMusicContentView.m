@@ -85,7 +85,7 @@
 -(void)setModel:(SYMusicModel *)model{
     _model = model;
     //背景图
-    [_bigimagView sd_setImageWithURL:[NSURL URLWithString:model.cover] placeholderImage:[UIImage imageNamed:@"default"]];
+    [_bigimagView sd_setImageWithURL:[NSURL URLWithString:model.cover] placeholderImage:nil];
     
     //头像
     SYMusicAuthor * author = model.author;

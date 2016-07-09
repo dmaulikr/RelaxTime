@@ -23,8 +23,7 @@
 
 //喜欢按钮
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
-//喜欢数量
-@property (weak, nonatomic) IBOutlet UILabel *likeNumLabel;
+
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @end
 
@@ -35,8 +34,8 @@
     self.layer.cornerRadius = 10;
     self.layer.borderWidth = 1;
     self.layer.borderColor = GlobalColorBLUE.CGColor;
-    self.clipsToBounds = YES;
-    
+    //self.clipsToBounds = YES;
+
     self.backgroundColor =  CellGlobalColor;
     
     //self.bottomView.layer.borderColor = GlobalColorBLUE.CGColor;
@@ -93,7 +92,7 @@
     
     
     /**
-     * 系统简单版 可以自己自定义UI按钮弹出(自带的支持的只有新浪微博)  可以加在UIActivityViewController的自定义activity上弹出
+     * 系统简单粗暴直接版 可以自己自定义UI按钮弹出(自带的支持的只有新浪微博)  可以加在UIActivityViewController的自定义activity上弹出
      */
 //    SLComposeViewController *svc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
 //    SLComposeViewControllerCompletionHandler myblock = ^(SLComposeViewControllerResult result){
@@ -123,7 +122,7 @@
     
     UIImage *imageToShare = _picImageView.image;
     
-    NSURL *urlToShare = [NSURL URLWithString:@"http://www.xTime.com"];
+    NSURL *urlToShare = [NSURL URLWithString:@"http://www.Xtime.com"];
     
     NSArray *activityItems = @[textToShare, description,imageToShare, urlToShare];
     
@@ -148,9 +147,9 @@
                                          
                                          UIActivityTypePrint,
                                          UIActivityTypeCopyToPasteboard,
-                                         UIActivityTypeAssignToContact,
+                                         
                                          UIActivityTypeSaveToCameraRoll,
-                                         UIActivityTypeAddToReadingList,
+                                         
                                          UIActivityTypePostToFlickr,
                                          UIActivityTypePostToVimeo,
                                          UIActivityTypePostToTencentWeibo,
@@ -174,9 +173,7 @@
     int num = [_model.praisenum intValue];
      _model.isLike ? num ++ : num --;
     _model.praisenum = [NSString stringWithFormat:@"%d",num];
-    self.likeNumLabel.text = _model.praisenum;
    
-
     //改变按钮选中状态
     self.likeBtn.selected = _model.isLike;
 }
@@ -195,7 +192,7 @@
     self.contentLabel.text = model.hp_content;
     self.authorlabel.text = model.hp_author;
     self.dateLabel.text = model.last_update_date;
-    self.likeNumLabel.text= model.praisenum;
+
     self.likeBtn.selected = model.isLike;
 }
 

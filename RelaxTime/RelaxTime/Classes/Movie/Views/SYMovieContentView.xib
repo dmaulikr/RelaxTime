@@ -18,7 +18,7 @@
                         <constraint firstAttribute="width" secondItem="K6M-pY-1Uw" secondAttribute="height" multiplier="2:1" id="SqQ-90-YTN"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHE-aL-DJ0">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHE-aL-DJ0">
                     <rect key="frame" x="20" y="203" width="59" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="  购票" image="buy_ticket">
@@ -34,7 +34,7 @@
                         <constraint firstAttribute="width" constant="60" id="Rsy-L5-6YQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title=" 评分" image="comment_Score">
+                    <state key="normal" title=" 评论" image="comment_Score">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -91,8 +91,8 @@
                     <color key="textColor" red="0.31372549019607843" green="0.5" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-sx-c8D" userLabel="故事内容">
-                    <rect key="frame" x="70" y="380" width="290" height="36"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-sx-c8D" userLabel="故事内容">
+                    <rect key="frame" x="70" y="390" width="290" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -269,10 +269,10 @@
                         <action selector="play:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gmy-2V-hTU"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfr-kn-Jz0" userLabel="故事标题">
-                    <rect key="frame" x="70" y="330" width="255" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfr-kn-Jz0" userLabel="故事标题">
+                    <rect key="frame" x="70" y="330" width="255" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="u9h-QK-hV5"/>
+                        <constraint firstAttribute="height" constant="50" id="u9h-QK-hV5"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -287,7 +287,7 @@
                 <constraint firstAttribute="trailing" secondItem="hfr-kn-Jz0" secondAttribute="trailing" constant="50" id="B9B-Cu-yj2"/>
                 <constraint firstItem="unE-MN-imh" firstAttribute="centerY" secondItem="K6M-pY-1Uw" secondAttribute="centerY" id="KyU-mh-0wl"/>
                 <constraint firstItem="dA6-gA-faT" firstAttribute="leading" secondItem="sYE-pk-WHc" secondAttribute="trailing" constant="20" id="Nry-X9-hky"/>
-                <constraint firstItem="Clg-sx-c8D" firstAttribute="top" secondItem="hfr-kn-Jz0" secondAttribute="bottom" constant="30" id="OVL-0x-zIY"/>
+                <constraint firstItem="Clg-sx-c8D" firstAttribute="top" secondItem="hfr-kn-Jz0" secondAttribute="bottom" constant="10" id="OVL-0x-zIY"/>
                 <constraint firstItem="sYE-pk-WHc" firstAttribute="height" secondItem="CHE-aL-DJ0" secondAttribute="height" id="Rkn-S5-Muh"/>
                 <constraint firstAttribute="bottom" secondItem="Nqs-Q3-SuA" secondAttribute="bottom" id="SDJ-pk-Dqh"/>
                 <constraint firstAttribute="trailing" secondItem="Nqs-Q3-SuA" secondAttribute="trailing" id="SoZ-L2-imG"/>

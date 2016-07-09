@@ -64,13 +64,22 @@
    // NSLog(@"%@",self.imageView.image);
     
   
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap)];
+    //增加双击手势放大缩小
+    UITapGestureRecognizer * tapTwo = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap)];
     
-    tap.numberOfTapsRequired = 2;
+    tapTwo.numberOfTapsRequired = 2;
     
+    [_scrollView addGestureRecognizer:tapTwo];
     
-    self.imageView.userInteractionEnabled  = YES;
-    [_imageView addGestureRecognizer:tap];
+    //增加单击手势退出
+    UITapGestureRecognizer * tapOne = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOne)];
+    
+    tapOne.numberOfTapsRequired = 1;
+    
+    [_scrollView addGestureRecognizer:tapOne];
+    
+    //单击响应在双击后
+    [tapOne requireGestureRecognizerToFail: tapTwo];
     
     [_scrollView addSubview:self.imageView];
     
@@ -79,9 +88,16 @@
 
 #pragma mark - 图片点击事件
 -(void)tap{
-    //NSLog(@"被双击两次");
-    //双击两次
+    SYLog(@"被双击两次");
+  
     [ self.scrollView setZoomScale:self.scrollView.zoomScale != 1 ? 1 : 2 animated:YES];
+    
+}
+
+-(void)tapOne{
+    SYLog(@"被单击次");
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

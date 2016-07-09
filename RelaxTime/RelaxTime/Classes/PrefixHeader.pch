@@ -34,6 +34,8 @@
 //分享
 #import <Social/Social.h>
 
+//工具类
+#import "SYFileHelper.h"
 
 //自定义view
 #import "SYAgainDownView.h"
@@ -107,5 +109,8 @@ static NSString *const movieScoreDetailFont = @"Cruickshank";
 #define SinaAppSecret @"0ab1cd31ab6325fdfe9c9df102f506da"
 
 
+
+#pragma mark - 缓存路径
+#define localImageCachePath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Caches/default"]
 
 #endif /* PrefixHeader_pch */

@@ -19,6 +19,8 @@
     //音乐播放器
    AVPlayer * _player;
     AVPlayerItem * _item;
+    //评论数label
+    UILabel *_label;
 
 }
 
@@ -48,6 +50,9 @@
 //音乐内容view
 @property(nonatomic ,strong) SYMusicContentView * musicContentView;
 
+//评论的sectionView
+@property(nonatomic ,strong) UIView * sectionView;
+
 @end
 
 @implementation SYMusicViewController
@@ -70,6 +75,7 @@
         weakSelf.againDownLabel.hidden = YES;
     }];
     
+    //
     [self creatUI];
     
     [SVProgressHUD show];
@@ -81,7 +87,6 @@
     
   
 }
-
 
 
 #pragma mark - 懒加载
@@ -117,9 +122,8 @@
 #pragma mark - 创建UI
 -(void)creatUI{
     
-    
     //去掉右按钮
-    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = nil;
     //设置滑条和tableView的偏移量
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 49, 0);
     self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
@@ -223,7 +227,7 @@
      
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        //[SVProgressHUD showErrorWithStatus:@"请求失败"];
+        [SVProgressHUD dismiss];
         SYLog(@"音乐数组请求失败");
         weakSelf.againDownLabel.hidden = NO;
     }];
@@ -231,6 +235,9 @@
 
 #pragma mark - 以Id请求歌曲数据和第一次的评论
 -(void)getMusicWithID:(NSString *)ID{
+    
+    //是否是第一次请求
+    static BOOL isFirst = YES;
     
     //请求音乐详细数据
     //详情地址
@@ -260,6 +267,12 @@
           //显示tableView
         self.tableView.hidden = NO;
         
+        //如果是第一次 设偏移量
+        if (isFirst) {
+            self.tableView.contentOffset = CGPointMake(0, WIDTH * 0.6);
+            isFirst = NO;
+        }
+        
        
         [SVProgressHUD dismiss];
         
@@ -278,6 +291,8 @@
 
 #pragma mark - 以Id请求歌曲评论
 -(void)getMusicCommentWithID:(NSString *) ID andUserId:(NSString *)userId{
+    
+
     
     //拼接url
     NSString *url = [Music_comment_URL stringByAppendingFormat:@"%@/%@", ID, userId];
@@ -309,6 +324,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.tableView reloadData];
+            
+           
+            
             //判断是否没有更多更多数据
             [self checkOutNoMoreData];
         });
@@ -347,18 +365,38 @@
 }
 
 //设置sectionheader  评论标题头
+//设置sectionheader  评论标题头
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
-    UILabel * label = [[UILabel alloc]init];
-    label.frame = CGRectMake(0, 0, 0, 20);
-    label.text = [NSString stringWithFormat:@"  评论 共%zd条", self.count];
+    if (self.sectionView == nil) {
+        self.sectionView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
+        self.sectionView.backgroundColor= GlobalColor238;
+        
+        _label = [[UILabel alloc]init];
+        _label.frame = CGRectMake(0, 5, WIDTH, 20);
+        
+        
+        _label.textColor = GlobalColorBLUE;
+        _label.font = [UIFont boldSystemFontOfSize:16];
+        
+        [self.sectionView addSubview:_label];
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.frame = CGRectMake(WIDTH - 40, 5, 30, 20);
+        
+        [button setImage:[UIImage imageNamed:@"comment_Score"] forState:UIControlStateNormal];
+        
+        [button addTarget:self action:@selector(comment) forControlEvents:UIControlEventTouchUpInside];
+        [self.sectionView addSubview:button];
+    }
     
-    label.textColor = GlobalColorBLUE;
-    label.font = [UIFont boldSystemFontOfSize:15];
-    label.backgroundColor = GlobalColor238;
-  
-    return label;
-    
+    _label.text = [NSString stringWithFormat:@"  评论 共%zd条", self.count];
+    return self.sectionView;
+}
+
+#pragma mark - 评论
+-(void)comment{
+    [SVProgressHUD showInfoWithStatus:@"暂未开放"];
 }
 
 #pragma mark - SYMusicContentViewDelegate 按钮点击
@@ -492,6 +530,8 @@
     [_player removeObserver:self forKeyPath:@"status"];
     
 }
+
+
 /*
  #pragma mark - Navigation
  

@@ -14,7 +14,10 @@
 #import "SYReadEssayModel.h"
 #import "SYReadSeriesModel.h"
 
-@interface SYReadDetailController ()<UITableViewDelegate,UITableViewDataSource>
+@interface SYReadDetailController ()<UITableViewDelegate,UITableViewDataSource>{
+    //评论条数
+    UILabel *_label;
+}
 
 //内容URL
 @property(nonatomic ,copy) NSString * contentURL;
@@ -38,6 +41,10 @@
 @property(nonatomic ,strong) SYReadContentView * contentView;
 //喜欢按钮
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
+
+//评论的sectionView
+@property(nonatomic ,strong) UIView * sectionView;
+
 
 @end
 
@@ -82,48 +89,14 @@
    
    
     
-    NSString *textToShare = @"要分享内容title";
+    [UMSocialData defaultData].extConfig.title = @"这边文章不错,去[闲Time]看看吧";
     
-    NSString *description = @"这是我的内容---------";
-    
-    UIImage *imageToShare = [UIImage imageNamed:@"tree"];
-    
-    NSURL *urlToShare = [NSURL URLWithString:@"http://www.iashes.com/"];
-    
-    NSArray *activityItems = @[textToShare, description,imageToShare, urlToShare];
-    
-    //创建自定义的Activity，加到一个数组里边
-    
-    SYCustomActivity *act1 = [[SYCustomActivity alloc]initWithImage:[UIImage imageNamed:@"longLu"] atURL:@"http://www.iashes.com/" atTitle:@"share Sina" atShareContentArray:activityItems];
-    
-    //myActivity是自定义的类，继承于UIActivity
-    
-    SYCustomActivity *act2 = [[SYCustomActivity alloc]initWithImage:[UIImage imageNamed:@"cat"] atURL:@"http://www.iashes.com/admin.html" atTitle:@"share Renren" atShareContentArray:activityItems];
-    
-    NSArray *apps = @[act1,act2];
-    
-    //创建
-    
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:apps];
-    
-    //关闭系统的一些分享
-    
-    activityVC.excludedActivityTypes = @[UIActivityTypePostToTwitter,
-                                         UIActivityTypeMessage,
-                                         
-                                         UIActivityTypePrint,
-                                         UIActivityTypeCopyToPasteboard,
-                                         UIActivityTypeAssignToContact,
-                                         UIActivityTypeSaveToCameraRoll,
-                                         UIActivityTypeAddToReadingList,
-                                         UIActivityTypePostToFlickr,
-                                         UIActivityTypePostToVimeo,
-                                         UIActivityTypePostToTencentWeibo,
-                                         UIActivityTypeAirDrop];
-    
-    //模态
-    
-    [self presentViewController:activityVC animated:YES completion:nil];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:UMAppKey
+                                      shareText:self.contentView.titlelabel.text
+                                     shareImage:[UIImage imageNamed:@"icon"]
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ]
+                                       delegate:self];
     
 
 }
@@ -193,6 +166,10 @@
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 49, 0);
     //NSLog(@"内容 %@", self.contentURL);
     //NSLog(@"评论 %@",self.commentURL);
+    
+    
+    
+
    
 }
 
@@ -307,16 +284,38 @@
 //设置sectionheader  评论标题头
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 
-    UILabel * label = [[UILabel alloc]init];
-    label.frame = CGRectMake(0, 0, 0, 20);
-    label.text = [NSString stringWithFormat:@"  评论 共%zd条", self.count];
-
-    label.textColor = GlobalColorBLUE;
-    label.font = [UIFont boldSystemFontOfSize:16];
-    label.backgroundColor = GlobalColor238;
+    if (self.sectionView == nil) {
+        self.sectionView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
+        self.sectionView.backgroundColor= GlobalColor238;
+        
+        _label = [[UILabel alloc]init];
+        _label.frame = CGRectMake(0, 5, WIDTH, 20);
+        
+        
+        _label.textColor = GlobalColorBLUE;
+        _label.font = [UIFont boldSystemFontOfSize:16];
+        
+        [self.sectionView addSubview:_label];
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.frame = CGRectMake(WIDTH - 40, 5, 30, 20);
+        
+        [button setImage:[UIImage imageNamed:@"comment_Score"] forState:UIControlStateNormal];
+        
+        [button addTarget:self action:@selector(comment) forControlEvents:UIControlEventTouchUpInside];
+        [self.sectionView addSubview:button];
+    }
    
-    return label;
+     _label.text = [NSString stringWithFormat:@"  评论 共%zd条", self.count];
+    return self.sectionView;
 }
+
+#pragma mark - 评论
+-(void)comment{
+    [SVProgressHUD showInfoWithStatus:@"暂未开放"];
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
