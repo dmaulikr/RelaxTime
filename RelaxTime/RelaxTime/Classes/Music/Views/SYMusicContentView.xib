@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -50,9 +50,9 @@
                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODU-fd-Odl">
-                            <rect key="frame" x="20" y="70" width="235" height="40"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODU-fd-Odl">
+                            <rect key="frame" x="20" y="65" width="195" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -89,19 +89,19 @@
                         <constraint firstItem="Fzl-mX-4pu" firstAttribute="leading" secondItem="Klp-9W-tx4" secondAttribute="trailing" constant="20" id="Bo2-Fx-rNn"/>
                         <constraint firstItem="ODU-fd-Odl" firstAttribute="leading" secondItem="Rb2-MD-cN9" secondAttribute="leading" constant="10" id="Jcw-tO-6bg"/>
                         <constraint firstItem="Rb2-MD-cN9" firstAttribute="leading" secondItem="pk9-A5-Aaw" secondAttribute="leading" constant="10" id="KBg-BH-9zi"/>
-                        <constraint firstAttribute="bottom" secondItem="ODU-fd-Odl" secondAttribute="bottom" constant="10" id="NEl-jM-TiQ"/>
+                        <constraint firstAttribute="bottom" secondItem="ODU-fd-Odl" secondAttribute="bottom" constant="5" id="NEl-jM-TiQ"/>
                         <constraint firstAttribute="trailing" secondItem="Alh-gx-q7i" secondAttribute="trailing" constant="13" id="OkJ-wd-OLx"/>
                         <constraint firstItem="Rb2-MD-cN9" firstAttribute="top" secondItem="pk9-A5-Aaw" secondAttribute="top" constant="10" id="QPL-nU-pAt"/>
                         <constraint firstItem="Fzl-mX-4pu" firstAttribute="top" secondItem="pk9-A5-Aaw" secondAttribute="top" constant="10" id="RDr-TD-BXT"/>
                         <constraint firstItem="Klp-9W-tx4" firstAttribute="top" secondItem="Rb2-MD-cN9" secondAttribute="top" constant="4" id="SEn-15-4oZ"/>
                         <constraint firstItem="Klp-9W-tx4" firstAttribute="leading" secondItem="Rb2-MD-cN9" secondAttribute="trailing" constant="10" id="TJv-PL-vK9"/>
                         <constraint firstAttribute="height" constant="120" id="aVv-y0-gK9"/>
-                        <constraint firstAttribute="trailing" secondItem="ODU-fd-Odl" secondAttribute="trailing" constant="60" id="ajg-WR-8BS"/>
                         <constraint firstItem="Fzl-mX-4pu" firstAttribute="leading" secondItem="5Qv-Mj-Bvb" secondAttribute="trailing" constant="30" id="bu2-H8-1ec"/>
                         <constraint firstItem="Rb2-MD-cN9" firstAttribute="top" secondItem="pk9-A5-Aaw" secondAttribute="top" constant="10" id="pxD-TR-Rw4"/>
                         <constraint firstAttribute="bottom" secondItem="Alh-gx-q7i" secondAttribute="bottom" constant="14" id="rAv-BC-lss"/>
                         <constraint firstItem="5Qv-Mj-Bvb" firstAttribute="top" secondItem="Klp-9W-tx4" secondAttribute="bottom" constant="4" id="xDh-w0-YLi"/>
-                        <constraint firstItem="ODU-fd-Odl" firstAttribute="top" secondItem="Rb2-MD-cN9" secondAttribute="bottom" constant="10" id="y8p-Vu-BfY"/>
+                        <constraint firstItem="ODU-fd-Odl" firstAttribute="top" secondItem="Rb2-MD-cN9" secondAttribute="bottom" constant="5" id="y8p-Vu-BfY"/>
+                        <constraint firstItem="Alh-gx-q7i" firstAttribute="leading" secondItem="ODU-fd-Odl" secondAttribute="trailing" constant="8" id="zCe-ok-khS"/>
                         <constraint firstItem="5Qv-Mj-Bvb" firstAttribute="leading" secondItem="Rb2-MD-cN9" secondAttribute="trailing" constant="10" id="ziI-Z3-cjT"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -110,23 +110,23 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64I-S7-HSx" userLabel="segmentView">
-                    <rect key="frame" x="0.0" y="480" width="375" height="44"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-bh-Tkg">
+                    <rect key="frame" x="10" y="535" width="355" height="9000"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="6ci-hv-Yqd"/>
-                    </constraints>
-                </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="rgrt hrthrthrt这个字体怎么不对啊" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-bh-Tkg">
-                    <rect key="frame" x="10" y="535" width="355" height="10000"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="10000" id="vby-i9-EVF"/>
+                        <constraint firstAttribute="height" constant="9000" id="vby-i9-EVF"/>
                     </constraints>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64I-S7-HSx" userLabel="segmentView">
+                    <rect key="frame" x="0.0" y="483" width="375" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="6ci-hv-Yqd"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

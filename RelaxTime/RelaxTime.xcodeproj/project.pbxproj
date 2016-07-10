@@ -21,6 +21,7 @@
 		1A6DC5111D29169200DF78A6 /* SYMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DC50F1D29169200DF78A6 /* SYMusicViewController.m */; };
 		1A6DC5121D29169200DF78A6 /* SYMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6DC5101D29169200DF78A6 /* SYMusicViewController.xib */; };
 		1A6DC5181D29480000DF78A6 /* SYMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DC5171D29480000DF78A6 /* SYMusicModel.m */; };
+		1A720C271D31FA4300033120 /* BasicDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A720C261D31FA4300033120 /* BasicDataManager.m */; };
 		1A72483D1D2FFFDE00374F33 /* SYCustomActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72483C1D2FFFDE00374F33 /* SYCustomActivity.m */; };
 		1A77F8F31D28075000C5200B /* SYReadTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A77F8F21D28075000C5200B /* SYReadTopViewController.m */; };
 		1A77F8F51D28090400C5200B /* SYReadTopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A77F8F41D28090400C5200B /* SYReadTopViewController.xib */; };
@@ -181,6 +182,8 @@
 		1A6DC5101D29169200DF78A6 /* SYMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYMusicViewController.xib; sourceTree = "<group>"; };
 		1A6DC5161D29480000DF78A6 /* SYMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMusicModel.h; sourceTree = "<group>"; };
 		1A6DC5171D29480000DF78A6 /* SYMusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMusicModel.m; sourceTree = "<group>"; };
+		1A720C251D31FA4300033120 /* BasicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDataManager.h; sourceTree = "<group>"; };
+		1A720C261D31FA4300033120 /* BasicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicDataManager.m; sourceTree = "<group>"; };
 		1A72483B1D2FFFDE00374F33 /* SYCustomActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCustomActivity.h; sourceTree = "<group>"; };
 		1A72483C1D2FFFDE00374F33 /* SYCustomActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCustomActivity.m; sourceTree = "<group>"; };
 		1A77F8F11D28075000C5200B /* SYReadTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYReadTopViewController.h; sourceTree = "<group>"; };
@@ -542,12 +545,14 @@
 		BC722B571D2BC102005A1745 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1A720C251D31FA4300033120 /* BasicDataManager.h */,
+				1A720C261D31FA4300033120 /* BasicDataManager.m */,
+				BC5B01921D30CE6A00E7E66F /* SYFileHelper.h */,
+				BC5B01931D30CE6A00E7E66F /* SYFileHelper.m */,
 				1A564B661D315122002BBA82 /* Reachability */,
 				BCC6BE5A1D2FAF280003C1BC /* UMSocial_Sdk_5.2.1 */,
 				BC3C13C61D2D364700DD5A8F /* ZFPlayer */,
 				BC722B581D2BC11F005A1745 /* XMGStatusBarHUD */,
-				BC5B01921D30CE6A00E7E66F /* SYFileHelper.h */,
-				BC5B01931D30CE6A00E7E66F /* SYFileHelper.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -1386,6 +1391,7 @@
 				BC67E8BE1D254B3D0042C649 /* SYDetailCollectionViewCell.m in Sources */,
 				BC7E7F3E1D26356C00CC8506 /* SYHomeBeforeSingleController.m in Sources */,
 				BCA725D71D23DB090005F7BE /* SYReadViewController.m in Sources */,
+				1A720C271D31FA4300033120 /* BasicDataManager.m in Sources */,
 				BC3C13E41D2D3D4D00DD5A8F /* SYMovieStoryModel.m in Sources */,
 				1A04CEEC1D25659600743C24 /* SYWaterCell.m in Sources */,
 				BC805EEE1D27906B00A52EF8 /* SYReadCommentCell.m in Sources */,

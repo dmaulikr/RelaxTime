@@ -165,11 +165,14 @@
     //改变模型数据
     _model.isLike = !_model.isLike;
     
-    //改变喜欢数量 和模型数据
-    int num = [_model.praisenum intValue];
-     _model.isLike ? num ++ : num --;
-    _model.praisenum = [NSString stringWithFormat:@"%d",num];
-   
+    //加入数据库
+    if (_model.isLike) {
+        [[BasicDataManager manager]insertDataWithModel:_model];
+    }else{
+        [[BasicDataManager manager]deleteDataWithContentId:_model.hpcontent_id];
+    }
+
+
     //改变按钮选中状态
     self.likeBtn.selected = _model.isLike;
 }
@@ -189,7 +192,9 @@
     self.authorlabel.text = model.hp_author;
     self.dateLabel.text = model.last_update_date;
 
-    self.likeBtn.selected = model.isLike;
+    //判断有没有搜藏过
+    self.likeBtn.selected = [[BasicDataManager manager]checkIsInDBWithhpContentId:model.hpcontent_id];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
