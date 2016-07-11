@@ -62,6 +62,28 @@
 
 - (IBAction)fastLogin:(UIButton *)sender {
     SYLog(@"快速登录");
+    
+    
+   // __weak typeof(self) weakSelf = self;
+    [AVOSCloudSNS setupPlatform:AVOSCloudSNSQQ withAppKey:QQAppID andAppSecret:QQAppKey andRedirectURI:@""];
+    [AVOSCloudSNS loginWithCallback:^(id object, NSError *error) {
+        if (error) {
+            
+            SYLog(@"%@", error.localizedDescription);
+        } else {
+            
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogin"];
+            
+            [[NSUserDefaults standardUserDefaults] setValue:object[@"username"] forKey:@"userName"];
+            [[NSUserDefaults standardUserDefaults] setValue:object[@"avatar"] forKey:@"userIcon"];
+            
+            //代理方法改变头像
+            [self.delegate changeUser];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    } toPlatform:AVOSCloudSNSQQ];
+
 }
 
 #pragma mark - 注册按钮

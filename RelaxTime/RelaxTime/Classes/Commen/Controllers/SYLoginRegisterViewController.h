@@ -7,6 +7,14 @@
 //
 #import <UIKit/UIKit.h>
 
+@protocol SYLoginRegisterViewController <NSObject>
+
+-(void)changeUser;
+
+@end
+
 @interface SYLoginRegisterViewController : UIViewController
 
+
+@property(nonatomic ,weak) id<SYLoginRegisterViewController> delegate;
 @end

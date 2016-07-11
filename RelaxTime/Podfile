@@ -12,4 +12,6 @@ target ‘RelaxTime’ do
   pod ‘DACircularProgress’
   pod 'MBProgressHUD'
   pod ‘FMDB’
+  pod 'AVOSCloud' 
+   pod 'LeanCloudSocial'
 end

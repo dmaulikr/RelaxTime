@@ -10,7 +10,7 @@
 #import "SYLoginRegisterViewController.h"
 #import "SYLikeController.h"
 
-@interface SYSetController ()
+@interface SYSetController ()<SYLoginRegisterViewController>
 
 //内存显示label
 @property (weak, nonatomic) IBOutlet UILabel *disklabel;
@@ -23,6 +23,8 @@
 @property(nonatomic ,assign) CGFloat imageViewOriginHeight;
 //头像image
 @property(nonatomic ,strong) UIImageView * iconImage;
+//名字
+@property(nonatomic ,strong) UILabel * nameLabel;
 
 @end
 
@@ -80,16 +82,49 @@
     return _iconImage;
 }
 
+-(UILabel *)nameLabel{
+    if (!_nameLabel) {
+        _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 20)];
+        _nameLabel.center = CGPointMake(WIDTH / 2, WIDTH * 0.6 / 2 + 60);
+        _nameLabel.textAlignment = NSTextAlignmentCenter;
+        _nameLabel.font = [UIFont systemFontOfSize:15];
+        _nameLabel.backgroundColor = [UIColor clearColor];
+    }
+    return _nameLabel;
+}
+
 #pragma mark - 登录 
 -(void)tap{
     SYLog(@"登录");
+    //判断是否已经登录
+   BOOL login = [[NSUserDefaults standardUserDefaults]boolForKey:@"isLogin"];
+    if (login) {
+        [SVProgressHUD showInfoWithStatus:@"已经登录"];
+    }else{
     
     SYLoginRegisterViewController * loginVc = [[SYLoginRegisterViewController alloc]init];
+    
+    loginVc.delegate = self;
     [self presentViewController:loginVc animated:YES completion:^{
         //
     }];
+    }
 }
 
+#pragma mark - 注册成功代理方法改变头像
+
+-(void)changeUser{
+    
+    //如果登录状态
+    //判断是否已经登录
+    BOOL login = [[NSUserDefaults standardUserDefaults]boolForKey:@"isLogin"];
+    if (login) {
+    self.nameLabel.text =[[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    
+   NSString *iconURL = [[NSUserDefaults standardUserDefaults] objectForKey:@"userIcon"];
+        [self.iconImage sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:nil];
+    }
+}
 #pragma mark - 设置UI
 -(void)creatUI{
     
@@ -107,11 +142,16 @@
     //将头像放到放到headView上
     [self.headerView addSubview:self.iconImage];
     
+    //将名字放在headView上
+    [self.headerView addSubview:self.nameLabel];
+    
     //将headview设为tableView的tableheadview
     
     self.tableView.tableHeaderView = self.headerView;
     
-   
+    //设置头像
+    [self changeUser];
+
 }
 
 

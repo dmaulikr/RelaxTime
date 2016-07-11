@@ -41,6 +41,14 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright 2015 LeanCloud, Inc. See https://leancloud.cn/terms.html</string>
+			<key>Title</key>
+			<string>AVOSCloud</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string># License
 
 ## MIT License
@@ -101,6 +109,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</string>
 			<key>Title</key>
 			<string>FMDB</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>&#169; Copyright 2015 LeanCloud, Inc. See https://leancloud.cn/terms.html</string>
+			<key>Title</key>
+			<string>LeanCloudSocial</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

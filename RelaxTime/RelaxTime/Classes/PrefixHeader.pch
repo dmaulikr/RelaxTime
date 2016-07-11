@@ -18,6 +18,9 @@
 #import <YYModel.h>
 #import <Masonry.h>
 #import <MBProgressHUD.h>
+#import <AVOSCloud/AVOSCloud.h>
+#import <LeanCloudSocial/AVOSCloudSNS.h>
+
 
 #import "XMGStatusBarHUD.h"
 //导航
@@ -110,7 +113,8 @@ static NSString *const movieScoreDetailFont = @"Cruickshank";
 #define SinaAppID @"929315414"
 #define SinaAppSecret @"0ab1cd31ab6325fdfe9c9df102f506da"
 
-
+static NSString *const AVCloudAppId = @"KvYg4CadfY8IW02U0eKmtGCp-gzGzoHsz";
+static NSString *const AVCloudAppKey = @"6dIwTTUMOG9G9qFt8YWaA8w7";
 
 #pragma mark - 缓存路径
 #define localImageCachePath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Caches/default"]
