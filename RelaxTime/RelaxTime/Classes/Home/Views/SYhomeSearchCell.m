@@ -11,6 +11,9 @@
 
 @interface SYhomeSearchCell()
 
+//是否是编辑状态 显示删除按钮 当cell用于收藏界面时使用
+@property(nonatomic ,assign) BOOL isEditing;
+
 @property (weak, nonatomic) IBOutlet UIImageView *picView;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;

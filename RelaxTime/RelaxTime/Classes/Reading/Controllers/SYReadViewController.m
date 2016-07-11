@@ -54,14 +54,14 @@
     
     self.topDownAgainView.block = ^() {
         [SVProgressHUD show];
-        [weakSelf getdata];
+        [weakSelf getTopData];
         weakSelf.topDownAgainView.hidden = YES;
     };
     
     self.bottomDownView.hidden = YES;
     [self.bottomDownView setBlock:^{
         [SVProgressHUD show];
-        [weakSelf getdata];
+        [weakSelf getButtomData];
         weakSelf.bottomDownView.hidden = YES;
     }];
     
@@ -71,7 +71,9 @@
     
      [SVProgressHUD show];
     
-    [self getdata];
+    //请求数据
+    [self getTopData];
+    [self getButtomData];
     
 
     
@@ -106,7 +108,7 @@
     
 }
 #pragma mark - 请求数据
--(void)getdata{
+-(void)getButtomData{
 
     //请求下方数据
     if (self.dataArrayBottom.count ==0) {
@@ -136,6 +138,12 @@
 
     }
     
+   
+    
+}
+
+#pragma mark - 请求上方数据
+-(void)getTopData{
     if (self.dataArrayTop.count == 0) {
         //请求上方数据
         [self.requestManager GET:Read_Scroll_URL parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -167,13 +175,12 @@
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             //
-            SYLog(@"read页下方请求失败");
-             [SVProgressHUD dismiss];
+            SYLog(@"read上方请求失败");
+            [SVProgressHUD dismiss];
             //请求失败 显示
             self.topDownAgainView.hidden = NO;
         }];
     }
-    
 }
 
 #pragma mark - 定时器事件

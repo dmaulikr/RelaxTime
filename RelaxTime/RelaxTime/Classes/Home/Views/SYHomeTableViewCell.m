@@ -21,8 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
-//喜欢按钮
-@property (weak, nonatomic) IBOutlet UIButton *likeBtn;
+
 
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @end
@@ -48,10 +47,25 @@
     tap.numberOfTapsRequired = 1;
     self.picImageView.userInteractionEnabled = YES;
     [self.picImageView addGestureRecognizer:tap];
+    
+    //注册通知 当搜藏页不喜欢时能改变喜欢状态
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(iDontLike:) name:@"IDontLike" object:nil];
    
 }
 
-
+#pragma mark - 通知方法
+-(void)iDontLike:(NSNotification *)notification{
+    
+    
+    //取出信息 如果传过来的id包含当前id 改变按钮状态为不喜欢
+    NSArray *idArray = notification.userInfo[@"IDS"];
+    for (NSString * ID in idArray) {
+        if ([ID isEqualToString:_model.hpcontent_id]) {
+            SYLog(@"接收通知,不喜欢");
+            self.likeBtn.selected = NO;
+        }
+    }
+}
 
 #pragma mark - 单击手势
 -(void)tap{
@@ -162,19 +176,18 @@
 
 - (IBAction)likeBtn:(id)sender {
     
-    //改变模型数据
-    _model.isLike = !_model.isLike;
-    
+    //改变按钮选中状态
+    self.likeBtn.selected = !self.likeBtn.selected ;
+  
     //加入数据库
-    if (_model.isLike) {
+    if (self.likeBtn.selected) {
         [[BasicDataManager manager]insertDataWithModel:_model];
     }else{
         [[BasicDataManager manager]deleteDataWithContentId:_model.hpcontent_id];
     }
 
 
-    //改变按钮选中状态
-    self.likeBtn.selected = _model.isLike;
+  
 }
 
 #pragma mark - 模型赋值
@@ -203,4 +216,9 @@
     // Configure the view for the selected state
 }
 
+
+-(void)dealloc{
+    // 移除通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end

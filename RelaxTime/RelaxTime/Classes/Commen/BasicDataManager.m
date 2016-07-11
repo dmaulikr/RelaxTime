@@ -65,9 +65,9 @@
     BOOL ret = [_db executeUpdate:sql];
     
     if (ret) {
-        SYLog(@"表创建成功");
+        SYLog(@"表打开成功");
     }else{
-        SYLog(@"表创建失败");
+        SYLog(@"表打开失败");
     }
 }
 
@@ -107,9 +107,9 @@
     }
     
     return NO;
-    
 
 }
+
 
 -(NSArray *)getAllModel{
     NSString *sql = @"SELECT * FROM t_hpLikeTable;";
@@ -151,4 +151,13 @@
     }
     
 }
+
+-(void)deleteDataWithIds:(NSArray *)idArray{
+    
+    for (NSString * ID in idArray) {
+        [self deleteDataWithContentId:ID];
+    }
+    
+}
+
 @end

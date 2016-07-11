@@ -8,6 +8,7 @@
 
 #import "SYSetController.h"
 #import "SYLoginRegisterViewController.h"
+#import "SYLikeController.h"
 
 @interface SYSetController ()
 
@@ -35,6 +36,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    //读取缓存显示
        self.disklabel.text = [NSString stringWithFormat:@"%.1fM",[self calculateMemoryWithPath:localImageCachePath]];
 }
 
@@ -91,7 +93,8 @@
 #pragma mark - 设置UI
 -(void)creatUI{
     
-    
+
+    self.title = @"个人中心";
     
     /**设置headView*/
     
@@ -108,11 +111,7 @@
     
     self.tableView.tableHeaderView = self.headerView;
     
-    
    
-  
- 
-
 }
 
 
@@ -151,7 +150,10 @@
     
     switch (indexPath.row) {
         case 0:
-            [SVProgressHUD showInfoWithStatus:@"等待开放"];
+        {
+            SYLikeController *like = [[SYLikeController alloc]init];
+            [self.navigationController pushViewController:like animated:YES];
+        }
             break;
         case 1:
             [SVProgressHUD showInfoWithStatus:@"等待开放"];

@@ -11,6 +11,11 @@
 @class SYHomeModel;
 
 @interface SYHomeBeforeSingleController : UIViewController
+/**
+ *  隐藏喜欢按钮
+ */
+@property(nonatomic ,assign) BOOL hiddenLikeButton;
 
 @property(nonatomic ,strong) SYHomeModel * model;
+
 @end

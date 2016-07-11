@@ -55,7 +55,7 @@
     //自适应高度
     self.tableView.estimatedRowHeight = 10;
     
- 
+    //
     
 }
 
@@ -78,6 +78,10 @@
     SYHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     cell.model = self.model;
+    
+    if(self.hiddenLikeButton){
+        cell.likeBtn.hidden = YES;
+    }
     
     return cell;
 }

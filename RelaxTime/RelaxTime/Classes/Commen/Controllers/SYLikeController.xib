@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYLikeController">
+            <connections>
+                <outlet property="allSelectButton" destination="Q7A-Kd-Zaj" id="Sl6-Z8-S8Z"/>
+                <outlet property="editView" destination="ECQ-Wh-jIR" id="kin-ST-o4t"/>
+                <outlet property="tableView" destination="TiN-F0-xmQ" id="nLf-Q0-SJ3"/>
+                <outlet property="view" destination="iN0-l3-epB" id="dLU-OP-qEf"/>
+                <outlet property="viewBottomConstraint" destination="5cI-gZ-7JA" id="P4B-p9-6Aq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TiN-F0-xmQ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="m5w-tJ-cVV"/>
+                        <outlet property="delegate" destination="-1" id="R0M-0j-CNu"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECQ-Wh-jIR">
+                    <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="box-C9-KCe">
+                            <rect key="frame" x="240" y="0.0" width="80" height="50"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="3ul-6Q-Npw"/>
+                            </constraints>
+                            <state key="normal" title="删除">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="delete:" destination="-1" eventType="touchUpInside" id="iCE-37-6zd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7A-Kd-Zaj">
+                            <rect key="frame" x="160" y="0.0" width="80" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="wUn-2G-WLo"/>
+                            </constraints>
+                            <state key="normal" title="全选">
+                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" title="取消全选"/>
+                            <connections>
+                                <action selector="allSelect:" destination="-1" eventType="touchUpInside" id="yWH-x9-PpP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="box-C9-KCe" secondAttribute="bottom" id="Gr2-at-Dis"/>
+                        <constraint firstAttribute="height" constant="50" id="YyS-mK-t8J"/>
+                        <constraint firstItem="box-C9-KCe" firstAttribute="top" secondItem="ECQ-Wh-jIR" secondAttribute="top" id="ZKG-S2-1X8"/>
+                        <constraint firstAttribute="trailing" secondItem="box-C9-KCe" secondAttribute="trailing" id="gnP-Uj-jbx"/>
+                        <constraint firstItem="box-C9-KCe" firstAttribute="leading" secondItem="Q7A-Kd-Zaj" secondAttribute="trailing" id="nVJ-Bq-7n5"/>
+                        <constraint firstAttribute="bottom" secondItem="Q7A-Kd-Zaj" secondAttribute="bottom" id="qqG-0F-m2x"/>
+                        <constraint firstItem="Q7A-Kd-Zaj" firstAttribute="top" secondItem="ECQ-Wh-jIR" secondAttribute="top" id="wYo-5Q-FDN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="TiN-F0-xmQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2ZH-PS-fHZ"/>
+                <constraint firstAttribute="bottom" secondItem="ECQ-Wh-jIR" secondAttribute="bottom" id="5cI-gZ-7JA"/>
+                <constraint firstItem="ECQ-Wh-jIR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7eN-eP-YDz"/>
+                <constraint firstItem="TiN-F0-xmQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ejn-il-Gyg"/>
+                <constraint firstAttribute="trailing" secondItem="ECQ-Wh-jIR" secondAttribute="trailing" id="Jch-CZ-8f9"/>
+                <constraint firstAttribute="trailing" secondItem="TiN-F0-xmQ" secondAttribute="trailing" id="bRX-iv-Ch7"/>
+                <constraint firstAttribute="bottom" secondItem="TiN-F0-xmQ" secondAttribute="bottom" id="qG3-U7-ggq"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

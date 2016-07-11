@@ -11,5 +11,8 @@
 
 @interface SYHomeTableViewCell : UITableViewCell
 
+//喜欢按钮
+@property (weak, nonatomic) IBOutlet UIButton *likeBtn;
+
 @property(nonatomic, strong) SYHomeModel *model;
 @end

@@ -108,6 +108,8 @@
 		BCA725D71D23DB090005F7BE /* SYReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725D61D23DB090005F7BE /* SYReadViewController.m */; };
 		BCA725D91D23DF810005F7BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA725D81D23DF810005F7BE /* Assets.xcassets */; };
 		BCA725DF1D23E6EB0005F7BE /* SYMainBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA725DE1D23E6EB0005F7BE /* SYMainBasicViewController.m */; };
+		BCAB9DDF1D333AB1008D6C9B /* SYLikeController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAB9DDE1D333AB1008D6C9B /* SYLikeController.m */; };
+		BCAB9DE11D337163008D6C9B /* SYLikeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAB9DE01D337163008D6C9B /* SYLikeController.xib */; };
 		BCC6BE591D2FACAC0003C1BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BE581D2FACAC0003C1BC /* SystemConfiguration.framework */; };
 		BCC6BE751D2FAF280003C1BC /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCC6BE5B1D2FAF280003C1BC /* UMSocialLocalizable.strings */; };
 		BCC6BE761D2FAF280003C1BC /* libUMSocial_Sdk_5.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BE691D2FAF280003C1BC /* libUMSocial_Sdk_5.2.1.a */; };
@@ -334,6 +336,9 @@
 		BCA725D81D23DF810005F7BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCA725DD1D23E6EB0005F7BE /* SYMainBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMainBasicViewController.h; sourceTree = "<group>"; };
 		BCA725DE1D23E6EB0005F7BE /* SYMainBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMainBasicViewController.m; sourceTree = "<group>"; };
+		BCAB9DDD1D333AB1008D6C9B /* SYLikeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYLikeController.h; sourceTree = "<group>"; };
+		BCAB9DDE1D333AB1008D6C9B /* SYLikeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYLikeController.m; sourceTree = "<group>"; };
+		BCAB9DE01D337163008D6C9B /* SYLikeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYLikeController.xib; sourceTree = "<group>"; };
 		BCC6BE581D2FACAC0003C1BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BCC6BE5C1D2FAF280003C1BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		BCC6BE5E1D2FAF280003C1BC /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
@@ -771,6 +776,9 @@
 				BC5B01971D30E19900E7E66F /* SYLoginRegisterViewController.xib */,
 				BC209C581D309FA2007BBF83 /* SYSetController.h */,
 				BC209C591D309FA2007BBF83 /* SYSetController.m */,
+				BCAB9DDD1D333AB1008D6C9B /* SYLikeController.h */,
+				BCAB9DDE1D333AB1008D6C9B /* SYLikeController.m */,
+				BCAB9DE01D337163008D6C9B /* SYLikeController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1273,6 +1281,7 @@
 				BC4AB5941D23F6B600BFEA15 /* SYHomeCollectionViewCell.xib in Resources */,
 				BC7E7F4F1D265A1200CC8506 /* SYReadBottomTableCell.xib in Resources */,
 				BCA725701D23C6780005F7BE /* Main.storyboard in Resources */,
+				BCAB9DE11D337163008D6C9B /* SYLikeController.xib in Resources */,
 				BC805EF41D279B1F00A52EF8 /* SYReadContentView.xib in Resources */,
 				BCC6BE791D2FAF280003C1BC /* UMSCommentInputControlleriPad.xib in Resources */,
 				1A77F8F51D28090400C5200B /* SYReadTopViewController.xib in Resources */,
@@ -1412,6 +1421,7 @@
 				1A564B691D315122002BBA82 /* Reachability.m in Sources */,
 				1A72483D1D2FFFDE00374F33 /* SYCustomActivity.m in Sources */,
 				1A6DC50B1D29054A00DF78A6 /* SYMusicContentView.m in Sources */,
+				BCAB9DDF1D333AB1008D6C9B /* SYLikeController.m in Sources */,
 				BC4AB5931D23F6B600BFEA15 /* SYHomeCollectionViewCell.m in Sources */,
 				1A04CEE81D255F7100743C24 /* SYHomeBeforeDetailController.m in Sources */,
 				1A77F8F91D280CD300C5200B /* SYReadTopTwoModel.m in Sources */,

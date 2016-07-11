@@ -34,5 +34,6 @@
 //删除指定的数据
 
 -(void)deleteDataWithContentId:(NSString *)ContentId;
-
+//删除数组中对应的ID的数据
+-(void)deleteDataWithIds:(NSArray *)idArray;
 @end

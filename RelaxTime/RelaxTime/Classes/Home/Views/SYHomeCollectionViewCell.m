@@ -36,6 +36,7 @@
   
 }
 
+
 #pragma mark - 模型赋值
 -(void)setModel:(SYHomeModel *)model{
     
@@ -58,6 +59,8 @@
     
    SYHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.model = _model;
+    
+   
   
     return cell;
 }
