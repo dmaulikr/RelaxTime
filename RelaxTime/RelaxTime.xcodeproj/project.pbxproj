@@ -138,6 +138,9 @@
 		BCC6BEB01D2FB0330003C1BC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BEAF1D2FB0330003C1BC /* CoreTelephony.framework */; };
 		BCC6BEB21D2FB0400003C1BC /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BEB11D2FB03F0003C1BC /* libstdc++.tbd */; };
 		BCC6BEB41D2FB0460003C1BC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BEB31D2FB0460003C1BC /* libz.tbd */; };
+		BCD44AAB1D3483D000F8880F /* SYUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD44AAA1D3483D000F8880F /* SYUserController.m */; };
+		BCD44AAF1D34E36200F8880F /* SYSecretController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD44AAD1D34E36200F8880F /* SYSecretController.m */; };
+		BCD44AB01D34E36200F8880F /* SYSecretController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD44AAE1D34E36200F8880F /* SYSecretController.xib */; };
 		BCFC2D951D2A6C7200D6B27C /* SYSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFC2D941D2A6C7200D6B27C /* SYSegmentController.m */; };
 		BCFE96191D24EB940021307D /* SYShowPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFE96181D24EB940021307D /* SYShowPicViewController.m */; };
 		BCFE961B1D2504F20021307D /* SYShowPicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFE961A1D2504F20021307D /* SYShowPicViewController.xib */; };
@@ -396,6 +399,11 @@
 		BCC6BEAF1D2FB0330003C1BC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BCC6BEB11D2FB03F0003C1BC /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		BCC6BEB31D2FB0460003C1BC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BCD44AA91D3483D000F8880F /* SYUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYUserController.h; sourceTree = "<group>"; };
+		BCD44AAA1D3483D000F8880F /* SYUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYUserController.m; sourceTree = "<group>"; };
+		BCD44AAC1D34E36200F8880F /* SYSecretController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSecretController.h; sourceTree = "<group>"; };
+		BCD44AAD1D34E36200F8880F /* SYSecretController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSecretController.m; sourceTree = "<group>"; };
+		BCD44AAE1D34E36200F8880F /* SYSecretController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYSecretController.xib; sourceTree = "<group>"; };
 		BCFC2D931D2A6C7200D6B27C /* SYSegmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSegmentController.h; sourceTree = "<group>"; };
 		BCFC2D941D2A6C7200D6B27C /* SYSegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSegmentController.m; sourceTree = "<group>"; };
 		BCFE96171D24EB940021307D /* SYShowPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYShowPicViewController.h; sourceTree = "<group>"; };
@@ -779,6 +787,11 @@
 				BCAB9DDD1D333AB1008D6C9B /* SYLikeController.h */,
 				BCAB9DDE1D333AB1008D6C9B /* SYLikeController.m */,
 				BCAB9DE01D337163008D6C9B /* SYLikeController.xib */,
+				BCD44AA91D3483D000F8880F /* SYUserController.h */,
+				BCD44AAA1D3483D000F8880F /* SYUserController.m */,
+				BCD44AAC1D34E36200F8880F /* SYSecretController.h */,
+				BCD44AAD1D34E36200F8880F /* SYSecretController.m */,
+				BCD44AAE1D34E36200F8880F /* SYSecretController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1258,6 +1271,7 @@
 				BC7E7F4A1D26549800CC8506 /* SYReadBottomCell.xib in Resources */,
 				BCA725751D23C6780005F7BE /* LaunchScreen.storyboard in Resources */,
 				BC722B5C1D2BC11F005A1745 /* XMGStatusBarHUD.bundle in Resources */,
+				BCD44AB01D34E36200F8880F /* SYSecretController.xib in Resources */,
 				BCC6BE7E1D2FAF280003C1BC /* UMSShareListController.xib in Resources */,
 				BCC6BEA01D2FAFE20003C1BC /* WeiboSDK.bundle in Resources */,
 				BC722B631D2BD7E0005A1745 /* SYSearchControllerViewController.xib in Resources */,
@@ -1402,7 +1416,9 @@
 				BCA725D71D23DB090005F7BE /* SYReadViewController.m in Sources */,
 				1A720C271D31FA4300033120 /* BasicDataManager.m in Sources */,
 				BC3C13E41D2D3D4D00DD5A8F /* SYMovieStoryModel.m in Sources */,
+				BCD44AAB1D3483D000F8880F /* SYUserController.m in Sources */,
 				1A04CEEC1D25659600743C24 /* SYWaterCell.m in Sources */,
+				BCD44AAF1D34E36200F8880F /* SYSecretController.m in Sources */,
 				BC805EEE1D27906B00A52EF8 /* SYReadCommentCell.m in Sources */,
 				BC7E7F4E1D265A1200CC8506 /* SYReadBottomTableCell.m in Sources */,
 				BCA725BD1D23C9200005F7BE /* UIBarButtonItem+XMGExtension.m in Sources */,

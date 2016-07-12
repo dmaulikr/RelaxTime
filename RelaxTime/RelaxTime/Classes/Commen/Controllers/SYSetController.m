@@ -9,8 +9,10 @@
 #import "SYSetController.h"
 #import "SYLoginRegisterViewController.h"
 #import "SYLikeController.h"
+#import "SYUserController.h"
 
-@interface SYSetController ()<SYLoginRegisterViewController>
+
+@interface SYSetController ()<SYLoginRegisterViewController,SYUserController>
 
 //内存显示label
 @property (weak, nonatomic) IBOutlet UILabel *disklabel;
@@ -99,7 +101,15 @@
     //判断是否已经登录
    BOOL login = [[NSUserDefaults standardUserDefaults]boolForKey:@"isLogin"];
     if (login) {
-        [SVProgressHUD showInfoWithStatus:@"已经登录"];
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SYUserController *userVC = [sb instantiateViewControllerWithIdentifier:@"SYUserController"];
+        
+        userVC.delegate = self;
+        
+        [self.navigationController pushViewController:userVC animated:YES];
+       
+        
     }else{
     
     SYLoginRegisterViewController * loginVc = [[SYLoginRegisterViewController alloc]init];
@@ -112,8 +122,8 @@
 }
 
 #pragma mark - 注册成功代理方法改变头像
-
--(void)changeUser{
+//通过第三方 来设置用户显示
+-(void)changeUserbyQQ{
     
     //如果登录状态
     //判断是否已经登录
@@ -121,10 +131,36 @@
     if (login) {
     self.nameLabel.text =[[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     
-   NSString *iconURL = [[NSUserDefaults standardUserDefaults] objectForKey:@"userIcon"];
-        [self.iconImage sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:nil];
+     NSString *iconURL = [[NSUserDefaults standardUserDefaults] objectForKey:@"userIcon"];
+    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    }else{
+        self.nameLabel.text = @"请登录";
+        self.iconImage.image = [UIImage imageNamed:@"defaultUserIcon"];
     }
 }
+
+//通过手机注册 来设置用户显示
+-(void)changeUserByPhoneRegister{
+    //如果登录状态
+    //判断是否已经登录
+    BOOL login = [[NSUserDefaults standardUserDefaults]boolForKey:@"isLogin"];
+    if (login) {
+        self.nameLabel.text =[[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+        
+        //如果有头像
+        NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"userIcon"];
+        if (data) {
+            self.iconImage.image = [UIImage imageWithData:data];
+        }else{
+            //默认显示
+            self.iconImage.image = [UIImage imageNamed:@"comment_profile_mars"];
+        }
+    }else{
+        self.nameLabel.text = @"请登录";
+        self.iconImage.image = [UIImage imageNamed:@"defaultUserIcon"];
+    }
+}
+
 #pragma mark - 设置UI
 -(void)creatUI{
     
@@ -154,6 +190,13 @@
 
 }
 
+-(void)changeUser{
+    if ([[NSUserDefaults standardUserDefaults]boolForKey:@"registerByPhone"]) {
+        [self changeUserByPhoneRegister];
+    }else{
+        [self changeUserbyQQ];
+    }
+}
 
 -(double)calculateMemoryWithPath:(NSString *)path{
     //返回字节

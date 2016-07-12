@@ -10,6 +10,7 @@
 
 @interface SYAgainDownView : UIView
 
+@property(nonatomic ,strong) UILabel * label;
 @property(nonatomic ,copy) void(^block)();
 
 @end

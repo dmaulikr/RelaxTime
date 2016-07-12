@@ -283,7 +283,7 @@
 
 //设置sectionheader  评论标题头
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-
+    SYLogFunc;
     if (self.sectionView == nil) {
         self.sectionView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
         self.sectionView.backgroundColor= GlobalColor238;

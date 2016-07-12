@@ -9,7 +9,9 @@
 
 @protocol SYLoginRegisterViewController <NSObject>
 
+
 -(void)changeUser;
+
 
 @end
 

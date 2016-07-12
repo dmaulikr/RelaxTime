@@ -51,6 +51,7 @@
     //设置重新下载
     __weak typeof (self) weakSelf = self;
     self.topDownAgainView.hidden = YES;
+    self.topDownAgainView.label.text = @"重新加载\n上方数据";
     
     self.topDownAgainView.block = ^() {
         [SVProgressHUD show];
@@ -59,6 +60,7 @@
     };
     
     self.bottomDownView.hidden = YES;
+     self.topDownAgainView.label.text = @"重新加载\n下方数据";
     [self.bottomDownView setBlock:^{
         [SVProgressHUD show];
         [weakSelf getButtomData];
@@ -172,6 +174,7 @@
             [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
             //请求成功 隐藏
             self.topDownAgainView.hidden = YES;
+             [SVProgressHUD dismiss];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             //
@@ -326,17 +329,19 @@
         [self.timer invalidate];
         self.timer = nil;
     }
-
-    
 }
-//在停止拖拽时启动计时器 因为可能不调用DidEndDecelerating方法
+
+//在停止拖拽时启动计时器 因为移动太小可能不调用DidEndDecelerating方法
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     //SYLogFunc;
     if (scrollView == self.topCollectionView) {
-            [self resetTimer];
+        
+        [self changeContenOffestAndCurrentPage:scrollView];
+        [self resetTimer];
     }
 
 }
+
 
 
 #pragma mark - 改变偏移量 和 currentpage
@@ -348,11 +353,9 @@
         }else if (scrollView.contentOffset.x == WIDTH *(self.dataArrayTop.count - 1)){
             
             scrollView.contentOffset = CGPointMake(WIDTH ,0);
-            
         }
     //设置pagecontrol的页数
     self.pageController.currentPage = scrollView.contentOffset.x / WIDTH - 1;
-    
 }
 
 

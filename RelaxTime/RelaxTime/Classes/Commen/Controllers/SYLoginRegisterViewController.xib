@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYLoginRegisterViewController">
             <connections>
+                <outlet property="changButton" destination="UhG-kk-GAM" id="gHg-Qx-k6q"/>
                 <outlet property="loginBtn" destination="5mF-38-4Kp" id="fr7-KI-3YG"/>
                 <outlet property="loginPhone" destination="Jzx-RU-C7m" id="CFB-6W-Oro"/>
                 <outlet property="loginSecret" destination="No4-N5-XQP" id="StX-eX-szC"/>
@@ -15,6 +16,7 @@
                 <outlet property="registerBtn" destination="bc2-HQ-4Vc" id="lVc-TO-BVC"/>
                 <outlet property="registerPhone" destination="5xD-Wn-SHM" id="ALo-G2-Ee6"/>
                 <outlet property="registerSecret" destination="1Kr-0d-cYT" id="mc3-Ao-r9K"/>
+                <outlet property="smsButton" destination="Za5-ay-ru7" id="PQg-yo-bCd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -125,25 +127,36 @@
                                         <outlet property="delegate" destination="-1" id="ZSX-bt-iZo"/>
                                     </connections>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="设置密码" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1Kr-0d-cYT" customClass="SYTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kr-0d-cYT" customClass="SYTextField">
                                     <rect key="frame" x="10" y="46" width="246" height="46"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="Ego-oj-mpe"/>
                                     </connections>
                                 </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Za5-ay-ru7">
+                                    <rect key="frame" x="196" y="48" width="65" height="42"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="获取验证码"/>
+                                    <connections>
+                                        <action selector="smsButton:" destination="-1" eventType="touchUpInside" id="9nK-br-0uI"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="92" id="42T-dx-pZb"/>
                                 <constraint firstAttribute="bottom" secondItem="kt2-H3-hoi" secondAttribute="bottom" id="7ae-Aw-Psf"/>
                                 <constraint firstAttribute="trailing" secondItem="kt2-H3-hoi" secondAttribute="trailing" id="BR9-uo-gea"/>
+                                <constraint firstAttribute="bottom" secondItem="Za5-ay-ru7" secondAttribute="bottom" constant="2" id="IQS-Mv-Rct"/>
+                                <constraint firstItem="Za5-ay-ru7" firstAttribute="top" secondItem="5xD-Wn-SHM" secondAttribute="bottom" constant="2" id="J8f-bT-csz"/>
                                 <constraint firstItem="1Kr-0d-cYT" firstAttribute="leading" secondItem="5xD-Wn-SHM" secondAttribute="leading" id="JIm-We-AVs"/>
                                 <constraint firstItem="5xD-Wn-SHM" firstAttribute="height" secondItem="97A-EM-0bU" secondAttribute="height" multiplier="0.5" id="NXU-sL-T9i"/>
                                 <constraint firstItem="kt2-H3-hoi" firstAttribute="leading" secondItem="97A-EM-0bU" secondAttribute="leading" id="QuU-ST-iHg"/>
                                 <constraint firstItem="5xD-Wn-SHM" firstAttribute="leading" secondItem="97A-EM-0bU" secondAttribute="leading" constant="10" id="Rmz-Wx-rM0"/>
+                                <constraint firstAttribute="trailing" secondItem="Za5-ay-ru7" secondAttribute="trailing" constant="5" id="Xte-wK-jt5"/>
                                 <constraint firstItem="1Kr-0d-cYT" firstAttribute="trailing" secondItem="5xD-Wn-SHM" secondAttribute="trailing" id="c8e-0q-h1R"/>
                                 <constraint firstItem="5xD-Wn-SHM" firstAttribute="top" secondItem="97A-EM-0bU" secondAttribute="top" id="feC-qm-abt"/>
                                 <constraint firstAttribute="bottom" secondItem="1Kr-0d-cYT" secondAttribute="bottom" id="l2W-3R-XYc"/>
@@ -230,6 +243,16 @@
                                 <constraint firstItem="Jzx-RU-C7m" firstAttribute="height" secondItem="g7b-EE-nya" secondAttribute="height" multiplier="0.5" id="wC7-6q-aJ1"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZr-iR-JDb">
+                            <rect key="frame" x="272" y="157" width="68" height="30"/>
+                            <state key="normal" title="忘记密码?">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="forget:" destination="-1" eventType="touchUpInside" id="t2m-5G-kFM"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mF-38-4Kp">
                             <rect key="frame" x="74" y="107" width="266" height="35"/>
                             <constraints>
@@ -248,16 +271,6 @@
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="logBtn:" destination="-1" eventType="touchUpInside" id="Lsk-rf-Ft1"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZr-iR-JDb">
-                            <rect key="frame" x="272" y="157" width="68" height="30"/>
-                            <state key="normal" title="忘记密码?">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="forget:" destination="-1" eventType="touchUpInside" id="t2m-5G-kFM"/>
                             </connections>
                         </button>
                     </subviews>
@@ -295,7 +308,7 @@
                 <constraint firstItem="NUX-G5-OVW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="lco-Ws-G3i"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-            <point key="canvasLocation" x="-203" y="320"/>
+            <point key="canvasLocation" x="151" y="339"/>
         </view>
     </objects>
     <resources>

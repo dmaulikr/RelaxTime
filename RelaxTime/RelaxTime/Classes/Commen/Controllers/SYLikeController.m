@@ -115,7 +115,6 @@
     [_tableView deleteRowsAtIndexPaths:_cellArray withRowAnimation:UITableViewRowAnimationAutomatic];
     
     
-    
     //取出数据ID
     NSMutableArray *idArray =[NSMutableArray array];
     for (SYHomeModel *model  in _rubbishArray) {
@@ -131,11 +130,8 @@
     [_cellArray removeAllObjects];
     [_rubbishArray removeAllObjects];
     
-    
-   
-    
-    
 }
+
 #pragma mark - 全选按钮
 - (IBAction)allSelect:(id)sender {
     SYLog(@"全选点击");
