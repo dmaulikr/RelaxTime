@@ -73,6 +73,10 @@
         [SVProgressHUD showErrorWithStatus:@"手机号码位数不正确"];
         return;
     }
+    if ([self.loginSecret.text isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"密码不能为空"];
+        return;
+    }
     
     //判断登录密码正确与否
     [self.view endEditing:YES];
@@ -115,12 +119,13 @@
   
        // [[NSUserDefaults standardUserDefaults]setObject:self.loginSecret.text forKey:@"userSecret"];
     //重置
-       [NSUserDefaults resetStandardUserDefaults];
+    
     
       [[NSUserDefaults standardUserDefaults] setBool:YES  forKey:@"registerByPhone"];
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isLogin"];
         [[NSUserDefaults standardUserDefaults]setObject:self.loginPhone.text forKey:@"userName"];
-        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"userIcon"];
+    //木有头像
+       [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userIcon"];
    
 
 }
@@ -238,7 +243,7 @@
                 SYLog(@"%@", error.localizedDescription);
             } else {
                 //重置
-                [NSUserDefaults resetStandardUserDefaults];
+                
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogin"];
                 [[NSUserDefaults standardUserDefaults] setBool:NO  forKey:@"registerByPhone"];
                 [[NSUserDefaults standardUserDefaults] setValue:object[@"username"] forKey:@"userName"];
@@ -271,7 +276,7 @@
   
     __weak typeof(self) weakSelf = self;
     
-     [SVProgressHUD showWithStatus:@"注册中"];
+     [SVProgressHUD showWithStatus:@"验证中"];
     
       self.view.userInteractionEnabled = NO;
     //判断验证码是否输入正确
@@ -284,7 +289,8 @@
             //弹出输密码框
            if(succeeded){
                 SYLog(@"注册成功");
-           
+            [SVProgressHUD dismiss];
+               
             SYSecretController *secretVC = [[SYSecretController alloc]init];
              
             secretVC.phoneNumber = self.registerPhone.text;

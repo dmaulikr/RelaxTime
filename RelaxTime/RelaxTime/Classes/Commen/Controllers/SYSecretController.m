@@ -35,12 +35,13 @@
         [SVProgressHUD showInfoWithStatus:@"密码不一致"];
     }else{
         
-        //上传密码到服务器
-        [self uploadUserMessage];
-        
         self.block();
         
-        [self dismissViewControllerAnimated:YES completion:nil];
+        //上传密码到服务器 完成后跳转
+        [self uploadUserMessage];
+      
+        
+       
     }
     
 }
@@ -49,13 +50,22 @@
 
 - (void) uploadUserMessage {
     
+    
+    self.view.userInteractionEnabled = NO;
+    
     AVObject *todo = [AVObject objectWithClassName:@"user"];
     [todo setObject:self.phoneNumber forKey:@"phoneNumber"];
     [todo setObject:self.secretOne.text forKey:@"password"];
+    __weak typeof (self) weakSelf = self;
     [todo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(succeeded){
-            [SVProgressHUD showSuccessWithStatus:@"完成"];
+            [SVProgressHUD showSuccessWithStatus:@"注册完成!\n请登录"];
+             [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"注册失败\n请重试"];
         }
+        
+         self.view.userInteractionEnabled = YES;
     }];
 }
 

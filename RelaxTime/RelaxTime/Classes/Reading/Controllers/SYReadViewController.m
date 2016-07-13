@@ -295,19 +295,6 @@
     }
 }
 
-#pragma mark - scrollView代理 改变偏移量
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    //SYLogFunc;
-    //判断第一张和最后一张改变偏移量
-    if (scrollView == self.topCollectionView) {
-        
-        [self changeContenOffestAndCurrentPage:scrollView];
-        //重置timer
-        [self resetTimer];
-    }
-
-    
-}
 
 #pragma mark - 定时器重置操作
 -(void)resetTimer{
@@ -320,6 +307,21 @@
     [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
     
 }
+#pragma mark - 拖动 定时问题
+
+//停止减速改变偏移量
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    //SYLogFunc;
+    //判断第一张和最后一张改变偏移量
+    if (scrollView == self.topCollectionView) {
+        
+        [self changeContenOffestAndCurrentPage:scrollView];
+        //重置timer
+        [self resetTimer];
+    }
+}
+
+
 
 //在即将开始拖拽时销毁计时器
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
@@ -334,17 +336,19 @@
 //在停止拖拽时启动计时器 因为移动太小可能不调用DidEndDecelerating方法
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     //SYLogFunc;
-    if (scrollView == self.topCollectionView) {
-        
-        [self changeContenOffestAndCurrentPage:scrollView];
-        [self resetTimer];
+    //如果不减速了
+    if (!decelerate) {
+        if (scrollView == self.topCollectionView) {
+            
+            [self changeContenOffestAndCurrentPage:scrollView];
+            [self resetTimer];
+        };
     }
-
 }
 
 
 
-#pragma mark - 改变偏移量 和 currentpage
+#pragma mark - 改变偏移量方法
 -(void)changeContenOffestAndCurrentPage:(UIScrollView *) scrollView{
     //如果第一张或者最后一张 改变偏移量
 
@@ -354,10 +358,15 @@
             
             scrollView.contentOffset = CGPointMake(WIDTH ,0);
         }
-    //设置pagecontrol的页数
-    self.pageController.currentPage = scrollView.contentOffset.x / WIDTH - 1;
 }
 
+#pragma mark - 设置页数
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    //设置pagecontrol的页数
+    self.pageController.currentPage = round(scrollView.contentOffset.x / WIDTH ) - 1;
+   
+}
 
  #pragma mark - readCell 代理方法 推出控制器
 -(void)pushControllerWithType:(ReadType)type andItemsID:(NSString *)itemsID{

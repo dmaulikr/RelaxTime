@@ -13,7 +13,7 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaSSOHandler.h"
 #import <TencentOpenAPI/TencentOAuth.h>
-
+#import "SYLuanchController.h"
 
 
 
@@ -27,7 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    //UM
+    //注册UM
     [UMSocialData setAppKey:UMAppKey];
     
     [self setUM];
@@ -37,18 +37,49 @@
     [AVOSCloud setApplicationId:AVCloudAppId
                       clientKey:AVCloudAppKey];
     
-    //
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
     
-    SYTabBarViewController * tabBar = [[SYTabBarViewController alloc]init];
-    self.window.rootViewController = tabBar;
+    /*=========    ======*/
+    [self setRootController];
     
-    [self.window makeKeyAndVisible];
+   
     //设置显示时间
     [SVProgressHUD setMinimumDismissTimeInterval:1];
     
     return YES;
+}
+
+-(void)setRootController{
+    
+   
+    NSString *key = @"CFBundleShortVersionString";
+    
+    // 1.从plist中取出版本号
+    
+    NSString *version = [NSBundle mainBundle].infoDictionary[key];
+    
+    // 2.从沙盒中取出上次存储的版本号
+    
+    NSString *saveVersion = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    SYLog(@"当前版本号======== %@", saveVersion);
+    
+    if([version isEqualToString:saveVersion]) {
+        
+        //不是第一次使用这个
+        SYTabBarViewController * tabBar = [[SYTabBarViewController alloc]init];
+        self.window.rootViewController = tabBar;
+       
+        
+    }else{
+        
+        //版本号不一样：第一次使用新版本
+        
+        //将新版本号写入沙盒
+        SYLuanchController *launchVc = [[SYLuanchController alloc]init];
+        self.window.rootViewController = launchVc;
+        
+        [[NSUserDefaults standardUserDefaults] setObject:version forKey:key];
+      
+  }
 }
 
 -(void)setUM{

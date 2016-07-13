@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYLuanchController">
+            <connections>
+                <outlet property="pageControl" destination="nO4-SX-Nb0" id="CyD-AE-hSa"/>
+                <outlet property="scrollView" destination="EiH-tt-f0Z" id="9kj-cs-16v"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiH-tt-f0Z">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="5Gt-M7-tAy"/>
+                    </connections>
+                </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="nO4-SX-Nb0" customClass="SYPageControl">
+                    <rect key="frame" x="100" y="550" width="400" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="daf-fI-tHe"/>
+                    </constraints>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="EiH-tt-f0Z" secondAttribute="bottom" id="2pI-IJ-QaL"/>
+                <constraint firstAttribute="trailing" secondItem="EiH-tt-f0Z" secondAttribute="trailing" id="4IH-QL-GAv"/>
+                <constraint firstItem="EiH-tt-f0Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9Ea-0R-NM8"/>
+                <constraint firstItem="EiH-tt-f0Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DYe-oA-IcL"/>
+                <constraint firstAttribute="trailing" secondItem="nO4-SX-Nb0" secondAttribute="trailing" constant="100" id="QEo-j1-rJg"/>
+                <constraint firstAttribute="bottom" secondItem="nO4-SX-Nb0" secondAttribute="bottom" constant="10" id="Un9-7B-9NR"/>
+                <constraint firstItem="nO4-SX-Nb0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="ep2-QH-2Je"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

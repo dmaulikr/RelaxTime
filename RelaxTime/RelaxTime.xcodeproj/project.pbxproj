@@ -138,6 +138,16 @@
 		BCC6BEB01D2FB0330003C1BC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BEAF1D2FB0330003C1BC /* CoreTelephony.framework */; };
 		BCC6BEB21D2FB0400003C1BC /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BEB11D2FB03F0003C1BC /* libstdc++.tbd */; };
 		BCC6BEB41D2FB0460003C1BC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BEB31D2FB0460003C1BC /* libz.tbd */; };
+		BCCD020C1D35DE5B0017246F /* SYLuanchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD020A1D35DE5B0017246F /* SYLuanchController.m */; };
+		BCCD020D1D35DE5B0017246F /* SYLuanchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCD020B1D35DE5B0017246F /* SYLuanchController.xib */; };
+		BCCD02101D35DF750017246F /* SYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD020F1D35DF750017246F /* SYPageControl.m */; };
+		BCCD02141D35E1880017246F /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD02131D35E1880017246F /* UIImage+animatedGIF.m */; };
+		BCCD021B1D35E2DB0017246F /* Gif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = BCCD02161D35E2DB0017246F /* Gif1.gif */; };
+		BCCD021C1D35E2DB0017246F /* Gif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = BCCD02171D35E2DB0017246F /* Gif2.gif */; };
+		BCCD021D1D35E2DB0017246F /* Gif3.gif in Resources */ = {isa = PBXBuildFile; fileRef = BCCD02181D35E2DB0017246F /* Gif3.gif */; };
+		BCCD021E1D35E2DB0017246F /* Gif4.gif in Resources */ = {isa = PBXBuildFile; fileRef = BCCD02191D35E2DB0017246F /* Gif4.gif */; };
+		BCCD021F1D35E2DB0017246F /* GIFLaunch2.gif in Resources */ = {isa = PBXBuildFile; fileRef = BCCD021A1D35E2DB0017246F /* GIFLaunch2.gif */; };
+		BCCD02211D361E100017246F /* txxchj.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCCD02201D361CB10017246F /* txxchj.ttf */; };
 		BCD44AAB1D3483D000F8880F /* SYUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD44AAA1D3483D000F8880F /* SYUserController.m */; };
 		BCD44AAF1D34E36200F8880F /* SYSecretController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD44AAD1D34E36200F8880F /* SYSecretController.m */; };
 		BCD44AB01D34E36200F8880F /* SYSecretController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD44AAE1D34E36200F8880F /* SYSecretController.xib */; };
@@ -399,6 +409,19 @@
 		BCC6BEAF1D2FB0330003C1BC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BCC6BEB11D2FB03F0003C1BC /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		BCC6BEB31D2FB0460003C1BC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BCCD02091D35DE5B0017246F /* SYLuanchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYLuanchController.h; sourceTree = "<group>"; };
+		BCCD020A1D35DE5B0017246F /* SYLuanchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYLuanchController.m; sourceTree = "<group>"; };
+		BCCD020B1D35DE5B0017246F /* SYLuanchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYLuanchController.xib; sourceTree = "<group>"; };
+		BCCD020E1D35DF750017246F /* SYPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPageControl.h; sourceTree = "<group>"; };
+		BCCD020F1D35DF750017246F /* SYPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPageControl.m; sourceTree = "<group>"; };
+		BCCD02121D35E1880017246F /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		BCCD02131D35E1880017246F /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		BCCD02161D35E2DB0017246F /* Gif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Gif1.gif; sourceTree = "<group>"; };
+		BCCD02171D35E2DB0017246F /* Gif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Gif2.gif; sourceTree = "<group>"; };
+		BCCD02181D35E2DB0017246F /* Gif3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Gif3.gif; sourceTree = "<group>"; };
+		BCCD02191D35E2DB0017246F /* Gif4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Gif4.gif; sourceTree = "<group>"; };
+		BCCD021A1D35E2DB0017246F /* GIFLaunch2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GIFLaunch2.gif; sourceTree = "<group>"; };
+		BCCD02201D361CB10017246F /* txxchj.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = txxchj.ttf; sourceTree = "<group>"; };
 		BCD44AA91D3483D000F8880F /* SYUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYUserController.h; sourceTree = "<group>"; };
 		BCD44AAA1D3483D000F8880F /* SYUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYUserController.m; sourceTree = "<group>"; };
 		BCD44AAC1D34E36200F8880F /* SYSecretController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSecretController.h; sourceTree = "<group>"; };
@@ -522,6 +545,7 @@
 		BC3C13B71D2D2F6700DD5A8F /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				BCCD02201D361CB10017246F /* txxchj.ttf */,
 				BC3C13B81D2D2F6700DD5A8F /* Arensdorff_Ink.otf */,
 				BC3C13B91D2D2F6700DD5A8F /* CRUICKSH.TTF */,
 			);
@@ -558,6 +582,7 @@
 		BC722B571D2BC102005A1745 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BCCD02111D35E1880017246F /* gif */,
 				1A720C251D31FA4300033120 /* BasicDataManager.h */,
 				1A720C261D31FA4300033120 /* BasicDataManager.m */,
 				BC5B01921D30CE6A00E7E66F /* SYFileHelper.h */,
@@ -771,6 +796,8 @@
 		BCA725A31D23C9200005F7BE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCCD02081D35DE250017246F /* Launch */,
+				BCCD02061D35DE080017246F /* Setter */,
 				BCA725C31D23CCB70005F7BE /* SYNavgationController.h */,
 				BCA725C41D23CCB70005F7BE /* SYNavgationController.m */,
 				BCA725C61D23CCE10005F7BE /* SYTabBarViewController.h */,
@@ -779,19 +806,6 @@
 				BCA725CA1D23CD250005F7BE /* SYBasicViewController.m */,
 				BCA725DD1D23E6EB0005F7BE /* SYMainBasicViewController.h */,
 				BCA725DE1D23E6EB0005F7BE /* SYMainBasicViewController.m */,
-				BC5B01951D30E19900E7E66F /* SYLoginRegisterViewController.h */,
-				BC5B01961D30E19900E7E66F /* SYLoginRegisterViewController.m */,
-				BC5B01971D30E19900E7E66F /* SYLoginRegisterViewController.xib */,
-				BC209C581D309FA2007BBF83 /* SYSetController.h */,
-				BC209C591D309FA2007BBF83 /* SYSetController.m */,
-				BCAB9DDD1D333AB1008D6C9B /* SYLikeController.h */,
-				BCAB9DDE1D333AB1008D6C9B /* SYLikeController.m */,
-				BCAB9DE01D337163008D6C9B /* SYLikeController.xib */,
-				BCD44AA91D3483D000F8880F /* SYUserController.h */,
-				BCD44AAA1D3483D000F8880F /* SYUserController.m */,
-				BCD44AAC1D34E36200F8880F /* SYSecretController.h */,
-				BCD44AAD1D34E36200F8880F /* SYSecretController.m */,
-				BCD44AAE1D34E36200F8880F /* SYSecretController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -971,6 +985,7 @@
 		BCA725B31D23C9200005F7BE /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				BCCD02151D35E2DB0017246F /* launchImage */,
 				BCA725B41D23C9200005F7BE /* main.m */,
 				BCA725B51D23C9200005F7BE /* ViewController.h */,
 				BCA725B61D23C9200005F7BE /* ViewController.m */,
@@ -1126,6 +1141,59 @@
 			path = Wechat;
 			sourceTree = "<group>";
 		};
+		BCCD02061D35DE080017246F /* Setter */ = {
+			isa = PBXGroup;
+			children = (
+				BC5B01951D30E19900E7E66F /* SYLoginRegisterViewController.h */,
+				BC5B01961D30E19900E7E66F /* SYLoginRegisterViewController.m */,
+				BC5B01971D30E19900E7E66F /* SYLoginRegisterViewController.xib */,
+				BC209C581D309FA2007BBF83 /* SYSetController.h */,
+				BC209C591D309FA2007BBF83 /* SYSetController.m */,
+				BCAB9DDD1D333AB1008D6C9B /* SYLikeController.h */,
+				BCAB9DDE1D333AB1008D6C9B /* SYLikeController.m */,
+				BCAB9DE01D337163008D6C9B /* SYLikeController.xib */,
+				BCD44AA91D3483D000F8880F /* SYUserController.h */,
+				BCD44AAA1D3483D000F8880F /* SYUserController.m */,
+				BCD44AAC1D34E36200F8880F /* SYSecretController.h */,
+				BCD44AAD1D34E36200F8880F /* SYSecretController.m */,
+				BCD44AAE1D34E36200F8880F /* SYSecretController.xib */,
+			);
+			name = Setter;
+			sourceTree = "<group>";
+		};
+		BCCD02081D35DE250017246F /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				BCCD02091D35DE5B0017246F /* SYLuanchController.h */,
+				BCCD020A1D35DE5B0017246F /* SYLuanchController.m */,
+				BCCD020B1D35DE5B0017246F /* SYLuanchController.xib */,
+				BCCD020E1D35DF750017246F /* SYPageControl.h */,
+				BCCD020F1D35DF750017246F /* SYPageControl.m */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
+		BCCD02111D35E1880017246F /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				BCCD02121D35E1880017246F /* UIImage+animatedGIF.h */,
+				BCCD02131D35E1880017246F /* UIImage+animatedGIF.m */,
+			);
+			path = gif;
+			sourceTree = "<group>";
+		};
+		BCCD02151D35E2DB0017246F /* launchImage */ = {
+			isa = PBXGroup;
+			children = (
+				BCCD02161D35E2DB0017246F /* Gif1.gif */,
+				BCCD02171D35E2DB0017246F /* Gif2.gif */,
+				BCCD02181D35E2DB0017246F /* Gif3.gif */,
+				BCCD02191D35E2DB0017246F /* Gif4.gif */,
+				BCCD021A1D35E2DB0017246F /* GIFLaunch2.gif */,
+			);
+			path = launchImage;
+			sourceTree = "<group>";
+		};
 		BCFE96161D24EB190021307D /* SYShowPicViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1252,8 +1320,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCD02211D361E100017246F /* txxchj.ttf in Resources */,
 				BCC6BE7A1D2FAF280003C1BC /* UMShareEditViewController.xib in Resources */,
 				BC3C13BB1D2D2F6700DD5A8F /* CRUICKSH.TTF in Resources */,
+				BCCD021F1D35E2DB0017246F /* GIFLaunch2.gif in Resources */,
 				1A6DC5121D29169200DF78A6 /* SYMusicViewController.xib in Resources */,
 				BC4AB5991D23FB5000BFEA15 /* SYHomeTableViewCell.xib in Resources */,
 				BCC6BE7D1D2FAF280003C1BC /* UMSnsAccountViewController.xib in Resources */,
@@ -1266,12 +1336,14 @@
 				BC3C13C51D2D355400DD5A8F /* SYMovieDetailController.xib in Resources */,
 				BC9B4A241D2E2EAD00AECEF8 /* SYMoviePicCell.xib in Resources */,
 				BC7E7F451D26548100CC8506 /* SYReadTopCell.xib in Resources */,
+				BCCD021E1D35E2DB0017246F /* Gif4.gif in Resources */,
 				BC3C13BA1D2D2F6700DD5A8F /* Arensdorff_Ink.otf in Resources */,
 				BC9B4A1B1D2DE32C00AECEF8 /* SYMovieContentView.xib in Resources */,
 				BC7E7F4A1D26549800CC8506 /* SYReadBottomCell.xib in Resources */,
 				BCA725751D23C6780005F7BE /* LaunchScreen.storyboard in Resources */,
 				BC722B5C1D2BC11F005A1745 /* XMGStatusBarHUD.bundle in Resources */,
 				BCD44AB01D34E36200F8880F /* SYSecretController.xib in Resources */,
+				BCCD021B1D35E2DB0017246F /* Gif1.gif in Resources */,
 				BCC6BE7E1D2FAF280003C1BC /* UMSShareListController.xib in Resources */,
 				BCC6BEA01D2FAFE20003C1BC /* WeiboSDK.bundle in Resources */,
 				BC722B631D2BD7E0005A1745 /* SYSearchControllerViewController.xib in Resources */,
@@ -1280,6 +1352,7 @@
 				BCC6BE771D2FAF280003C1BC /* UMSCommentDetailController.xib in Resources */,
 				1A451E031D2BF5F500AB316C /* SYhomeSearchCell.xib in Resources */,
 				BC99FF2C1D2D1FD000D73948 /* SYMovieListCell.xib in Resources */,
+				BCCD020D1D35DE5B0017246F /* SYLuanchController.xib in Resources */,
 				1A6DC50D1D29055A00DF78A6 /* SYMusicContentView.xib in Resources */,
 				BC7E7F401D2650D700CC8506 /* SYReadViewController.xib in Resources */,
 				BCC6BE7C1D2FAF280003C1BC /* UMSLoginViewController.xib in Resources */,
@@ -1287,9 +1360,11 @@
 				BC4AB58F1D23EF5800BFEA15 /* SYHomeViewController.xib in Resources */,
 				BC805EDA1D274C7E00A52EF8 /* SYReadDetailController.xib in Resources */,
 				BC67E8BF1D254B3D0042C649 /* SYDetailCollectionViewCell.xib in Resources */,
+				BCCD021D1D35E2DB0017246F /* Gif3.gif in Resources */,
 				BCC6BEA31D2FAFE20003C1BC /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				BC5B01991D30E19900E7E66F /* SYLoginRegisterViewController.xib in Resources */,
 				BCA725D91D23DF810005F7BE /* Assets.xcassets in Resources */,
+				BCCD021C1D35E2DB0017246F /* Gif2.gif in Resources */,
 				BC67E8B51D2544500042C649 /* SYHomeBeforeCell.xib in Resources */,
 				BCC6BE751D2FAF280003C1BC /* UMSocialLocalizable.strings in Resources */,
 				BC4AB5941D23F6B600BFEA15 /* SYHomeCollectionViewCell.xib in Resources */,
@@ -1391,6 +1466,7 @@
 				1A6DC5111D29169200DF78A6 /* SYMusicViewController.m in Sources */,
 				1A6DC5181D29480000DF78A6 /* SYMusicModel.m in Sources */,
 				BC7E7F591D2667B000CC8506 /* SYReadSeriesModel.m in Sources */,
+				BCCD020C1D35DE5B0017246F /* SYLuanchController.m in Sources */,
 				BCA725C81D23CCE10005F7BE /* SYTabBarViewController.m in Sources */,
 				BC3C13DD1D2D36D500DD5A8F /* SYPlayViewController.m in Sources */,
 				BC4AB58E1D23EF5800BFEA15 /* SYHomeViewController.m in Sources */,
@@ -1410,10 +1486,12 @@
 				1A6AB7511D26B2A60018FDEB /* SYReadTopModel.m in Sources */,
 				BC9B4A271D2E611D00AECEF8 /* SYAgainDownView.m in Sources */,
 				BC805ED91D274C7E00A52EF8 /* SYReadDetailController.m in Sources */,
+				BCCD02101D35DF750017246F /* SYPageControl.m in Sources */,
 				BC67E8B41D2544500042C649 /* SYHomeBeforeCell.m in Sources */,
 				BC67E8BE1D254B3D0042C649 /* SYDetailCollectionViewCell.m in Sources */,
 				BC7E7F3E1D26356C00CC8506 /* SYHomeBeforeSingleController.m in Sources */,
 				BCA725D71D23DB090005F7BE /* SYReadViewController.m in Sources */,
+				BCCD02141D35E1880017246F /* UIImage+animatedGIF.m in Sources */,
 				1A720C271D31FA4300033120 /* BasicDataManager.m in Sources */,
 				BC3C13E41D2D3D4D00DD5A8F /* SYMovieStoryModel.m in Sources */,
 				BCD44AAB1D3483D000F8880F /* SYUserController.m in Sources */,

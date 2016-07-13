@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-Co-TiS">
-                                <rect key="frame" x="250" y="245" width="100" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-Co-TiS">
+                                <rect key="frame" x="110" y="285" width="100" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="dgr-EK-dqC"/>
                                 </constraints>
@@ -34,10 +34,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="v9H-a8-Ihg">
-                                <rect key="frame" x="260" y="150" width="80" height="100"/>
+                                <rect key="frame" x="120" y="150" width="80" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="SIt-Pn-9n7"/>
-                                    <constraint firstAttribute="height" constant="100" id="pVn-4p-Q3P"/>
+                                    <constraint firstAttribute="height" constant="120" id="pVn-4p-Q3P"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -49,10 +49,11 @@
                             <constraint firstItem="zsR-Co-TiS" firstAttribute="top" secondItem="v9H-a8-Ihg" secondAttribute="bottom" constant="15" id="sSA-XT-K5i"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="49" y="408"/>
         </scene>
     </scenes>
     <resources>

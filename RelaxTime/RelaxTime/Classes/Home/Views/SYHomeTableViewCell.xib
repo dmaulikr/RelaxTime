@@ -16,30 +16,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="393" height="564"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gd-Yc-z4V">
-                        <rect key="frame" x="0.0" y="524" width="393" height="40"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-g5-XYo" userLabel="喜欢">
-                                <rect key="frame" x="185" y="9" width="23" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="23" id="4oW-fm-5ow"/>
-                                    <constraint firstAttribute="height" constant="23" id="idP-Dh-nIY"/>
-                                </constraints>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" backgroundImage="liker"/>
-                                <state key="selected" backgroundImage="liker_click"/>
-                                <connections>
-                                    <action selector="likeBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0UE-dU-cy0"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="iXs-C9-UGP"/>
-                            <constraint firstAttribute="bottom" secondItem="hbq-g5-XYo" secondAttribute="bottom" constant="8" id="lWT-YI-K5Z"/>
-                            <constraint firstItem="hbq-g5-XYo" firstAttribute="centerX" secondItem="2Gd-Yc-z4V" secondAttribute="centerX" id="nAJ-BH-jhB"/>
-                        </constraints>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.27 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APV-Jp-vW1" userLabel="日期">
                         <rect key="frame" x="309" y="494" width="61" height="20"/>
                         <constraints>
@@ -84,6 +60,30 @@
                             <constraint firstAttribute="width" secondItem="CBW-rO-Xef" secondAttribute="height" multiplier="1.333:1" id="eb7-TQ-fA7"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gd-Yc-z4V">
+                        <rect key="frame" x="0.0" y="524" width="393" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-g5-XYo" userLabel="喜欢">
+                                <rect key="frame" x="185" y="7" width="23" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="4oW-fm-5ow"/>
+                                    <constraint firstAttribute="height" constant="23" id="idP-Dh-nIY"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="liker"/>
+                                <state key="selected" backgroundImage="liker_click"/>
+                                <connections>
+                                    <action selector="likeBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0UE-dU-cy0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="iXs-C9-UGP"/>
+                            <constraint firstAttribute="bottom" secondItem="hbq-g5-XYo" secondAttribute="bottom" constant="10" id="lWT-YI-K5Z"/>
+                            <constraint firstItem="hbq-g5-XYo" firstAttribute="centerX" secondItem="2Gd-Yc-z4V" secondAttribute="centerX" id="nAJ-BH-jhB"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" red="0.79507606907894723" green="0.81578947368421051" blue="0.78921568627450989" alpha="0.11" colorSpace="calibratedRGB"/>
                 <constraints>
