@@ -43,17 +43,6 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUE-Rk-JcY" userLabel="分享">
-                        <rect key="frame" x="348" y="529" width="25" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="25" id="A44-AK-UyF"/>
-                            <constraint firstAttribute="height" constant="25" id="spI-qz-qbJ"/>
-                        </constraints>
-                        <state key="normal" title="Button" backgroundImage="share_movie"/>
-                        <connections>
-                            <action selector="shareBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CbW-Kq-Roe"/>
-                        </connections>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBW-rO-Xef" userLabel="图">
                         <rect key="frame" x="13" y="13" width="367" height="275"/>
                         <constraints>
@@ -84,6 +73,17 @@
                             <constraint firstItem="hbq-g5-XYo" firstAttribute="centerX" secondItem="2Gd-Yc-z4V" secondAttribute="centerX" id="nAJ-BH-jhB"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUE-Rk-JcY" userLabel="分享">
+                        <rect key="frame" x="348" y="529" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="A44-AK-UyF"/>
+                            <constraint firstAttribute="height" constant="25" id="spI-qz-qbJ"/>
+                        </constraints>
+                        <state key="normal" title="Button" backgroundImage="share_movie"/>
+                        <connections>
+                            <action selector="shareBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CbW-Kq-Roe"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.79507606907894723" green="0.81578947368421051" blue="0.78921568627450989" alpha="0.11" colorSpace="calibratedRGB"/>
                 <constraints>

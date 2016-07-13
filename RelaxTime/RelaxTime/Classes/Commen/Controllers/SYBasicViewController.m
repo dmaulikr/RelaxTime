@@ -29,6 +29,22 @@
     
 }
 
+
+-(void)setTitleViewWithText:(NSString *)text{
+    //标题
+    NSMutableDictionary *attrib = [NSMutableDictionary dictionary];
+    attrib[NSFontAttributeName] = [UIFont fontWithName:@"Tensentype-XiChaoHeiJ" size:20];
+    attrib[NSForegroundColorAttributeName] = SYColorRGB(232, 126, 162);
+    
+    NSMutableAttributedString *attriStrb = [[NSMutableAttributedString alloc] initWithString:text attributes:attrib];
+    
+    UILabel *labelB = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 40)];
+    labelB.backgroundColor = [UIColor clearColor];
+    labelB.textAlignment = NSTextAlignmentCenter;
+    labelB.attributedText = attriStrb;
+    self.navigationItem.titleView = labelB;
+}
+
 #pragma mark - 按钮点击事件
 //搜索
 -(void)searchClick{

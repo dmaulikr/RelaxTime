@@ -46,6 +46,8 @@ NSString *const movieListCellIdentifer = @"movieListCell";
     //隐藏
     self.navigationItem.leftBarButtonItem = nil;
     
+     [self setTitleViewWithText:@"电影"];
+    
     //请求数据
     [self requestMovieData:self.movieId];
     

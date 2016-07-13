@@ -22,4 +22,11 @@
  *  用户按钮点击
  */
 -(void)userClick;
+
+/**
+ *  设置navigationItem的titleView
+ *
+ *  @param text 显示的标题
+ */
+-(void)setTitleViewWithText:(NSString *)text;
 @end

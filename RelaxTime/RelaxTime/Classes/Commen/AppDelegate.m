@@ -58,7 +58,7 @@
     NSString *version = [NSBundle mainBundle].infoDictionary[key];
     
     // 2.从沙盒中取出上次存储的版本号
-    
+
     NSString *saveVersion = [[NSUserDefaults standardUserDefaults] objectForKey:key];
     SYLog(@"当前版本号======== %@", saveVersion);
     
@@ -77,8 +77,10 @@
         SYLuanchController *launchVc = [[SYLuanchController alloc]init];
         self.window.rootViewController = launchVc;
         
+#if(0)
         [[NSUserDefaults standardUserDefaults] setObject:version forKey:key];
-      
+#endif
+        
   }
 }
 

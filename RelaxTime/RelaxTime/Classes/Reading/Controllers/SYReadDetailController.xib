@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYReadDetailController">
             <connections>
+                <outlet property="bottomView" destination="vZ9-8G-Qat" id="sLD-m9-g4m"/>
+                <outlet property="bottomViewConstraint" destination="DvU-X5-Lb6" id="dcH-0l-SeP"/>
                 <outlet property="likeBtn" destination="o4w-Xs-3o2" id="6Ci-Ry-nD5"/>
                 <outlet property="tableView" destination="KO0-V5-LVf" id="HcU-y5-mQE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,8 +27,8 @@
                         <outlet property="delegate" destination="-1" id="WkF-Kj-oPZ"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZ9-8G-Qat">
-                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZ9-8G-Qat">
+                    <rect key="frame" x="0.0" y="478" width="320" height="49"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm9-vd-5fN">
                             <rect key="frame" x="107" y="0.0" width="106" height="49"/>

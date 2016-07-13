@@ -35,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = @"闲Time";
+ 
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self creatUI];
@@ -59,7 +59,7 @@
 #pragma mark - 数据请求
 -(void)getData{
     
-    
+   
     [self.requestManager GET:Home_URl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
        
         //取出数组
@@ -93,6 +93,8 @@
     
     self.bgImageView.image = [UIImage imageNamed:self.picArray[arc4random() % self.picArray.count]];
    
+    [self setTitleViewWithText:@"闲Time"];
+    
 }
 
 #pragma mark - collectionView代理方法事件

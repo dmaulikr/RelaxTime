@@ -44,7 +44,11 @@
 
 //评论的sectionView
 @property(nonatomic ,strong) UIView * sectionView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewConstraint;
+
+@property(nonatomic ,assign) CGFloat beforeY;
 
 @end
 
@@ -167,10 +171,30 @@
     //NSLog(@"内容 %@", self.contentURL);
     //NSLog(@"评论 %@",self.commentURL);
     
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap)];
+    [self.tableView addGestureRecognizer:tap];
     
-    
+}
 
-   
+#pragma mark - 手势
+-(void)tap{
+    //SYLogFunc;
+    self.bottomViewConstraint.constant = self.bottomViewConstraint.constant == 0 ? -49 : 0;
+    [self changeStatusBar];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.bottomView layoutIfNeeded];
+        self.navigationController.navigationBar.alpha = self.navigationController.navigationBar.alpha == 0 ? 1 : 0;
+        
+    }];
+}
+#pragma mark - 改变状态栏
+
+-(void)changeStatusBar{
+    if (self.bottomViewConstraint.constant == 0) {
+        self.navigationController.navigationBar.barStyle =  UIBarStyleDefault;
+    }else{
+        self.navigationController.navigationBar.barStyle =  UIBarStyleBlack;
+    }
 }
 
 #pragma mark - 数据请求
@@ -283,7 +307,7 @@
 
 //设置sectionheader  评论标题头
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    SYLogFunc;
+    //SYLogFunc;
     if (self.sectionView == nil) {
         self.sectionView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
         self.sectionView.backgroundColor= GlobalColor238;
@@ -313,6 +337,40 @@
 #pragma mark - 评论
 -(void)comment{
     [SVProgressHUD showInfoWithStatus:@"暂未开放"];
+}
+
+
+#pragma mark - scrollView代理方法
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    //如果往下滑显示
+    if (self.beforeY > scrollView.contentOffset.y) {
+        self.bottomViewConstraint.constant = 0;
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.bottomView layoutIfNeeded];
+            self.navigationController.navigationBar.alpha = 1;
+            
+        }];
+    }else{//往上滑消失
+        self.bottomViewConstraint.constant = -49;
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.bottomView layoutIfNeeded];
+             self.navigationController.navigationBar.alpha = 0;
+           
+        }];
+    }
+    
+    [self changeStatusBar];
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    //记录刚拉时的y
+    self.beforeY = scrollView.contentOffset.y;
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+   self.navigationController.navigationBar.alpha = 1;
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
 }
 
 

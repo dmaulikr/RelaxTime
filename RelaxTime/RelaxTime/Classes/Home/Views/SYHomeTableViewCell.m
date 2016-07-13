@@ -87,6 +87,7 @@
     //[SVProgressHUD showErrorWithStatus:@"敬请期待哦"];
     
     id vc =  [UIApplication sharedApplication].keyWindow.rootViewController;
+  
    
     /**
      *  友盟简单版

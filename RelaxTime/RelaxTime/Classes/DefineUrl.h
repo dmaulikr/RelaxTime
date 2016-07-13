@@ -79,7 +79,7 @@
 /***********电影 get ***/
 //以模型的id进行刷新操作
 #define Movie_URL @"http://v3.wufazhuce.com:8000/api/movie/list/"
-//#define Movie_URL @"http://v3.wufazhuce.com:8000/api/movie/list/34";
+//#define Movie_URL @"http://v3.wufazhuce.com:8000/api/movie/list/34"
 
 //详情
 #define Movie_detail_URL @"http://v3.wufazhuce.com:8000/api/movie/detail/%@"

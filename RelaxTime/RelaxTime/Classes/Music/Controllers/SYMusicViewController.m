@@ -124,6 +124,9 @@
 #pragma mark - 创建UI
 -(void)creatUI{
     
+     [self setTitleViewWithText:@"音乐"];
+    
+    
     //去掉右按钮
     self.navigationItem.leftBarButtonItem = nil;
     //设置滑条和tableView的偏移量

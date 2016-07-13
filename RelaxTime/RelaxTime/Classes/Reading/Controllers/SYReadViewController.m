@@ -60,7 +60,7 @@
     };
     
     self.bottomDownView.hidden = YES;
-     self.topDownAgainView.label.text = @"重新加载\n下方数据";
+     self.bottomDownView.label.text = @"重新加载\n下方数据";
     [self.bottomDownView setBlock:^{
         [SVProgressHUD show];
         [weakSelf getButtomData];
@@ -107,6 +107,7 @@
     [self.topCollectionView registerNib:[UINib nibWithNibName:@"SYReadTopCell" bundle:nil] forCellWithReuseIdentifier:TopCellID];
      [self.bottomCollectionView registerNib:[UINib nibWithNibName:@"SYReadBottomCell" bundle:nil] forCellWithReuseIdentifier:BottomCellID];
     
+     [self setTitleViewWithText:@"文章"];
     
 }
 #pragma mark - 请求数据
@@ -364,7 +365,9 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     //设置pagecontrol的页数
-    self.pageController.currentPage = round(scrollView.contentOffset.x / WIDTH ) - 1;
+    if (scrollView == self.topCollectionView) {
+        self.pageController.currentPage = round(scrollView.contentOffset.x / WIDTH ) - 1;
+    }
    
 }
 

@@ -101,16 +101,30 @@
         CGFloat buttonH = launchButtonH;
         CGFloat buttonW = launchButtonW;
          self.button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
-        [ self.button setTitle:@"点击进入闲Time" forState:UIControlStateNormal];
+    
         [ self.button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
        self.button.backgroundColor= SYColorRGB(232, 126, 162);
        self.button.layer.cornerRadius = 20;
- 
-      self.button.layer.borderColor = [UIColor whiteColor].CGColor;
-      [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-      self.button.userInteractionEnabled = NO;
+        self.button.layer.borderColor = [UIColor whiteColor].CGColor;
+       [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+       self.button.userInteractionEnabled = NO;
     
-        [self.view addSubview: self.button];
+      [self.view addSubview: self.button];
+ 
+    //富文本
+    NSMutableDictionary *attrib = [NSMutableDictionary dictionary];
+     attrib[NSFontAttributeName] = [UIFont fontWithName:@"Tensentype-XiChaoHeiJ" size:20];
+     attrib[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    
+    NSMutableAttributedString *attriStrb = [[NSMutableAttributedString alloc] initWithString:@"点击进入闲Time" attributes:attrib];
+
+    UILabel *labelB = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 40)];
+    labelB.backgroundColor = [UIColor clearColor];
+    labelB.textAlignment = NSTextAlignmentCenter;
+    labelB.attributedText = attriStrb;
+    [self.button addSubview:labelB];
+    
+    
     
     
 }
