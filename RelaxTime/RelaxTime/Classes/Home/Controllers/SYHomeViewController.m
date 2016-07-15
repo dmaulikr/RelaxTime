@@ -59,16 +59,16 @@
 #pragma mark - 数据请求
 -(void)getData{
     
-   
+    __weak typeof (self) weakSelf = self;
     [self.requestManager GET:Home_URl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
        
         //取出数组
         NSArray * array = responseObject[@"data"];
-        [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYHomeModel class] json:array]];
+        [weakSelf.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYHomeModel class] json:array]];
         //NSLog(@"%@",self.dataArray);
         dispatch_async(dispatch_get_main_queue(), ^{
-             self.againDownView.hidden = YES;
-            [self.collectionView reloadData];
+             weakSelf.againDownView.hidden = YES;
+            [weakSelf.collectionView reloadData];
             [SVProgressHUD dismiss];
         });
      
@@ -77,7 +77,7 @@
         //[SVProgressHUD showErrorWithStatus:@"请求失败"];
         [SVProgressHUD dismiss];
         SYLog(@"首页数据请求失败");
-        self.againDownView.hidden = NO;
+        weakSelf.againDownView.hidden = NO;
     }];
     
    
@@ -106,7 +106,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     SYHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    
+  
     cell.model = self.dataArray[indexPath.row];
     
     return cell;

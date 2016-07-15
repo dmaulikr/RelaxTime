@@ -77,7 +77,7 @@
         SYLuanchController *launchVc = [[SYLuanchController alloc]init];
         self.window.rootViewController = launchVc;
         
-#if(0)
+#if(1)
         [[NSUserDefaults standardUserDefaults] setObject:version forKey:key];
 #endif
         

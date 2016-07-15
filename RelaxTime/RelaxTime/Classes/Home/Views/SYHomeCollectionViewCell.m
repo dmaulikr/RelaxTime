@@ -41,11 +41,15 @@
 -(void)setModel:(SYHomeModel *)model{
     
     _model = model;
-    
-     self.tableView.contentOffset = CGPointMake(0, -80);
-    [self layoutIfNeeded];
-   
+  
     [self.tableView reloadData];
+    
+    dispatch_async(dispatch_get_main_queue()
+                   , ^{
+                     
+                            self.tableView.contentOffset = CGPointMake(0, -80);
+                   });
+
    
     
 }
@@ -71,7 +75,7 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-  
+    
 }
 
 @end

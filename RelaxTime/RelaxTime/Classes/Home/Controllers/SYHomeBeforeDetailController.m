@@ -77,13 +77,16 @@
 -(void)getdata{
     
     NSString *url = [Home_before_URL stringByAppendingString:self.RequestDate];
+    __weak typeof (self) weakSelf = self;
     [self.requestManager GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSArray *array = responseObject[@"data"];
-        [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYHomeModel class]json:array]];
+        [weakSelf.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[SYHomeModel class]json:array]];
         
         //刷新数据
-        [self.collectionView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+             [weakSelf.collectionView reloadData];
+        });
        // NSLog(@"%@",self.dataArray);
         
 

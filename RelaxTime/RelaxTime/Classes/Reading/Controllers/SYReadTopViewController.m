@@ -48,6 +48,7 @@
 
 #pragma mark - 隐藏状态栏
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
 }
 

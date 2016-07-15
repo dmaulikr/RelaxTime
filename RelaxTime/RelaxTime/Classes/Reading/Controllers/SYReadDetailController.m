@@ -56,6 +56,7 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
 }
 
@@ -180,21 +181,11 @@
 -(void)tap{
     //SYLogFunc;
     self.bottomViewConstraint.constant = self.bottomViewConstraint.constant == 0 ? -49 : 0;
-    [self changeStatusBar];
+   
     [UIView animateWithDuration:0.5 animations:^{
         [self.bottomView layoutIfNeeded];
-        self.navigationController.navigationBar.alpha = self.navigationController.navigationBar.alpha == 0 ? 1 : 0;
-        
+    
     }];
-}
-#pragma mark - 改变状态栏
-
--(void)changeStatusBar{
-    if (self.bottomViewConstraint.constant == 0) {
-        self.navigationController.navigationBar.barStyle =  UIBarStyleDefault;
-    }else{
-        self.navigationController.navigationBar.barStyle =  UIBarStyleBlack;
-    }
 }
 
 #pragma mark - 数据请求
@@ -336,6 +327,7 @@
 
 #pragma mark - 评论
 -(void)comment{
+    
     [SVProgressHUD showInfoWithStatus:@"暂未开放"];
 }
 
@@ -347,19 +339,16 @@
         self.bottomViewConstraint.constant = 0;
         [UIView animateWithDuration:0.5 animations:^{
             [self.bottomView layoutIfNeeded];
-            self.navigationController.navigationBar.alpha = 1;
-            
+           
         }];
     }else{//往上滑消失
         self.bottomViewConstraint.constant = -49;
         [UIView animateWithDuration:0.5 animations:^{
             [self.bottomView layoutIfNeeded];
-             self.navigationController.navigationBar.alpha = 0;
            
         }];
     }
     
-    [self changeStatusBar];
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
@@ -368,10 +357,7 @@
     
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-   self.navigationController.navigationBar.alpha = 1;
-    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-}
+
 
 
 - (void)didReceiveMemoryWarning {

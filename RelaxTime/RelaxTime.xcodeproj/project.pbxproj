@@ -125,7 +125,7 @@
 		BCC6BE9E1D2FAFE20003C1BC /* libSocialSinaSSO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BE821D2FAFE20003C1BC /* libSocialSinaSSO.a */; };
 		BCC6BE9F1D2FAFE20003C1BC /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BE831D2FAFE20003C1BC /* libWeiboSDK.a */; };
 		BCC6BEA01D2FAFE20003C1BC /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCC6BE8E1D2FAFE20003C1BC /* WeiboSDK.bundle */; };
-		BCC6BEA11D2FAFE20003C1BC /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BE921D2FAFE20003C1BC /* libSocialQQ.a */; };
+		BCC6BEA11D2FAFE20003C1BC /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BE921D2FAFE20003C1BC /* libSocialQQ.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		BCC6BEA21D2FAFE20003C1BC /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BE931D2FAFE20003C1BC /* TencentOpenAPI.framework */; };
 		BCC6BEA31D2FAFE20003C1BC /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCC6BE941D2FAFE20003C1BC /* TencentOpenApi_IOS_Bundle.bundle */; };
 		BCC6BEA41D2FAFE20003C1BC /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC6BE971D2FAFE20003C1BC /* libSocialWechat.a */; };
@@ -1275,7 +1275,7 @@
 				TargetAttributes = {
 					BCA725611D23C6770005F7BE = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = UZV288DNAJ;
+						DevelopmentTeam = 2U5WYMT45B;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1620,7 +1620,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1657,7 +1657,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1668,8 +1668,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 74E88003CDF506C7D70607D8 /* Pods-RelaxTime.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RelaxTime/Classes/Commen/UMSocial_Sdk_5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -1677,6 +1680,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/RelaxTime/Classes/PrefixHeader.pch";
 				INFOPLIST_FILE = RelaxTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1685,6 +1689,7 @@
 					"$(PROJECT_DIR)/RelaxTime/Classes/Commen/UMSocial_Sdk_5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RelaxTime/Classes/Commen/UMSocial_Sdk_5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1716,8 +1721,10 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTimeOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1725,8 +1732,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2962376A9FB060836F1E1055 /* Pods-RelaxTime.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RelaxTime/Classes/Commen/UMSocial_Sdk_5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -1734,6 +1744,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/RelaxTime/Classes/PrefixHeader.pch";
 				INFOPLIST_FILE = RelaxTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1742,6 +1753,7 @@
 					"$(PROJECT_DIR)/RelaxTime/Classes/Commen/UMSocial_Sdk_5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RelaxTime/Classes/Commen/UMSocial_Sdk_5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1773,8 +1785,10 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTimeOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

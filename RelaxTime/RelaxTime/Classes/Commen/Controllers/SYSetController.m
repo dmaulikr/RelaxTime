@@ -40,6 +40,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     //读取缓存显示
        self.disklabel.text = [NSString stringWithFormat:@"%.1fM",[self calculateMemoryWithPath:localImageCachePath]];
 }
