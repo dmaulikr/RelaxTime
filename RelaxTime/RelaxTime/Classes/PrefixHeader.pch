@@ -22,7 +22,7 @@
 #import <LeanCloudSocial/AVOSCloudSNS.h>
 
 
-#import "XMGStatusBarHUD.h"
+//#import "XMGStatusBarHUD.h"
 //导航
 
 #import "SYNavgationController.h"

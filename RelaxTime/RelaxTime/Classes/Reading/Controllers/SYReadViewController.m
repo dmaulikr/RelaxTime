@@ -159,11 +159,11 @@
             [self.dataArrayTop addObject:self.dataArrayTop[1]];
             
             
-            //设置偏移量
-            self.topCollectionView.contentOffset = CGPointMake(WIDTH, 0);
+          
             //刷新数据
             [self.topCollectionView reloadData];
-            
+            //设置偏移量
+            self.topCollectionView.contentOffset = CGPointMake(WIDTH, 0);
             //显示pageControler设置
             _pageController.hidden = NO;
             _pageController.numberOfPages = self.dataArrayTop.count - 2;
@@ -172,7 +172,7 @@
             //添加计时器
             self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(timeGo) userInfo:nil repeats:YES];
             
-            [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+            [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
             //请求成功 隐藏
             self.topDownAgainView.hidden = YES;
              [SVProgressHUD dismiss];
@@ -305,7 +305,7 @@
     self.timer = nil;
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(timeGo) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+    [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
     
 }
 #pragma mark - 拖动 定时问题

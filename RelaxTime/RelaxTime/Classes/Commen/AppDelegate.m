@@ -99,6 +99,8 @@
     [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:SinaAppID
                                               secret:SinaAppSecret
                                          RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    
+    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
 
 }
 

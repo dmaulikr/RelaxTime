@@ -184,15 +184,16 @@
             //成功后就显示成功
             case AVPlayerStatusReadyToPlay:
               
-                [XMGStatusBarHUD showSuccess:@"正在播放"];
-        
+               
+               [SVProgressHUD showSuccessWithStatus:@"播放中"];
              
                 SYLog(@"KVO：加载成功");
         
                 break;
             //失败也提示
             case AVPlayerStatusFailed:
-                 [XMGStatusBarHUD showError:@"加载失败"];
+                
+                [SVProgressHUD showErrorWithStatus:@"加载失败"];
                SYLog(@"KVO：加载失败，网络或者服务器出现问题");
                 break;
             default:
@@ -288,6 +289,8 @@
         SYLog(@" 音乐详情请求失败");
         //[SVProgressHUD showErrorWithStatus:@"请求失败"];
         [SVProgressHUD dismiss];
+        //请求完成后使切换按钮可用
+        self.musicContentView.changeButton.enabled = YES;
          self.againDownLabel.hidden = NO;
     }];
     
@@ -495,8 +498,7 @@
 -(void)endPlay{
     
     SYLogFunc;
-    
-    [XMGStatusBarHUD showMessage:@"暂停播放"];
+    [SVProgressHUD dismiss];
     self.musicContentView.playButton.selected = NO;
     [_player pause];
     
@@ -510,13 +512,13 @@
      SYLogFunc;
     
     if (_item.status == 1) {
-        [XMGStatusBarHUD showSuccess:@"正在播放"];
+        [SVProgressHUD showSuccessWithStatus:@"播放中"];
         self.musicContentView.playButton.selected = YES;
     }else if (_item.status == 0){
-        [XMGStatusBarHUD showLoading:@"正在加载中"];
+        [SVProgressHUD showWithStatus:@"加载中"];
         self.musicContentView.playButton.selected = YES;
     }else{
-        [XMGStatusBarHUD showError:@"加载失败"];
+        [SVProgressHUD showErrorWithStatus:@"记载失败"];
         self.musicContentView.playButton.selected = NO;
         
     };
