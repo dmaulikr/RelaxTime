@@ -176,7 +176,7 @@
     
  
     if ([keyPath isEqualToString:@"status"]) {
-        switch (_player.status) {
+        switch (_item.status) {
             case AVPlayerStatusUnknown:
                  SYLog(@"KVO：正在加载");
                 
@@ -194,6 +194,9 @@
             case AVPlayerStatusFailed:
                 
                 [SVProgressHUD showErrorWithStatus:@"加载失败"];
+                
+                self.musicContentView.playButton.selected = NO;
+                [_player pause];
                SYLog(@"KVO：加载失败，网络或者服务器出现问题");
                 break;
             default:
@@ -202,13 +205,14 @@
     }
     
     //缓冲进度
-//    AVPlayerItem * songItem = object;
-//    if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
-//        NSArray * array = songItem.loadedTimeRanges;
-//        CMTimeRange timeRange = [array.firstObject CMTimeRangeValue]; //本次缓冲的时间范围
-//        NSTimeInterval totalBuffer = CMTimeGetSeconds(timeRange.start) + CMTimeGetSeconds(timeRange.duration); //缓冲总长度
-//        SYLog(@"共缓冲%.2f",totalBuffer);
-//    }
+    AVPlayerItem * songItem = object;
+    if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
+       
+        NSArray * array = songItem.loadedTimeRanges;
+        CMTimeRange timeRange = [array.firstObject CMTimeRangeValue]; //本次缓冲的时间范围
+        NSTimeInterval totalBuffer = CMTimeGetSeconds(timeRange.start) + CMTimeGetSeconds(timeRange.duration); //缓冲总长度
+        SYLog(@"共缓冲%.2f",totalBuffer);
+    }
     
 }
 
@@ -518,7 +522,7 @@
         [SVProgressHUD showWithStatus:@"加载中"];
         self.musicContentView.playButton.selected = YES;
     }else{
-        [SVProgressHUD showErrorWithStatus:@"记载失败"];
+        [SVProgressHUD showErrorWithStatus:@"加载失败"];
         self.musicContentView.playButton.selected = NO;
         
     };
@@ -602,9 +606,10 @@
 -(void)repeatPlay{
     
     //循环播放
-    [_player replaceCurrentItemWithPlayerItem:[[AVPlayerItem alloc]initWithURL:[NSURL URLWithString:self.currentModel.music_id]]];
+    [_player replaceCurrentItemWithPlayerItem:_item];
     
     [_player play];
+    
 }
 
 
