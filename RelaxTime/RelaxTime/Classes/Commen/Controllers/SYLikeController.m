@@ -167,7 +167,7 @@
 #pragma mark - 编辑按钮点击事件
 -(void)rightClick:(UIButton *)button{
     
-    //改变按钮装备
+    //改变按钮状态
     button.selected = ! button.selected;
     
     //改变编辑模式
@@ -223,7 +223,7 @@
          return UITableViewCellEditingStyleDelete|UITableViewCellEditingStyleInsert;
     }else{
         //不在编辑状态时
-        return  UITableViewCellEditingStyleDelete;
+        return UITableViewCellEditingStyleDelete;
     }
    
 }

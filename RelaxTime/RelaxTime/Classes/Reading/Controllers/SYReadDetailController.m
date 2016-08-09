@@ -93,7 +93,7 @@
 - (IBAction)share:(id)sender {
    
    
-    
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeDefault];
     [UMSocialData defaultData].extConfig.title = @"这边文章不错,去[闲Time]看看吧";
     
     [UMSocialSnsService presentSnsIconSheetView:self

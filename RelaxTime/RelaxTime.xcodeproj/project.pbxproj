@@ -1275,7 +1275,7 @@
 				TargetAttributes = {
 					BCA725611D23C6770005F7BE = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = GCJX6JY5WY;
+						DevelopmentTeam = 2U5WYMT45B;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1721,7 +1721,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTime00;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTimeOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -1785,7 +1785,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTime00;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.RelaxTimeOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
